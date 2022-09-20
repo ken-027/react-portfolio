@@ -1,0 +1,60 @@
+//sidebar
+@use '../partials/variables' as *;
+
+.sidebar {
+  width: 10%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  max-width: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: $primary-light-color;
+  border-right: 1px solid $border-color;
+  padding: {
+    top: $space_1;
+    bottom: $space_1;
+  }
+
+  .logo {
+    width: 100%;
+    max-width: 100%;
+    display: block;
+  }
+
+  
+  .social { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: $space_3;
+
+    a {
+      font-size: 20px;
+      .codewarsicon {
+        background-color: $secondary-color;
+        color: $primary-light-color;
+        transition: $transition;
+        &:hover {
+          background-color: $tertiary-color;
+        }
+      }
+      &:nth-child(1) { animation-delay: 600ms; }
+      &:nth-child(2) { animation-delay: 800ms; }
+      &:nth-child(3) { animation-delay: 1000ms; }
+      &:nth-child(4) { animation-delay: 1200ms; }
+
+      &:hover {
+       transform: scale(1.2); 
+      }
+    }
+
+  }
+}
+
+//endsidebar

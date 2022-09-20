@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    @include font-family;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    // @include mobile {
+    //     background: $secondary-color;
+    // }
+    font-size: 14px;
+    background-color: $primary-color;
+    color: $secondary-color;
+}
+
+@for $index from 1 to 6 {
+    h#{$index} {
+        font-size: inherit;
+        font-weight: inherit;
+    }
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+    transition: $transition;
+    cursor: pointer;
+    &:hover {
+        color: $tertiary-color;
+    }
+}
+
+ul, ol {
+    list-style-type: none;
+}
+
+button {
+    background: none;
+    border: none;
+    color: $secondary-color;
+    cursor: pointer;
+    transition: $transition;
+    &:hover {
+        color: $tertiary-color;
+    }
+}
+
+.btn {
+    font-size: 1rem;
+    border: 1px solid $secondary-color;
+    @include px($space_6);
+    @include py($space_2);
+    transition: all 200ms ease-in;
+    &:hover {
+        border-color: $tertiary-color;
+        background-color: $tertiary-color;
+        color: $white;
+    }
+    &:focus {
+        outline: none;
+    }
+}
+
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 0.45rem;
+    height: 0.45rem;
+}
+ 
+::-webkit-scrollbar-track {
+    background-color: none;
+    border-radius: 1rem;
+    border: 1px solid $border-color;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    background: #027791; 
+}
+
+h2 {
+    color: $tertiary-color;
+    position: absolute;
+    background-color: $primary-color;
+    @include px($space_4);
+    @include py($space_4);
+    top: -30px;
+    font: {
+        size: 20px;
+        weight: bold;
+    }
+}
+
+h3 {
+    color: $tertiary-color;
+    font-size: 16px;
+    margin-bottom: $space_6;
+}
+
+.section {
+    position: relative;
+    margin-top: 5%;
+    @include py($space_16);
+    @include px($space_4);
+    border-top: 1px solid $border-color;
+}
+
+.box {
+    border: 1px solid $border-color;
+    animation: fadeIn 0.600s ease-in-out;
+    @include px($space_4);
+    padding-top: $space_8;
+    padding-bottom: $space_12;
+}
+
+input, textarea {
+    border: 1px solid $secondary-color;
+    resize: none;
+    color: $secondary-color;
+    background-color: $primary-color;
+    font-size: 1.3em;
+    width: 100%;
+    @include px($space_3);
+    @include py($space_2);
+    &:focus {
+        outline: none;
+    }
+    &::placeholder {
+        color: #276472;
+    }
+}
+
+.error {
+    color: $red;
+    font-size: 0.8em;
+    padding-left: $space_1;
+}

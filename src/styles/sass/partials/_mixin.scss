@@ -1,0 +1,70 @@
+@mixin  font-family {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 500;
+}
+
+
+@mixin small-mobile {
+    @media screen and (max-width: $extra-small) {
+        @content;
+    }    
+}
+
+@mixin mobile {
+    @media screen and (min-width: $extra-small) {
+        @content;
+    }    
+}
+
+@mixin large-mobile {
+    @media screen and (min-width: $small) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (min-width: $medium) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media screen and (min-width: $large) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: $extra-large) {
+        @content;
+    }
+}
+
+//margin
+@mixin mx($margin) {
+    margin: {
+        left: $margin;
+        right: $margin;
+    }
+}
+
+@mixin my($margin) {
+    margin: {
+        top: $margin;
+        bottom: $margin;
+    }
+}
+
+@mixin px($padding) {
+    padding: {
+        left: $padding;
+        right: $padding;
+    }
+}
+
+@mixin py($padding) {
+    padding: {
+        top: $padding;
+        bottom: $padding;
+    }
+}

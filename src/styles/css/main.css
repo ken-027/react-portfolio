@@ -1,0 +1,7 @@
+@import './variable.css';
+@import './config.css';
+
+
+body {
+    background-color: var(--secondary-color);
+}
