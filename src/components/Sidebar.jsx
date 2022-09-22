@@ -1,6 +1,7 @@
 import logo from '../assets/logo.svg'
 import { FaLinkedinIn, FaInstagram, FaTwitter } from 'react-icons/fa'
 import { SiCodewars } from 'react-icons/si'
+import info from '../shared/info'
 
 import '../styles/sass/components/sidebar.scss'
 
@@ -17,28 +18,36 @@ const Sidebar = () => (
     </a>
     <div className='social'>
       <a
-        className='animate__animated animate__bounceIn'
-        href='https://www.linkedin.com/in/kenneth-andales-20ba62240/'
+        className='animate__animated animate__bounceIn ex'
+        href={info.socials.linkedIn}
         target='_blank'>
-        <FaLinkedinIn />
+        <span>
+          <FaLinkedinIn />
+        </span>
       </a>
       <a
-        className='animate__animated animate__bounceIn'
-        href='https://www.instagram.com/kenolitan/'
+        className='animate__animated animate__bounceIn ex'
+        href={info.socials.instagram}
         target='_blank'>
-        <FaInstagram />
+        <span>
+          <FaInstagram />
+        </span>
       </a>
       <a
-        className='animate__animated animate__bounceIn'
-        href='https://twitter.com/whyme_27'
+        className='animate__animated animate__bounceIn ex'
+        href={info.socials.twitter}
         target='_blank'>
-        <FaTwitter />
+        <span>
+          <FaTwitter />
+        </span>
       </a>
       <a
-        className='animate__animated animate__bounceIn'
-        href='https://www.codewars.com/users/ken@27'
+        className='animate__animated animate__bounceIn ex'
+        href={info.socials.codewars}
         target='_blank'>
-        <SiCodewars className='codewarsicon' />
+        <span>
+          <SiCodewars className='codewarsicon' />
+        </span>
       </a>
     </div>
   </div>

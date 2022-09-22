@@ -5,7 +5,7 @@ $secondary-light-color: #43D0EE;
 $tertiary-color: #E45323;
 $border-color: #21406C;
 $white: #D5D5D5;
-$red: #f16c6c;
+$red: #d26666;
 
 // spacing
 $space_px: 1px;
@@ -45,12 +45,25 @@ $space_80: 20rem;
 $space_96: 24rem;
 
 // devices
-$extra-small: 414px;
-$extra-small: 640px;
-$small: 768px;
-$medium: 1366;
-$large: 1536px;
-$extra-large: 1920px;
+$mobile: 390px;
+$tablet: 641px;
+$laptop: 1025px;
+$desktop: 1440px;
+$large-desktop: 1728px;
+// $small-mobile: 320px;
+// $mobile: 390px;
+// $large-mobile: 428px;
+// $tablet: 641px;
+// $large-tablet: 961px;
+// $laptop: 1025px;
+// $desktop: 1281px;
+// $large-desktop: 1728
+// $extra-small: 414px;
+// $extra-small: 640px;
+// $small: 768px;
+// $medium: 1366;
+// $large: 1536px;
+// $extra-large: 1920px;
 
 
 // width and height

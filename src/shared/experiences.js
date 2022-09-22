@@ -9,10 +9,10 @@ const experiences = [
           ended: 'September 2022',
         },
         description: [
-            'Created static website',
-            'Maintain existing existing projects',
-            'Develop a soft launching web app',
-            'Participate daily/weekly scrum',
+            'Implemented API integration',
+            'Develop frontend applications from the scratch',
+            'Write and maintain codes of the existing frontend applications',
+            'Use trend tech React as Frontend Developer in the company',
         ]
     },
     {
@@ -25,12 +25,9 @@ const experiences = [
         ended: 'April 2022',
       },
       description: [
-        'Rebuild admin application',
-        'Manage web hosting sites',
-        'Weekly upload of updates for staging site',
-        'Daily updates via WhatsApp',
-        'Fix bugs of others website',
-        'Manage SEO task of live sites',
+        'Given access to the web hosting sites for updating changes of an online and staging site',
+        'Manage SEO of the online site',
+        'Use trend Laravel tech to rebuild the backend application of an e-commerce site',
       ]
     },
     {
@@ -43,11 +40,10 @@ const experiences = [
         ended: 'March 2020',
       },
       description: [
-        'Joint team development',
-        'Fixed bugs of existing projects',
-        'Join Team development for others project',
-        'Manage and completed assigned task',
-        'Participate in monthly meeting',
+        'Write and maintain codes for clients and company projects',
+        'Write and fix bugs of online site for adding features',
+        'Adopt the MVC structure of an application',
+        'Use CodeIgniter tech for the company projects',
       ]
     },
     {
@@ -60,10 +56,10 @@ const experiences = [
         ended: 'April 2019',
       },
       description: [
-        'Trained in six months',
-        'Managed given task',
-        'Maintain existing projects',
-        'Develop Internal Project',
+        'Develop an internal website for the Customer Service employee',
+        'Manage task for API payment integration',
+        'Write and maintain codes of existing PHP boilerplate projects',
+        'Train the basic to advanced PHP programming',
       ]
     },
   ]

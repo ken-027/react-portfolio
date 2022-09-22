@@ -19,6 +19,7 @@ body {
     font-size: 14px;
     background-color: $primary-color;
     color: $secondary-color;
+    overflow-x: hidden;
 }
 
 @for $index from 1 to 6 {
@@ -33,7 +34,7 @@ a {
     text-decoration: inherit;
     transition: $transition;
     cursor: pointer;
-    &:hover {
+    &:not(.ex):hover {
         color: $tertiary-color;
     }
 }
@@ -127,10 +128,10 @@ input, textarea {
     resize: none;
     color: $secondary-color;
     background-color: $primary-color;
-    font-size: 1.3em;
+    font-size: 1em;
     width: 100%;
-    @include px($space_3);
-    @include py($space_2);
+    @include px($space_4);
+    @include py($space_3);
     &:focus {
         outline: none;
     }
@@ -141,6 +142,57 @@ input, textarea {
 
 .error {
     color: $red;
-    font-size: 0.8em;
+    font-size: 0.9em;
+    font: {
+        size: 0.8em;
+        weight: 400;
+    }
     padding-left: $space_1;
+    display: flex;
+    align-items: center;
+    gap: $space_2;
+}
+
+.loading {
+    position: fixed;
+    inset: 0;;
+    background-color: $primary-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .image {
+        width: 70%;
+        max-width: 250px;
+        img {
+            max-width: 100%;
+            display: block;
+        }
+    }
+}
+
+.notfound {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: $space_4;
+    img {
+        max-width: 100%;
+        display: block;
+    }
+    h1 {
+        color: $secondary-light-color;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        font: {
+            size: 2rem;
+            weight: bold;
+        }
+        span {
+            font-size: 1.2rem;
+        }
+    }
 }

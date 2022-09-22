@@ -5,37 +5,37 @@
 
 
 @mixin small-mobile {
-    @media screen and (max-width: $extra-small) {
+    @media screen and (max-width: $mobile) {
         @content;
     }    
 }
 
 @mixin mobile {
-    @media screen and (min-width: $extra-small) {
+    @media screen and (min-width: $mobile) {
         @content;
     }    
 }
 
-@mixin large-mobile {
-    @media screen and (min-width: $small) {
-        @content;
-    }
-}
-
 @mixin tablet {
-    @media screen and (min-width: $medium) {
+    @media screen and (min-width: $tablet) {
         @content;
     }
 }
 
 @mixin laptop {
-    @media screen and (min-width: $large) {
+    @media screen and (min-width: $laptop) {
         @content;
     }
 }
 
 @mixin desktop {
-    @media screen and (min-width: $extra-large) {
+    @media screen and (min-width: $desktop) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: $large-desktop) {
         @content;
     }
 }

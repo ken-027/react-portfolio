@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.7.0",
     "@reduxjs/toolkit": "^1.8.4",
     "animate.css": "^4.1.1",
     "dotenv-expand": "^8.0.3",

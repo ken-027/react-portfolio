@@ -11,8 +11,10 @@ const Nav = () => {
 
   useEffect(() => {
     if (isShow) {
+      document.getElementsByTagName('html')[0].style.overflow = 'hidden'
       window.document.body.style.overflow = 'hidden'
     } else {
+      document.getElementsByTagName('html')[0].style.overflow = 'auto'
       window.document.body.style.overflow = 'auto'
     }
   }, [isShow])
@@ -67,8 +69,8 @@ const Nav = () => {
           </li>
         </ul>
         <a
-          download
           href={Resume}
+          target='_blank'
           className='btn resume'>
           <FaDownload /> Resume
         </a>

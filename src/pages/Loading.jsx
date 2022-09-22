@@ -1,27 +1,26 @@
-import { useEffect } from 'react'
-import logo from '../assets/kenlogo.gif'
+import { useState, useEffect } from 'react'
+import logo from '../assets/webdeveloperlogo.gif'
 
 const Loading = () => {
-  
+  const [isUnmount, setisUnmount] = useState(false)
+
   useEffect(() => {
-    const delay = async() => {
-      return await new Promise(resolve => setTimeout(resolve, 3000));
-    }
-
-    delay()
-
-    return () => {
-
-    }
-  }, [])
+    setTimeout(() => {
+      setisUnmount(true)
+    }, 2600)
+  }, [isUnmount])
 
   return (
-    <div>
-      Loading
-      <img
-        src={logo}
-        alt='logo'
-      />
+    <div className='loading'>
+      <div
+        className={`image ${
+          isUnmount ? `animate__animated animate__fadeOut` : ``
+        }`}>
+        <img
+          src={logo}
+          alt='logo'
+        />
+      </div>
     </div>
   )
 }

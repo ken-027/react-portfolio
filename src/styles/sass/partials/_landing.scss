@@ -1,5 +1,6 @@
 .container {
   margin-left: 10%;
+  overflow-y: hidden;
   // @include px($space_4)
 }
 
@@ -27,9 +28,8 @@
       weight: bold;
       size: 30px;
     }
-    @include my($space_4)    
+    @include my($space_4);
   }
-  
 }
 //endheadersection
 
@@ -41,13 +41,13 @@
       // animation: fadeIn 1s ease-in-out;
       // &:nth-child(1) {
       //   animation-delay: 1000ms;
-      // } 
+      // }
       // &:nth-child(2) {
       //   animation-delay: 1200ms;
-      // } 
+      // }
       // &:nth-child(3) {
       //   animation-delay: 1300ms;
-      // } 
+      // }
     }
   }
 
@@ -63,7 +63,7 @@
       display: block;
     }
   }
-  
+
   .education {
     margin-bottom: $space_12;
     > p {
@@ -100,6 +100,7 @@
         gap: $space_3;
         li {
           width: fit-content;
+          position: relative;
           cursor: pointer;
           display: flex;
           align-items: center;
@@ -115,11 +116,46 @@
             background-color: $secondary-color;
             transition: $transition;
           }
-          
+
           &:hover {
+            a {
+              color: $tertiary-color;
+            }
             &::before {
               background-color: $tertiary-color;
               transform: scale(1.5);
+            }
+          }
+
+          .rating {
+            position: absolute;
+            top: 50%;
+            left: $space_8;
+            font-size: 0.9em;
+            background-color: $primary-color;
+            z-index: -1;
+            opacity: 0%;
+            width: $space_40;
+            transition: $transition;
+            transition-duration: 500ms;
+            @extend .box;
+            @include py($space_3);
+            @include px($space_4);
+            &.show {
+              z-index: 1;
+              opacity: 100%;
+              // animation: fadeIn 0.600s ease-in-out;
+            }
+            h6 {
+              font-size: 0.9em;
+              margin-bottom: $space_1;
+            }
+            .stars {
+              display: flex;
+              color: $secondary-light-color;
+              align-items: center;
+              font-size: 0.9em;
+              margin-bottom: $space_2;
             }
           }
         }
@@ -177,16 +213,16 @@
       }
 
       &:nth-child(1).active ~ .position .bullet {
-          left: -2px;
+        left: -2px;
       }
       &:nth-child(2).active ~ .position .bullet {
-          left: 33%;
+        left: 33%;
       }
       &:nth-child(3).active ~ .position .bullet {
-          left: 66.5%;
+        left: 66.5%;
       }
       &:nth-child(4).active .bullet {
-          left: 99.8%;
+        left: 99.8%;
       }
     }
   }
@@ -211,7 +247,7 @@
     p:first-child {
       color: $secondary-light-color;
       font-size: 1.2em;
-    } 
+    }
     ul {
       margin-top: $space_4;
       li {
@@ -226,14 +262,14 @@
           border: 1px solid $secondary-color;
           margin-right: $space_3;
           width: $space_3;
+          min-width: $space_3;
         }
 
-        span:nth-child(2) { animation-delay: 300ms; }
-        span:nth-child(3) { animation-delay: 400ms; }
-        span:nth-child(4) { animation-delay: 500ms; }
-        span:nth-child(5) { animation-delay: 600ms; }
-        span:nth-child(6) { animation-delay: 700ms; }
-        span:nth-child(7) { animation-delay: 800ms; }
+        @for $i from 1 to 10 {
+          &:nth-child(#{$i}) {
+            animation-delay: ($i + 1) * 100ms;
+          }
+        }
       }
     }
   }
@@ -246,6 +282,11 @@
     color: $secondary-light-color;
     font-size: 1.2em;
     margin-bottom: $space_4;
+  }
+
+  .manymore {
+    text-align: center;
+    font-size: 0.9em;
   }
   .box {
     position: relative;
@@ -284,6 +325,7 @@
         position: absolute;
         max-width: 100%;
         display: block;
+        transition: $transition;
         &:nth-child(1) {
           left: 0%;
         }
@@ -291,11 +333,11 @@
           height: 90%;
           right: -10%;
           top: 15%;
-        }          
+        }
       }
     }
 
-    &:nth-child(even) .images img  {
+    &:nth-child(even) .images img {
       &:nth-child(1) {
         left: 10%;
       }
@@ -303,16 +345,16 @@
         height: 90%;
         left: 0%;
         top: 15%;
-      }       
+      }
     }
   }
 }
 //endworksection
 
-
 //contactsection
 .section.contact {
-  .form {
+  margin-bottom: $space_8;
+  form {
     width: 100%;
     > div {
       margin-bottom: $space_4;
@@ -329,7 +371,7 @@
       align-items: center;
       &.sending {
         i {
-          animation: sliteRotate 0.300s ease-in-out infinite;
+          animation: sliteRotate 0.3s ease-in-out infinite;
           svg {
             transform: rotate(35deg);
           }
@@ -337,10 +379,10 @@
       }
       &:not(.sending):hover {
         svg {
-          animation: sliteRotate 0.300s ease-in-out infinite;
+          animation: sliteRotate 0.3s ease-in-out infinite;
         }
       }
-    }  
+    }
   }
 }
 //endcontactsection

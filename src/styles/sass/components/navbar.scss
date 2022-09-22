@@ -26,6 +26,14 @@ nav {
     transform: translateX(100%);
     transition: $transition;
 
+    &::before {
+      display: block;
+      content: '';
+      width: 10%;
+      z-index: 10;
+      background-color: red;
+    }
+
     &.show {
       transform: translateX(0);
     }
@@ -51,7 +59,7 @@ nav {
             margin-top: $space_1;
             border-bottom: 2px solid $tertiary-color;
             transition: $transition;
-            transform: translateX(-100%);
+            transform: translateX(-105%);
           }
 
 
@@ -104,6 +112,12 @@ nav {
 
     .btn.resume {
       margin-top: auto;
+      &:hover {
+        color: $white;
+        svg {
+          animation: sliteRotate 0.300s ease-in-out infinite;
+        }
+      }
     }
   }
 }
