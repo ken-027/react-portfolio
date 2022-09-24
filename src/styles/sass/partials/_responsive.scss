@@ -1,0 +1,43 @@
+@use './variables' as var;
+
+@mixin small-mobile {
+  @media screen and (max-width: var.$mobile) {
+      @content;
+  }    
+}
+
+@mixin mobile {
+  @media screen and (min-width: var.$mobile) {
+      @content;
+  }    
+}
+
+@mixin large-mobile {
+  @media screen and (min-width: var.$large-mobile) {
+      @content;
+  }    
+}
+
+@mixin tablet {
+  @media screen and (min-width: var.$tablet) {
+      @content;
+  }
+}
+
+@mixin laptop {
+  @media screen and (min-width: var.$laptop) {
+      @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: var.$desktop) {
+      @content;
+  }
+}
+
+@mixin large-desktop {
+  @media screen and (min-width: var.$large-desktop) {
+      @content;
+  }
+}

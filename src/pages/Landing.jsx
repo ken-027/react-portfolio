@@ -9,6 +9,7 @@ import Footer from '../components/Footer'
 import Loading from './Loading'
 
 import info from '../shared/info'
+import { AnimationOnScroll } from 'react-animation-on-scroll'
 
 const Landing = () => {
   const [isLoading, setisLoading] = useState(true)
@@ -27,7 +28,9 @@ const Landing = () => {
         <h1 className='name animate__animated animate__bounceIn'>
           {info.user.fullName}
         </h1>
-        <p className='animate__animated animate__fadeInUp animate__fadeIn'>{info.landing.intro}</p>
+        <p className='animate__animated animate__fadeInUp'>
+          {info.landing.intro}
+        </p>
       </section>
       <About />
       <Experience />

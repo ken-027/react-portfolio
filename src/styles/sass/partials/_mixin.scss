@@ -1,43 +1,8 @@
+@use './responsive' as res;
+
 @mixin  font-family {
     font-family: 'Source Code Pro', monospace;
     font-weight: 500;
-}
-
-
-@mixin small-mobile {
-    @media screen and (max-width: $mobile) {
-        @content;
-    }    
-}
-
-@mixin mobile {
-    @media screen and (min-width: $mobile) {
-        @content;
-    }    
-}
-
-@mixin tablet {
-    @media screen and (min-width: $tablet) {
-        @content;
-    }
-}
-
-@mixin laptop {
-    @media screen and (min-width: $laptop) {
-        @content;
-    }
-}
-
-@mixin desktop {
-    @media screen and (min-width: $desktop) {
-        @content;
-    }
-}
-
-@mixin desktop {
-    @media screen and (min-width: $large-desktop) {
-        @content;
-    }
 }
 
 //margin
@@ -66,5 +31,18 @@
     padding: {
         top: $padding;
         bottom: $padding;
+    }
+}
+
+@mixin padding-x {
+    @include px($space_4);
+    @include res.large-mobile {
+        @include px($space_5)
+    }
+    @include res.tablet {
+        @include px($space_8)
+    }
+    @include res.laptop {
+        padding-right: $space_24;
     }
 }

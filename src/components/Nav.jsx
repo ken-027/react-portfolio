@@ -25,14 +25,22 @@ const Nav = () => {
 
   return (
     <nav>
-      <button className='animate__animated animate__bounceInRight' onClick={toggleNav}>
-        <BiMenuAltRight size={50} />
+      <a
+        href={Resume}
+        target='_blank'
+        className='btn resume desktop'>
+        <FaDownload /> Resume
+      </a>
+      <button
+        className='animate__animated animate__bounceInRight'
+        onClick={toggleNav}>
+        <BiMenuAltRight size={45} />
       </button>
       <div className={`menu-container ${isShow ? `show` : ``}`}>
         <button
           className='close'
           onClick={toggleNav}>
-          <AiOutlineClose size={40} />
+          <AiOutlineClose size={35} />
         </button>
         <ul className=''>
           <li className=''>
@@ -71,7 +79,7 @@ const Nav = () => {
         <a
           href={Resume}
           target='_blank'
-          className='btn resume'>
+          className='btn resume mobile'>
           <FaDownload /> Resume
         </a>
       </div>

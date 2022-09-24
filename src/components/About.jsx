@@ -8,13 +8,18 @@ import Profile from '../assets/profile.png'
 import Book from '../assets/book.png'
 import Graduated from '../assets/graduated.png'
 
-const PopUp = ({data}) => (
+const PopUp = ({ data }) => (
   <div className='rating animate__animated animate__fadeIn'>
     <h6>Skills Rating</h6>
     <div className='stars'>
       {[...Array(10)].map((x, index) => {
-        return data.rating > index ? <AiFillStar key={index} /> : <AiOutlineStar key={index} />
-      })}/{data.rating}
+        return data.rating > index ? (
+          <AiFillStar key={index} />
+        ) : (
+          <AiOutlineStar key={index} />
+        )
+      })}
+      |{data.rating}/10
     </div>
     <p>{data.description}</p>
   </div>
@@ -42,43 +47,47 @@ const About = () => {
     <AnimationOnScroll
       animateIn='animate__fadeInUp'
       animateOut='animate__fadeOutUp'
+      offset={400}
       animateOnce={true}
       className='about section'>
       <h2 id='about'>About Me</h2>
-      <div className='description'>
+      <div className='me'>
+        <div className='description'>
+          <AnimationOnScroll
+            animateIn='animate__fadeInUp'
+            animateOut='animate__fadeOutUp'
+            delay={400}
+            animateOnce={true}>
+            <p>{info.about[0]}</p>
+          </AnimationOnScroll>
+          <AnimationOnScroll
+            animateIn='animate__fadeInUp'
+            animateOut='animate__fadeOutUp'
+            delay={500}
+            animateOnce={true}>
+            <p>{info.about[1]}</p>
+          </AnimationOnScroll>
+          <AnimationOnScroll
+            animateIn='animate__fadeInUp'
+            animateOut='animate__fadeOutUp'
+            delay={600}
+            animateOnce={true}>
+            <p>{info.about[2]}</p>
+          </AnimationOnScroll>
+        </div>
         <AnimationOnScroll
           animateIn='animate__fadeInUp'
           animateOut='animate__fadeOutUp'
+          animateOnce={true}
           delay={400}
-          animateOnce={true}>
-          <p>{info.about[0]}</p>
-        </AnimationOnScroll>
-        <AnimationOnScroll
-          animateIn='animate__fadeInUp'
-          animateOut='animate__fadeOutUp'
-          delay={500}
-          animateOnce={true}>
-          <p>{info.about[1]}</p>
-        </AnimationOnScroll>
-        <AnimationOnScroll
-          animateIn='animate__fadeInUp'
-          animateOut='animate__fadeOutUp'
-          delay={600}
-          animateOnce={true}>
-          <p>{info.about[2]}</p>
+          className='profile'>
+          <img
+            src={Profile}
+            alt=''
+          />
         </AnimationOnScroll>
       </div>
-      <AnimationOnScroll
-        animateIn='animate__fadeInUp'
-        animateOut='animate__fadeOutUp'
-        animateOnce={true}
-        delay={400}
-        className='profile'>
-        <img
-          src={Profile}
-          alt=''
-        />
-      </AnimationOnScroll>
+
       <AnimationOnScroll
         animateIn='animate__fadeInUp'
         animateOut='animate__fadeOutUp'
@@ -117,49 +126,27 @@ const About = () => {
         <h3>Skills</h3>
         <p>Here’s the following technologies that I knew:</p>
         <div className='skillset'>
-          <ul className=''>
-            {skills.language.map((language, index) => (
-              <li
-                className=''
-                onMouseLeave={onHoverOut}
-                key={index}>
-                <a
-                  onMouseOver={onHover}
-                  data-description={language.description}>
-                  {language.name}
-                </a>
-                <PopUp data={language} />
-              </li>
-            ))}
-          </ul>
-          <ul className=''>
-            {skills.frontend.map((frontend, index) => (
-              <li
-                key={index}
-                onMouseLeave={onHoverOut}>
-                <a
-                  onMouseOver={onHover}
-                  data-description={frontend.description}>
-                  {frontend.name}
-                </a>
-                <PopUp data={frontend} />
-              </li>
-            ))}
-          </ul>
-          <ul className=''>
-            {skills.backend.map((backend, index) => (
-              <li
-                key={index}
-                onMouseLeave={onHoverOut}>
-                <a
-                  onMouseOver={onHover}
-                  data-description={backend.description}>
-                  {backend.name}
-                </a>
-                <PopUp data={backend} />
-              </li>
-            ))}
-          </ul>
+          {Object.values(skills).map((skill, index) => (
+            <ul className=''>
+              {skill.map((skill, index) => (
+                <li
+                  className=''
+                  onMouseLeave={onHoverOut}
+                  key={index}>
+                  <a
+                    onMouseOver={onHover}
+                    data-description={skill.description}>
+                  <img
+                    src={skill.icon}
+                    alt={skill.name}
+                  />
+                    {skill.name}
+                  </a>
+                  <PopUp data={skill} />
+                </li>
+              ))}
+            </ul>
+          ))}
         </div>
       </AnimationOnScroll>
     </AnimationOnScroll>

@@ -1,5 +1,6 @@
 //sidebar
 @use '../partials/variables' as *;
+@use '../partials/responsive' as *;
 
 .sidebar {
   width: 10%;
@@ -13,17 +14,24 @@
   flex-direction: column;
   justify-content: space-between;
   background-color: $primary-light-color;
+  align-items: center;
   border-right: 1px solid $border-color;
   padding: {
     top: $space_1;
     bottom: $space_1;
   }
 
-  .logo {
-    width: 100%;
-    max-width: 100%;
-    display: block;
+  .logo-container {
+    @include tablet {
+      width: 80%;
+    }
+    .logo {
+      width: 100%;
+      max-width: 100%;
+      display: block;
+    }
   }
+
 
   
   .social { 
@@ -32,11 +40,17 @@
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    padding-bottom: $space_3;
+    padding-bottom: $space_6;
 
     a {
       font-size: 20px;
       transition: $transition;
+      @include large-mobile {
+        font-size: 25px;
+      }
+      @include tablet {
+        font-size: 30px;
+      }
 
       span {
         transition: $transition;

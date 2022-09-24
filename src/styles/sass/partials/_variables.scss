@@ -2,6 +2,7 @@ $primary-color: #18263A;
 $primary-light-color: #18283F;
 $secondary-color: #019FC1;
 $secondary-light-color: #43D0EE;
+$secondary-dark-color: #177e95;
 $tertiary-color: #E45323;
 $border-color: #21406C;
 $white: #D5D5D5;
@@ -46,7 +47,8 @@ $space_96: 24rem;
 
 // devices
 $mobile: 390px;
-$tablet: 641px;
+$large-mobile: 481px;
+$tablet: 768px;
 $laptop: 1025px;
 $desktop: 1440px;
 $large-desktop: 1728px;

@@ -1,198 +1,209 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;300;400;500;600;700;800;900&display=swap');
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    @include font-family;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  @include font-family;
 }
 
 html {
-    scroll-behavior: smooth;
-    overflow-x: hidden;
+  scroll-behavior: smooth;
+  overflow-x: hidden !important;
 }
 
 body {
-    // @include mobile {
-    //     background: $secondary-color;
-    // }
-    font-size: 14px;
-    background-color: $primary-color;
-    color: $secondary-color;
-    overflow-x: hidden;
+  // @include mobile {
+  //     background: $secondary-color;
+  // }
+  font-size: 14px;
+  @include tablet {
+    font-size: 16px;
+  }
+  background-color: $primary-color;
+  color: $secondary-color;
+  overflow-x: hidden !important;
 }
 
 @for $index from 1 to 6 {
-    h#{$index} {
-        font-size: inherit;
-        font-weight: inherit;
-    }
+  h#{$index} {
+    font-size: inherit;
+    font-weight: inherit;
+  }
 }
 
 a {
-    color: inherit;
-    text-decoration: inherit;
-    transition: $transition;
-    cursor: pointer;
-    &:not(.ex):hover {
-        color: $tertiary-color;
-    }
+  color: inherit;
+  text-decoration: inherit;
+  transition: $transition;
+  cursor: pointer;
+  &:not(.ex):hover {
+    color: $tertiary-color;
+  }
 }
 
-ul, ol {
-    list-style-type: none;
+ul,
+ol {
+  list-style-type: none;
 }
 
 button {
-    background: none;
-    border: none;
-    color: $secondary-color;
-    cursor: pointer;
-    transition: $transition;
-    &:hover {
-        color: $tertiary-color;
-    }
+  background: none;
+  border: none;
+  color: $secondary-color;
+  cursor: pointer;
+  transition: $transition;
+  &:hover {
+    color: $tertiary-color;
+  }
 }
 
 .btn {
-    font-size: 1rem;
-    border: 1px solid $secondary-color;
-    @include px($space_6);
-    @include py($space_2);
-    transition: all 200ms ease-in;
-    &:hover {
-        border-color: $tertiary-color;
-        background-color: $tertiary-color;
-        color: $white;
-    }
-    &:focus {
-        outline: none;
-    }
+  font-size: 1rem;
+  border: 1px solid $secondary-color;
+  background-color: $primary-color;
+  @include px($space_6);
+  @include py($space_2);
+  transition: all 200ms ease-in;
+  &:hover {
+    border-color: $tertiary-color;
+    background-color: $tertiary-color;
+    color: $white;
+  }
+  &:focus {
+    outline: none;
+  }
 }
-
 
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
-    width: 0.45rem;
-    height: 0.45rem;
+  width: 0.45rem;
+  height: 0.45rem;
 }
- 
+
 ::-webkit-scrollbar-track {
-    background-color: none;
-    border-radius: 1rem;
-    border: 1px solid $border-color;
+  background-color: none;
+  border-radius: 1rem;
+  border: 1px solid $border-color;
 }
 
 ::-webkit-scrollbar-thumb {
-    border-radius: 1rem;
-    background: #027791; 
+  border-radius: 1rem;
+  background: #027791;
 }
 
 h2 {
-    color: $tertiary-color;
-    position: absolute;
-    background-color: $primary-color;
-    @include px($space_4);
-    @include py($space_4);
-    top: -30px;
-    font: {
-        size: 20px;
-        weight: bold;
-    }
+  color: $tertiary-color;
+  position: absolute;
+  background-color: $primary-color;
+  @include px($space_4);
+  @include py($space_4);
+  top: -30px;
+  font: {
+    size: 20px;
+    weight: bold;
+  }
 }
 
 h3 {
-    color: $tertiary-color;
-    font-size: 16px;
-    margin-bottom: $space_6;
+  color: $tertiary-color;
+  font-size: 16px;
+  margin-bottom: $space_6;
 }
 
 .section {
-    position: relative;
-    margin-top: 5%;
-    @include py($space_16);
-    @include px($space_4);
-    border-top: 1px solid $border-color;
+  position: relative;
+  margin-top: 5%;
+  @include py($space_16);
+  // @include px($space_4);
+  @include padding-x;
+  border-top: 1px solid $border-color;
 }
 
 .box {
-    border: 1px solid $border-color;
-    animation: fadeIn 0.600s ease-in-out;
-    @include px($space_4);
-    padding-top: $space_8;
-    padding-bottom: $space_12;
+  border: 1px solid $border-color;
+  animation: fadeIn 0.6s ease-in-out;
+  @include px($space_4);
+  padding-top: $space_8;
+  padding-bottom: $space_12;
+  @include laptop {
+    padding-top: $space_14;
+    @include px($space_8);
+    padding-bottom: $space_20;
+  }
 }
 
-input, textarea {
-    border: 1px solid $secondary-color;
-    resize: none;
-    color: $secondary-color;
-    background-color: $primary-color;
-    font-size: 1em;
-    width: 100%;
-    @include px($space_4);
-    @include py($space_3);
-    &:focus {
-        outline: none;
-    }
-    &::placeholder {
-        color: #276472;
-    }
+input,
+textarea {
+  border: 1px solid $secondary-color;
+  resize: none;
+  color: $secondary-color;
+  background-color: $primary-color;
+  font-size: 1em;
+  width: 100%;
+  @include px($space_4);
+  @include py($space_3);
+  &:focus {
+    outline: none;
+  }
+  &::placeholder {
+    color: #276472;
+  }
 }
 
 .error {
-    color: $red;
-    font-size: 0.9em;
-    font: {
-        size: 0.8em;
-        weight: 400;
-    }
-    padding-left: $space_1;
-    display: flex;
-    align-items: center;
-    gap: $space_2;
+  color: $red;
+  font-size: 0.9em;
+  font: {
+    size: 0.8em;
+    weight: 400;
+  }
+  padding-left: $space_1;
+  display: flex;
+  align-items: center;
+  gap: $space_2;
 }
 
 .loading {
-    position: fixed;
-    inset: 0;;
-    background-color: $primary-color;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .image {
-        width: 70%;
-        max-width: 250px;
-        img {
-            max-width: 100%;
-            display: block;
-        }
+  position: fixed;
+  inset: 0;
+  background-color: $primary-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .image {
+    width: 70%;
+    max-width: 250px;
+    img {
+      max-width: 100%;
+      display: block;
     }
+  }
 }
 
 .notfound {
-    position: fixed;
-    inset: 0;
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: $space_4;
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  h1 {
+    color: $secondary-light-color;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: $space_4;
-    img {
-        max-width: 100%;
-        display: block;
+    text-align: center;
+    font: {
+      size: 2rem;
+      weight: bold;
     }
-    h1 {
-        color: $secondary-light-color;
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        font: {
-            size: 2rem;
-            weight: bold;
-        }
-        span {
-            font-size: 1.2rem;
-        }
+    span {
+      font-size: 1.2rem;
     }
+  }
 }

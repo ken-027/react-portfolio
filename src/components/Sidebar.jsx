@@ -9,7 +9,7 @@ const Sidebar = () => (
   <div className='sidebar'>
     <a
       href='/'
-      className='animate__animated animate__bounceIn'>
+      className='animate__animated animate__bounceIn logo-container'>
       <img
         src={logo}
         className='logo'

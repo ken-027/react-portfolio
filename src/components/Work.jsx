@@ -7,41 +7,46 @@ const Work = () => (
     animateIn='animate__fadeInUp'
     animateOut='animate__fadeOutUp'
     animateOnce={true}
+    offset={400}
     className='work section'>
     <h2 id='work'>Some Things I've Built</h2>
-    <div className=''>
+    <div>
       {works.map((work, index) => (
-        <div key={index}>
-          <AnimationOnScroll
-            animateIn='animate__fadeInUp'
-            animateOut='animate__fadeOutUp'
-            animateOnce={true}
-            className='box'>
-            <div className=''>
-              <p>{work.title}</p>
-              <p>{work.description}</p>
-              <ul className='techno'>
-                {work.technologies.map((technology, index) => (
-                  <li key={index}>{technology}</li>
-                ))}
-              </ul>
-              <ul className='links'>
-                <li>
-                  <a
-                    target='_blank'
-                    href={work.repository}>
-                    <FaGithub />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    target='_blank'
-                    href={work.website}>
-                    <FaShareSquare />
-                  </a>
-                </li>
-              </ul>
-            </div>
+        <AnimationOnScroll
+          key={index}
+          animateIn='animate__fadeInUp'
+          animateOut='animate__fadeOutUp'
+          animateOnce={true}
+          // delay={200}
+          delay={index===0?400:0}
+          offset={30}
+          className='box'>
+          <div className=''>
+            <p>{work.title}</p>
+            <p>{work.description}</p>
+            <ul className='techno'>
+              {work.technologies.map((technology, index) => (
+                <li key={index}>{technology}</li>
+              ))}
+            </ul>
+            <ul className='links'>
+              <li>
+                <a
+                  target='_blank'
+                  href={work.repository}>
+                  <FaGithub />
+                </a>
+              </li>
+              <li>
+                <a
+                  target='_blank'
+                  href={work.website}>
+                  <FaShareSquare />
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div className="image-container">
             <div className='images'>
               {work.images.map((image, index) => (
                 <img
@@ -52,10 +57,17 @@ const Work = () => (
                 />
               ))}
             </div>
-          </AnimationOnScroll>
-        </div>
+          </div>
+        </AnimationOnScroll>
       ))}
-      <p className='manymore'>many more to come</p>
+      <AnimationOnScroll
+        animateIn='animate__fadeInUp'
+        animateOut='animate__fadeOutUp'
+        animateOnce={true}
+        className=''>
+        <p className='manymore'>many more to come</p>
+        <p className='others'>others are contributed to the companies</p>
+      </AnimationOnScroll>
     </div>
   </AnimationOnScroll>
 )

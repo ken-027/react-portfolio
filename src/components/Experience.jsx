@@ -60,13 +60,14 @@ const Experience = () => {
       animateIn='animate__fadeInUp'
       animateOut='animate__fadeOutUp'
       animateOnce={true}
+      offset={400}
       className='experience section'>
       <h2 id='experience'>Where I've Worked</h2>
       <AnimationOnScroll
         animateIn='animate__fadeInUp'
         animateOut='animate__fadeOutUp'
         animateOnce={true}
-        className=''>
+        className='tab-container'>
         <ul className='bullet-container'>
           <li
             data-index={0}

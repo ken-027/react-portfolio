@@ -1,6 +1,7 @@
 @use '../partials/variables' as *;
 @use '../partials/mixin' as *;
 @use '../partials/animation' as *;
+@use '../partials/responsive' as *;
 
 nav {
   text-align: end;
@@ -9,6 +10,18 @@ nav {
   top: 0;
   left: 0;
   right: 0;
+  @include laptop {
+   position: relative; 
+   padding-top: $space_2;
+   @include mx(calc($space_24 + $space_4))
+  }
+
+  > button {
+    @include px($space_1);
+    @include laptop {
+      display: none;
+    }
+  }
 
   .menu-container {
     padding-top: $space_2;
@@ -25,13 +38,23 @@ nav {
     background-color: $primary-light-color;
     transform: translateX(100%);
     transition: $transition;
-
+    @include tablet {
+      padding-left: calc(80px + $space_4);
+    }
+    @include laptop {
+      padding-left: $space_8;
+      transform: translateX(calc(100% - $space_24));
+      background-color: $primary-color;
+    }
     &::before {
       display: block;
       content: '';
       width: 10%;
       z-index: 10;
-      background-color: red;
+      // background-color: red;
+      @include laptop {
+        display: none;
+      }
     }
 
     &.show {
@@ -39,19 +62,39 @@ nav {
     }
 
     .close {
-     margin-bottom: $space_4; 
+      margin-bottom: $space_4;
+      @include laptop {
+        display: none;
+      }
     }
 
     ul {
       overflow: hidden;
       width: 100%;
+      @include laptop {
+        display: flex;
+        flex-direction: column;
+        gap: $space_6;
+        margin-top: auto;
+        padding-top: 15%;
+        margin-bottom: auto;
+      }
       li {
         margin-bottom: $space_6;
+        @include laptop {
+          background-color: $primary-color;
+        }
         a {
           display: block;
           width: fit-content;
           overflow: hidden;
           font-size: 1.2em;
+
+          @include laptop {
+            writing-mode: vertical-rl;
+            // text-orientation: upright;
+            font-size: 1em;
+          }
 
           &::after {
             display: block;
@@ -62,39 +105,15 @@ nav {
             transform: translateX(-105%);
           }
 
-
           &:hover {
-            
             padding-left: $space_2;
             transform: scale(1.3);
+            @include laptop {
+              transform: scale(1);
+            }
             &::after {
               transform: translate(0);
             }
-            
-            // span {
-            //   display: inline-block;
-            //   animation: scaleUp 0.600s infinite;
-            //   transition: all 200ms ease-in;
-            //   margin-right: $space_1;
-            //   &:nth-child(2) {
-            //     animation-delay: 200ms;
-            //   }
-            //   &:nth-child(3) {
-            //     animation-delay: 250ms;
-            //   }
-            //   &:nth-child(4) {
-            //     animation-delay: 300ms;
-            //   }
-            //   &:nth-child(4) {
-              //     animation-delay: 350ms;
-              //   }
-              //   &:nth-child(5) {
-                //     animation-delay: 400ms;
-                //   }
-                //   &:nth-child(6) {
-            //     animation-delay: 450ms;
-            //   }
-            // }
           }
 
           &.expe {
@@ -110,14 +129,32 @@ nav {
       }
     }
 
-    .btn.resume {
+    .btn.resume.mobile {
       margin-top: auto;
+      width: max-content;
       &:hover {
         color: $white;
         svg {
-          animation: sliteRotate 0.300s ease-in-out infinite;
+          animation: sliteRotate 0.3s ease-in-out infinite;
         }
       }
+      @include laptop {
+        display: none;
+      }
+    }
+  }
+  .btn.resume.desktop {
+    margin-top: $space_4;
+    width: max-content;
+    display: none;
+    &:hover {
+      color: $white;
+      svg {
+        animation: sliteRotate 0.3s ease-in-out infinite;
+      }
+    }
+    @include laptop {
+      display: inline-block;
     }
   }
 }

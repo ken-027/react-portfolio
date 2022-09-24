@@ -106,12 +106,14 @@ const Contact = () => {
     <AnimationOnScroll
       animateIn='animate__fadeInUp'
       animateOut='animate__fadeOutUp'
+      offset={400}
       animateOnce={true}
       className='contact section'>
       <h2 id='contact'>Get In Touch</h2>
       <AnimationOnScroll
         animateIn='animate__fadeInUp'
         animateOut='animate__fadeOutUp'
+        delay={600}
         animateOnce={true}
         className='form'>
         <form
