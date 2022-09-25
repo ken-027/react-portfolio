@@ -1,5 +1,5 @@
 .container {
-  margin-left: 10%;
+  margin-left: 12%;
   overflow-y: hidden;
   overflow-x: hidden;
   // @include px($space_4)
@@ -11,14 +11,14 @@
 //headersection
 .header {
   padding-top: 150px;
-  .handle {
-    // position: absolute;
-    top: 10%;
-    left: 0;
-    right: 0;
-  }
   @include tablet {
     padding-top: 200px;
+  }
+  @include laptop {
+    padding-top: 180px;
+  }
+  @include desktop {
+    padding-top: 100px;
   }
 
   height: 100vh;
@@ -27,14 +27,33 @@
 
   .name {
     animation-delay: 900ms;
+    @include tablet {
+      font-size: 40px;
+    }
+    @include laptop {
+      font-size: 50px;
+    }
+    @include desktop {
+      font-size: 70px;
+    }
   }
 
   p:first-child {
     color: $white;
+    @include desktop {
+      font-size: 20px;
+    }
   }
 
   p:last-child {
     animation-delay: 1100ms;
+    @include laptop {
+      max-width: 90%;
+      font-size: 18px;
+    }
+    @include desktop {
+      font-size: 20px;
+    }
   }
 
   h1 {
@@ -53,6 +72,7 @@
   .me {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: $space_12;
     @include laptop {
       flex-direction: row;
@@ -67,13 +87,14 @@
   }
 
   .profile {
-    background-color: $white;
+    // background-color: $white;
     overflow: hidden;
     // border-radius: 0.8em;
     width: 80%;
     display: flex;
     align-items: flex-end;
-    max-width: 300px;
+    max-width: 250px;
+    // max-height: 300px;
     margin-bottom: $space_12;
     @include mx(auto);
     @include tablet {
@@ -82,6 +103,7 @@
     img {
       max-width: 100%;
       display: block;
+      background-color: $white;
     }
   }
 
@@ -104,15 +126,22 @@
         flex-direction: row;
         gap: $space_10;
       }
+      @include desktop {
+        gap: $space_32;
+      }
       li {
         display: flex;
         align-items: center;
         gap: $space_4;
+        @include desktop {
+          gap: $space_6;
+        }
         &:nth-child(1) {
           @include laptop {
             order: 1;
           }
         }
+
         // img {
         //   max-width: 100%;
         //   display: block;
@@ -143,11 +172,7 @@
         padding-right: $space_14;
       }
       @include tablet {
-        // justify-content: start;
-        gap: $space_24;
-        padding-right: $space_24;
-      }
-      @include desktop {
+        gap: $space_16;
       }
       ul {
         display: flex;
@@ -244,174 +269,192 @@
 
 //experiencesection
 .section.experience {
-  @include laptop {
-    display: flex;
-    gap: $space_14;
-  }
-
-  .tab-container {
+  .section-content {
     @include laptop {
       display: flex;
-      gap: $space_12;
-      justify-content: center;
-      // align-items: center;
+      gap: $space_14;
     }
-    .bullet-container {
-      position: relative;
-      border-top: 1px solid $border-color;
-      @include mx(auto);
-      width: 75%;
-      padding-top: $space_4;
-      display: flex;
-      justify-content: space-between;
+    .tab-container {
       @include laptop {
-        flex-direction: column;
-        border-top: none;
-        height: 100%;
-        border-left: 1px solid $border-color;
-        padding-top: unset;
-      }
-      li {
-        cursor: pointer;
-        &:nth-child(2)::after {
-          animation-delay: 300ms;
-        }
-        &:nth-child(3)::after {
-          animation-delay: 600ms;
-        }
-        &:nth-child(4)::after {
-          animation-delay: 900ms;
-        }
-        &::after {
-          position: absolute;
-          cursor: pointer;
-          display: inline-block;
-          content: '';
-          top: -4px;
-          width: 0.5em;
-          height: 0.5em;
-          border-radius: 100%;
-          background-color: $white;
-          animation: scaleUpSmall 1.5s ease-in-out infinite;
-          @include laptop {
-            left: -4px;
-            top: unset;
-          }
-        }
-
-        .bullet {
-          position: absolute;
-          top: -6px;
-          left: -2px;
-          width: 0.8em;
-          height: 0.8em;
-          z-index: 1;
-          border-radius: 100%;
-          background-color: $secondary-color;
-          transition: $transition;
-          @include laptop {
-            transition-duration: 600ms;
-          }
-        }
-
-        &:nth-child(1).active ~ .position .bullet {
-          left: -2px;
-          @include laptop {
-            top: -3px;
-            left: -6px;
-          }
-        }
-        &:nth-child(2).active ~ .position .bullet {
-          left: 33%;
-          @include laptop {
-            left: -6px;
-            top: 33%;
-          }
-        }
-        &:nth-child(3).active ~ .position .bullet {
-          left: 66.5%;
-          @include large-mobile {
-            left: 66%;
-          }
-          @include laptop {
-            left: -6px;
-            top: 66%;
-          }
-        }
-        &:nth-child(4).active .bullet {
-          left: 99.8%;
-          @include laptop {
-            left: -6px;
-            top: 99.8%;
-          }
-        }
-      }
-    }
-    .bullet-content {
-      @include mx($space_4);
-      display: flex;
-      margin-bottom: $space_8;
-      @include mx(auto);
-      width: 90%;
-      justify-content: space-between;
-      @include large-mobile {
-        width: 85%;
-      }
-      @include tablet {
-        justify-content: space-around;
-        width: 95%;
-      }
-      @include laptop {
-        flex-direction: column;
-        justify-content: space-between;
-        height: 100%;
-        @include mx(unset);
-        @include py(unset);
-      }
-      li {
-        transition: $transition;
-        width: max-content;
-        opacity: 0%;
-        @include laptop {
-          opacity: 100%;
-          color: $white;
-        }
-        &.show {
-          opacity: 100%;
-          color: $secondary-color;
-        }
-      }
-    }
-  }
-
-  .box {
-    small {
-      display: inline-block;
-    }
-    p:first-child {
-      color: $secondary-light-color;
-      font-size: 1.2em;
-    }
-    ul {
-      margin-top: $space_4;
-      li {
-        margin-bottom: $space_3;
-        padding-left: $space_2;
         display: flex;
+        gap: $space_12;
+        justify-content: center;
         align-items: center;
-        &::before {
-          content: '';
-          display: inline-block;
-          vertical-align: middle;
-          border: 1px solid $secondary-color;
-          margin-right: $space_3;
-          width: $space_3;
-          min-width: $space_3;
+      }
+      .bullet-container {
+        position: relative;
+        border-top: 1px solid $border-color;
+        @include mx(auto);
+        width: 75%;
+        padding-top: $space_4;
+        display: flex;
+        justify-content: space-between;
+        @include laptop {
+          flex-direction: column;
+          border-top: none;
+          height: 80%;
+          border-left: 1px solid $border-color;
+          @include py(unset);
+          @include my(unset);
         }
+        li {
+          cursor: pointer;
+          &:nth-child(2)::after {
+            animation-delay: 300ms;
+          }
+          &:nth-child(3)::after {
+            animation-delay: 600ms;
+          }
+          &:nth-child(4)::after {
+            animation-delay: 900ms;
+          }
+          &::after {
+            position: absolute;
+            cursor: pointer;
+            display: inline-block;
+            content: '';
+            top: -4px;
+            width: 0.5em;
+            height: 0.5em;
+            border-radius: 100%;
+            background-color: $white;
+            animation: scaleUpSmall 1.5s ease-in-out infinite;
+            @include laptop {
+              left: -4px;
+              top: unset;
+            }
+          }
 
-        @for $i from 1 to 10 {
-          &:nth-child(#{$i}) {
-            animation-delay: ($i + 1) * 100ms;
+          .bullet {
+            position: absolute;
+            top: -6px;
+            left: -2px;
+            width: 0.8em;
+            height: 0.8em;
+            z-index: 1;
+            border-radius: 100%;
+            background-color: $secondary-color;
+            transition: $transition;
+            @include laptop {
+              transition-duration: 600ms;
+            }
+          }
+
+          &:nth-child(1).active ~ .position .bullet {
+            left: -2px;
+            @include laptop {
+              top: -3px;
+              left: -6px;
+            }
+          }
+          &:nth-child(2).active ~ .position .bullet {
+            left: 33%;
+            @include laptop {
+              left: -6px;
+              top: 32.7%;
+            }
+          }
+          &:nth-child(3).active ~ .position .bullet {
+            left: 66.5%;
+            @include large-mobile {
+              left: 66%;
+            }
+            @include laptop {
+              left: -6px;
+              top: 65.7%;
+            }
+          }
+          &:nth-child(4).active .bullet {
+            left: 99.8%;
+            @include laptop {
+              left: -6px;
+              top: 99.5%;
+            }
+          }
+        }
+      }
+      .bullet-content {
+        @include mx($space_4);
+        display: flex;
+        margin-bottom: $space_8;
+        @include mx(auto);
+        width: 90%;
+        justify-content: space-between;
+        @include large-mobile {
+          width: 85%;
+        }
+        @include tablet {
+          justify-content: space-around;
+          width: 95%;
+        }
+        @include laptop {
+          flex-direction: column;
+          justify-content: space-between;
+          height: 87%;
+          @include mx(auto);
+          @include my(auto);
+          @include py(auto);
+          padding-top: $space_2;
+        }
+        li {
+          transition: $transition;
+          width: max-content;
+          opacity: 0%;
+          @include laptop {
+            opacity: 100%;
+            color: $white;
+          }
+          &.show {
+            opacity: 100%;
+            color: $secondary-color;
+          }
+        }
+      }
+    }
+
+    .box {
+      small {
+        display: inline-block;
+        @include laptop {
+          margin-bottom: $space_3;
+        }
+      }
+      p:first-child {
+        color: $secondary-light-color;
+        font-size: 1.2em;
+        @include laptop {
+          margin-bottom: $space_2;
+        }
+      }
+      p:nth-child(2) {
+        @include laptop {
+          margin-bottom: $space_2;
+        }
+      }
+      ul {
+        margin-top: $space_4;
+        li {
+          margin-bottom: $space_3;
+          padding-left: $space_2;
+          display: flex;
+          align-items: center;
+          &::before {
+            content: '';
+            display: inline-block;
+            vertical-align: middle;
+            border: 1px solid $secondary-color;
+            margin-right: $space_3;
+            width: $space_3;
+            min-width: $space_3;
+          }
+          @include laptop {
+            margin-bottom: $space_4;
+          }
+
+          @for $i from 1 to 10 {
+            &:nth-child(#{$i}) {
+              animation-delay: ($i + 1) * 100ms;
+            }
           }
         }
       }
@@ -424,96 +467,159 @@
 .section.work {
   position: relative;
   .manymore {
-    font-size: 1em;
-    text-align: center;
+    margin-top: $space_40;
+    p {
+      &:first-child {
+        font-size: 1em;
+        text-align: center;
+      }
+      &:last-child {
+        text-align: center;
+        font-size: 0.8em;
+        color: $secondary-dark-color;
+      }
+    }
   }
-  .others {
-    text-align: center;
-    font-size: 0.8em;
-    color: $secondary-dark-color;
-  }
-  .box {
-    position: relative;
-    padding-bottom: $space_24;
-    margin-bottom: $space_60;
-    @include large-mobile {
-      margin-bottom: $space_80;
-    }
-    @include tablet {
-      margin-bottom: $space_96;
-    }
-
-    p:first-child {
-      color: $secondary-light-color;
-      font-size: 1.2em;
-      margin-bottom: $space_4;
-    }
-
-    ul {
-      @include my($space_6);
-      display: flex;
-      gap: $space_2;
-      flex-wrap: wrap;
-      li {
-        font-size: 0.9em;
+  .container {
+    margin-left: 0;
+    .row {
+      position: relative;
+      padding-bottom: $space_24;
+      margin-bottom: $space_60;
+      @include large-mobile {
+        margin-bottom: $space_80;
+      }
+      @include tablet {
+        margin-bottom: $space_96;
+      }
+      @include laptop {
+        width: 90%;
+        @include mx(auto);
+        display: flex;
+        justify-content: center;
+        padding-bottom: unset;
+        margin-bottom: $space_60;
+        min-height: min-content;
       }
 
-      &.links {
-        margin-left: $space_2;
-        gap: $space_4;
+      .box {
+        padding-bottom: $space_20;
+        @include laptop {
+          width: 80%;
+          max-width: 500px;
+          order: 2;
+          padding-left: calc($space_20 + $space_4);
+          height: 300px;
+          padding-bottom: 0;
+        }
+      }
+
+      p:first-child {
+        color: $secondary-light-color;
+        font-size: 1.2em;
+        margin-bottom: $space_4;
+      }
+
+      ul {
+        @include my($space_6);
+        display: flex;
+        gap: $space_2;
+        flex-wrap: wrap;
         li {
-          a {
-            font-size: 25px;
-            display: inline-block;
-            &:hover {
-              transform: scale(1.2);
+          font-size: 0.9em;
+        }
+
+        &.links {
+          margin-left: $space_2;
+          gap: $space_4;
+          li {
+            a {
+              font-size: 25px;
+              display: inline-block;
+              &:hover {
+                transform: scale(1.2);
+              }
             }
           }
         }
       }
-    }
-    .image-container {
-      width: 100%;
-      position: relative;
-      overflow: visible;
-      height: fit-content;
-      margin-top: $space_16;
-      .images {
-        position: absolute;
-        right: 0;
-        left: 0;
-        height: 200px;
-        img {
+      .image-container {
+        max-width: 400px;
+        position: relative;
+        overflow: visible;
+        height: fit-content;
+        width: 90%;
+        @include mx(auto);
+        margin-top: -$space_16;
+        @include tablet {
+          max-width: 600px;
+        }
+        @include laptop {
+          margin-top: $space_16;
+          order: 1;
+          width: 100%;
+          margin-right: -$space_16;
+          height: 100%;
+          background-color: red;
+        }
+        // @include desktop {
+        //   max-width: 500px;
+        // }
+        .images {
           position: absolute;
-          max-width: 100%;
-          display: block;
-          transition: $transition;
+          right: 0;
+          left: 0;
+          min-height: 200px;
+          @include laptop {
+            min-height: 400px;
+          }
+          img {
+            position: absolute;
+            max-width: 100%;
+            display: block;
+            transition: $transition;
+            &:nth-child(1) {
+              width: 90%;
+            }
+            &:nth-child(2) {
+              width: 30%;
+              right: 0%;
+              top: 15%;
+            }
+          }
+        }
+      }
+
+      &:nth-child(even) {
+        .box {
+          @include laptop {
+            order: 0;
+            padding-right: calc($space_16 + $space_4);
+            padding-left: $space_8;
+          }
+        }
+        .image-container {
+          @include laptop {
+            margin-left: -$space_16;
+            margin-right: $space_0;
+          }
+        }
+        .images img {
           &:nth-child(1) {
-            width: 90%;
+            left: 10%;
           }
           &:nth-child(2) {
             width: 30%;
-            right: 0%;
+            left: 0%;
             top: 15%;
           }
         }
       }
-    }
 
-    &:nth-child(even) .images img {
-      &:nth-child(1) {
-        left: 10%;
-      }
-      &:nth-child(2) {
-        width: 30%;
-        left: 0%;
-        top: 15%;
-      }
-    }
-
-    @for $i from 1 to 10 {
-      &:nth-child(#{$i}) {
-        animation-delay: ($i + 1) * 100ms;
+      @for $i from 1 to 10 {
+        &:nth-child(#{$i}) {
+          animation-delay: ($i + 1) * 100ms;
+        }
       }
     }
   }
@@ -525,13 +631,30 @@
   margin-bottom: $space_8;
   form {
     width: 100%;
-    > div {
-      margin-bottom: $space_4;
-      .group {
+    .row {
+      @include laptop {
         display: flex;
-        flex-direction: column;
-        gap: $space_2;
-        margin-bottom: $space_1;
+        gap: $space_4;
+      }
+      > div {
+        @include laptop {
+          flex: 1;
+        }
+      }
+      .group-container {
+        margin-bottom: $space_4;
+        .group {
+          display: flex;
+          flex-direction: column;
+          gap: $space_2;
+          margin-bottom: $space_1;
+        }
+        textarea {
+          @include laptop {
+            height: 100%;
+            display: block;
+          }
+        }
       }
     }
     .btn {
@@ -539,6 +662,8 @@
       gap: $space_2;
       align-items: center;
       &.sending {
+        background-color: $tertiary-color;
+        color: $white;
         i {
           animation: sliteRotate 0.3s ease-in-out infinite;
           svg {
@@ -577,6 +702,14 @@
     @include tablet {
       left: 27%;
       right: 27%;
+    }
+    @include laptop {
+      left: 35%;
+      right: 35%;
+    }
+    @include desktop {
+      left: 38%;
+      right: 38%;
     }
     top: -8px;
     background-color: $primary-color;

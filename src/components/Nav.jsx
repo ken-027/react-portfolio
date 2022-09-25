@@ -8,6 +8,11 @@ import Resume from '../assets/Resume.pdf'
 
 const Nav = () => {
   const [isShow, setisShow] = useState(false)
+  const [screenWidth, setscreenWidth] = useState(window.innerWidth)
+
+  // const isMobile = useMemo(() => {
+  //   return window.innerWidth <= 1025
+  // }, [window.innerWidth])
 
   useEffect(() => {
     if (isShow) {
@@ -17,7 +22,19 @@ const Nav = () => {
       document.getElementsByTagName('html')[0].style.overflow = 'auto'
       window.document.body.style.overflow = 'auto'
     }
-  }, [isShow])
+
+    if (screenWidth > 1025) {
+      setisShow(false)
+    }
+  }, [isShow, screenWidth])
+
+  useEffect(() => {
+    window.addEventListener(
+      'resize',
+      () => setscreenWidth(window.innerWidth),
+      false
+    )
+  }, [])
 
   const toggleNav = () => setisShow((prevState) => !prevState)
 
@@ -25,12 +42,14 @@ const Nav = () => {
 
   return (
     <nav>
-      <a
-        href={Resume}
-        target='_blank'
-        className='btn resume desktop'>
-        <FaDownload /> Resume
-      </a>
+      <div className='section-content'>
+        <a
+          href={Resume}
+          target='_blank'
+          className='btn resume desktop'>
+          <FaDownload /> Resume
+        </a>
+      </div>
       <button
         className='animate__animated animate__bounceInRight'
         onClick={toggleNav}>

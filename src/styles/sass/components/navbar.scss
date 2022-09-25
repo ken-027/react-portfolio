@@ -11,13 +11,14 @@ nav {
   left: 0;
   right: 0;
   @include laptop {
-   position: relative; 
-   padding-top: $space_2;
-   @include mx(calc($space_24 + $space_4))
+    position: relative;
+    padding-top: $space_2;
+    @include mx(calc($space_24 + $space_4));
   }
 
   > button {
     @include px($space_1);
+    padding-top: $space_1;
     @include laptop {
       display: none;
     }
@@ -26,7 +27,7 @@ nav {
   .menu-container {
     padding-top: $space_2;
     @include px($space_4);
-    padding-left: calc(10% + $space_4);
+    padding-left: calc(12% + $space_4);
     text-align: start;
     position: fixed;
     inset: 0;
@@ -46,6 +47,12 @@ nav {
       transform: translateX(calc(100% - $space_24));
       background-color: $primary-color;
     }
+    @include desktop {
+      transform: translateX(calc(100% - $space_32));
+    }
+    @include large-desktop {
+      transform: translateX(calc(100% - $space_48));
+    }
     &::before {
       display: block;
       content: '';
@@ -59,9 +66,13 @@ nav {
 
     &.show {
       transform: translateX(0);
+      @include laptop {
+        transform: translateX(calc(100% - $space_24));
+      }
     }
 
     .close {
+      padding-top: $space_1;
       margin-bottom: $space_4;
       @include laptop {
         display: none;
@@ -95,6 +106,9 @@ nav {
             // text-orientation: upright;
             font-size: 1em;
           }
+          @include desktop {
+            font-size: 1.2em;
+          }
 
           &::after {
             display: block;
@@ -103,6 +117,13 @@ nav {
             border-bottom: 2px solid $tertiary-color;
             transition: $transition;
             transform: translateX(-105%);
+            @include laptop {
+              transform: translateY(-110%);
+              border-left: 2px solid $tertiary-color;
+              margin-top: 0;
+              margin-left: 0;
+              margin-right: $space_1;
+            }
           }
 
           &:hover {
@@ -112,7 +133,10 @@ nav {
               transform: scale(1);
             }
             &::after {
-              transform: translate(0);
+              transform: translateX(0);
+              @include laptop {
+                transform: translateY(0);
+              }
             }
           }
 
@@ -143,18 +167,20 @@ nav {
       }
     }
   }
-  .btn.resume.desktop {
-    margin-top: $space_4;
-    width: max-content;
+  .section-content {
     display: none;
-    &:hover {
-      color: $white;
-      svg {
-        animation: sliteRotate 0.3s ease-in-out infinite;
-      }
-    }
     @include laptop {
       display: inline-block;
+    }
+    .btn.resume.desktop {
+      margin-top: $space_4;
+      width: max-content;
+      &:hover {
+        color: $white;
+        svg {
+          animation: sliteRotate 0.3s ease-in-out infinite;
+        }
+      }
     }
   }
 }

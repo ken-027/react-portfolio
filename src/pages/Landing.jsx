@@ -24,13 +24,17 @@ const Landing = () => {
     <div className='container animate__animated animate__fadeIn'>
       <Nav />
       <section className='header'>
-        <p className='animate__animated animate__backInLeft'>Hi, my name is</p>
-        <h1 className='name animate__animated animate__bounceIn'>
-          {info.user.fullName}
-        </h1>
-        <p className='animate__animated animate__fadeInUp'>
-          {info.landing.intro}
-        </p>
+        <div className='section-content'>
+          <p className='animate__animated animate__backInLeft'>
+            Hi, my name is
+          </p>
+          <h1 className='name animate__animated animate__bounceIn'>
+            {info.user.fullName}
+          </h1>
+          <p className='animate__animated animate__fadeInUp'>
+            {info.landing.intro}
+          </p>
+        </div>
       </section>
       <About />
       <Experience />

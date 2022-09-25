@@ -103,6 +103,10 @@ h2 {
     size: 20px;
     weight: bold;
   }
+  @include tablet {
+    top: -35px;
+    font-size: 25px;
+  }
 }
 
 h3 {
@@ -111,6 +115,22 @@ h3 {
   margin-bottom: $space_6;
 }
 
+.section-content {
+  max-width: 1100px;
+  @include tablet {
+    padding-top: $space_6;
+    padding-bottom: $space_10;
+  }
+  @include laptop {
+    padding-left: $space_6;
+    padding-right: $space_8;
+  }
+  @include desktop {
+    max-width: 1400px;
+    padding-left: $space_10;
+    padding-right: $space_18;
+  }
+}
 .section {
   position: relative;
   margin-top: 5%;
@@ -118,10 +138,12 @@ h3 {
   // @include px($space_4);
   @include padding-x;
   border-top: 1px solid $border-color;
+
 }
 
 .box {
   border: 1px solid $border-color;
+  background-color: $primary-light-color;
   animation: fadeIn 0.6s ease-in-out;
   @include px($space_4);
   padding-top: $space_8;

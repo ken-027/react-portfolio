@@ -89,14 +89,20 @@ const Contact = () => {
             },
             (error) => {
               // console.log(error.text)
-              setbtnText('Send Message')
+              setbtnText('Failed To Send')
+              setTimeout(() => {
+                setbtnText('Send Message')
+              }, 3000)
               setisSending(false)
             }
           )
       },
       (error) => {
         // console.log(error.text)
-        setbtnText('Send Message')
+        setbtnText('Failed To Send')
+        setTimeout(() => {
+          setbtnText('Send Message')
+        }, 3000)
         setisSending(false)
       }
     )
@@ -109,86 +115,92 @@ const Contact = () => {
       offset={400}
       animateOnce={true}
       className='contact section'>
-      <h2 id='contact'>Get In Touch</h2>
-      <AnimationOnScroll
-        animateIn='animate__fadeInUp'
-        animateOut='animate__fadeOutUp'
-        delay={600}
-        animateOnce={true}
-        className='form'>
-        <form
-          ref={form}
-          onSubmit={sendEmail}>
-          <div>
-            <div className='group'>
-              <label>Name</label>
-              <input
-                type='text'
-                placeholder='Your Name'
-                name='name'
-              />
+      <div className='section-content'>
+        <h2 id='contact'>Get In Touch</h2>
+        <AnimationOnScroll
+          animateIn='animate__fadeInUp'
+          animateOut='animate__fadeOutUp'
+          delay={600}
+          animateOnce={true}
+          className='form'>
+          <form
+            ref={form}
+            onSubmit={sendEmail}>
+            <div className='row'>
+              <div className=''>
+                <div className='group-container'>
+                  <div className='group'>
+                    <label>Name</label>
+                    <input
+                      type='text'
+                      placeholder='Your Name'
+                      name='name'
+                    />
+                  </div>
+                  {errors.name ? (
+                    <p className='error'>
+                      <TiWarning size={16} /> {errors.name}
+                    </p>
+                  ) : null}
+                </div>
+                <div className='group-container'>
+                  <div className='group'>
+                    <label>Subject</label>
+                    <input
+                      type='text'
+                      placeholder='Your Subject'
+                      name='subject'
+                    />
+                  </div>
+                  {errors.subject ? (
+                    <p className='error'>
+                      <TiWarning size={16} /> {errors.subject}
+                    </p>
+                  ) : null}
+                </div>
+                <div className='group-container'>
+                  <div className='group'>
+                    <label>Email</label>
+                    <input
+                      type='email'
+                      placeholder='Your Email'
+                      name='email'
+                    />
+                  </div>
+                  {errors.email ? (
+                    <p className='error'>
+                      <TiWarning size={16} /> {errors.email}
+                    </p>
+                  ) : null}
+                </div>
+              </div>
+              <div className='group-container'>
+                <div className='group'>
+                  <label>Message</label>
+                  <textarea
+                    placeholder='Your Message'
+                    name='message'
+                    cols='30'
+                    rows='10'></textarea>
+                  {errors.message ? (
+                    <p className='error'>
+                      <TiWarning size={16} /> {errors.message}
+                    </p>
+                  ) : null}
+                </div>
+              </div>
             </div>
-            {errors.name ? (
-              <p className='error'>
-                <TiWarning size={16} /> {errors.name}
-              </p>
-            ) : null}
-          </div>
-          <div>
-            <div className='group'>
-              <label>Subject</label>
-              <input
-                type='text'
-                placeholder='Your Subject'
-                name='subject'
-              />
-            </div>
-            {errors.subject ? (
-              <p className='error'>
-                <TiWarning size={16} /> {errors.subject}
-              </p>
-            ) : null}
-          </div>
-          <div>
-            <div className='group'>
-              <label>Email</label>
-              <input
-                type='email'
-                placeholder='Your Email'
-                name='email'
-              />
-            </div>
-            {errors.email ? (
-              <p className='error'>
-                <TiWarning size={16} /> {errors.email}
-              </p>
-            ) : null}
-          </div>
-          <div>
-            <div className='group'>
-              <label>Message</label>
-              <textarea
-                placeholder='Your Message'
-                name='message'
-                cols='30'
-                rows='8'></textarea>
-              {errors.message ? (
-                <p className='error'>
-                  <TiWarning size={16} /> {errors.message}
-                </p>
-              ) : null}
-            </div>
-          </div>
-          <button
-            type='submit'
-            className={`btn ${btnText === 'Sending ...' ? `sending` : ``}`}>
-            <i>
-              <FiSend size={20} />
-            </i>
-            {btnText}
-          </button>
-        </form>
-      </AnimationOnScroll>
+            <button
+              type='submit'
+              className={`btn ${btnText === 'Sending ...' ? `sending` : ``}`}>
+              <i>
+                <FiSend size={20} />
+              </i>
+              {btnText}
+            </button>
+          </form>
+        </AnimationOnScroll>
+      </div>
     </AnimationOnScroll>
   )
 }

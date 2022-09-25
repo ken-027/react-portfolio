@@ -51,7 +51,13 @@ const Experience = () => {
       })
 
       ulContent.current.children[index].classList.add('show')
-      e.target.classList.add('active')
+      if (e.target.nodeName === 'LI') {
+        e.target.classList.add('active')
+      } else {
+        document
+          .querySelectorAll('.bullet-container li')
+          [index].classList.add('active')
+      }
     }
   }
 
@@ -62,47 +68,73 @@ const Experience = () => {
       animateOnce={true}
       offset={400}
       className='experience section'>
-      <h2 id='experience'>Where I've Worked</h2>
-      <AnimationOnScroll
-        animateIn='animate__fadeInUp'
-        animateOut='animate__fadeOutUp'
-        animateOnce={true}
-        className='tab-container'>
-        <ul className='bullet-container'>
-          <li
-            data-index={0}
-            className='active'
-            onClick={changeTab}></li>
-          <li
-            data-index={1}
-            className=''
-            onClick={changeTab}></li>
-          <li
-            data-index={2}
-            className=''
-            onClick={changeTab}></li>
-          <li
-            data-index={3}
-            className='position'
-            onClick={changeTab}>
-            <div className='bullet'></div>
-          </li>
-        </ul>
-        <ul
-          ref={ulContent}
-          className='bullet-content'>
-          <li className='show'>{experiences[0].name}</li>
-          <li className=''>{experiences[1].name}</li>
-          <li className=''>{experiences[2].name}</li>
-          <li className=''>{experiences[3].name}</li>
-        </ul>
-      </AnimationOnScroll>
-      <AnimationOnScroll
-        animateIn='animate__fadeInUp'
-        animateOut='animate__fadeOutUp'
-        animateOnce={true}>
-        <Description tabIndex={tabIndex} />
-      </AnimationOnScroll>
+      <div className='section-content'>
+        <h2 id='experience'>Where I've Worked</h2>
+        <AnimationOnScroll
+          animateIn='animate__fadeInUp'
+          animateOut='animate__fadeOutUp'
+          animateOnce={true}
+          className='tab-container'>
+          <ul className='bullet-container'>
+            <li
+              data-index={0}
+              className='active'
+              onClick={changeTab}></li>
+            <li
+              data-index={1}
+              className=''
+              onClick={changeTab}></li>
+            <li
+              data-index={2}
+              className=''
+              onClick={changeTab}></li>
+            <li
+              data-index={3}
+              className='position'
+              onClick={changeTab}>
+              <div className='bullet'></div>
+            </li>
+          </ul>
+          <ul
+            ref={ulContent}
+            className='bullet-content'>
+            <li className='show'>
+              <a
+                data-index={0}
+                onClick={changeTab}>
+                {experiences[0].name}
+              </a>
+            </li>
+            <li className=''>
+              <a
+                data-index={1}
+                onClick={changeTab}>
+                {experiences[1].name}
+              </a>
+            </li>
+            <li className=''>
+              <a
+                data-index={2}
+                onClick={changeTab}>
+                {experiences[2].name}
+              </a>
+            </li>
+            <li className=''>
+              <a
+                data-index={3}
+                onClick={changeTab}>
+                {experiences[3].name}
+              </a>
+            </li>
+          </ul>
+        </AnimationOnScroll>
+        <AnimationOnScroll
+          animateIn='animate__fadeInUp'
+          animateOut='animate__fadeOutUp'
+          animateOnce={true}>
+          <Description tabIndex={tabIndex} />
+        </AnimationOnScroll>
+      </div>
     </AnimationOnScroll>
   )
 }
