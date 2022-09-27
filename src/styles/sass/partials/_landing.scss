@@ -26,7 +26,8 @@
     padding-top: 180px;
   }
   @include desktop {
-    padding-top: 100px;
+    // padding-top: 100px;
+    padding-top: 20vh;
   }
 
   height: 100vh;

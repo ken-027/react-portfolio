@@ -143,10 +143,9 @@ const About = () => {
                 animateIn='animate__fadeInUp'
                 animateOut='animate__fadeOutUp'
                 delay={++index * 200}
+                key={index}
                 animateOnce={true}>
-                <ul
-                  className=''
-                  key={index}>
+                <ul className=''>
                   {skill.map((skill, index) => (
                     <li
                       className=''

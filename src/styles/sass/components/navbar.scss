@@ -11,11 +11,13 @@ nav {
   left: 0;
   right: 0;
   overflow: hidden;
+  max-width: 1100px;
   @include laptop {
     position: relative;
     padding-top: $space_2;
     @include mx(calc($space_24 + $space_4));
   }
+
 
   > button {
     @include px($space_1);
@@ -169,6 +171,8 @@ nav {
     }
   }
   .section-content {
+    width: 100%;
+    margin-left: 0;
     display: none;
     @include laptop {
       display: inline-block;

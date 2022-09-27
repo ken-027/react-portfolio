@@ -1,6 +1,6 @@
 const info = {
   socials: {
-    linkedIn: 'https://www.linkedin.com/in/kenneth-andales-20ba62240/',
+    linkedIn: 'https://www.linkedin.com/in/kenneth-andales/',
     instagram: 'https://www.instagram.com/kenolitan/',
     twitter: 'https://twitter.com/whyme_27',
     codewars: 'https://www.codewars.com/users/ken@27',
