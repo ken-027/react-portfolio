@@ -100,22 +100,33 @@ const About = () => {
           </p>
           <ul className=''>
             <li>
-              <div className=''>
-                <img src={Graduated} />
-              </div>
-              <div className=''>
-                <p>{info.education[0].degree}</p>
-                <small>{info.education[0].year}</small>
-              </div>
+              <AnimationOnScroll
+                animateIn='animate__fadeInUp'
+                animateOut='animate__fadeOutUp'
+                animateOnce={true}>
+                <div className=''>
+                  <img src={Graduated} />
+                </div>
+                <div className=''>
+                  <p>{info.education[0].degree}</p>
+                  <small>{info.education[0].year}</small>
+                </div>
+              </AnimationOnScroll>
             </li>
             <li>
-              <div className=''>
-                <img src={Book} />
-              </div>
-              <div className=''>
-                <p>{info.education[1].degree}</p>
-                <small>{info.education[1].year}</small>
-              </div>
+              <AnimationOnScroll
+                animateIn='animate__fadeInUp'
+                animateOut='animate__fadeOutUp'
+                delay={300}
+                animateOnce={true}>
+                <div className=''>
+                  <img src={Book} />
+                </div>
+                <div className=''>
+                  <p>{info.education[1].degree}</p>
+                  <small>{info.education[1].year}</small>
+                </div>
+              </AnimationOnScroll>
             </li>
           </ul>
         </AnimationOnScroll>
@@ -128,27 +139,33 @@ const About = () => {
           <p>Here’s the following technologies that I knew:</p>
           <div className='skillset'>
             {Object.values(skills).map((skill, index) => (
-              <ul
-                className=''
-                key={index}>
-                {skill.map((skill, index) => (
-                  <li
-                    className=''
-                    onMouseLeave={onHoverOut}
-                    key={index}>
-                    <a
-                      onMouseOver={onHover}
-                      data-description={skill.description}>
-                      <img
-                        src={skill.icon}
-                        alt={skill.name}
-                      />
-                      {skill.name}
-                    </a>
-                    <PopUp data={skill} />
-                  </li>
-                ))}
-              </ul>
+              <AnimationOnScroll
+                animateIn='animate__fadeInUp'
+                animateOut='animate__fadeOutUp'
+                delay={++index * 200}
+                animateOnce={true}>
+                <ul
+                  className=''
+                  key={index}>
+                  {skill.map((skill, index) => (
+                    <li
+                      className=''
+                      onMouseLeave={onHoverOut}
+                      key={index}>
+                      <a
+                        onMouseOver={onHover}
+                        data-description={skill.description}>
+                        <img
+                          src={skill.icon}
+                          alt={skill.name}
+                        />
+                        {skill.name}
+                      </a>
+                      <PopUp data={skill} />
+                    </li>
+                  ))}
+                </ul>
+              </AnimationOnScroll>
             ))}
           </div>
         </AnimationOnScroll>

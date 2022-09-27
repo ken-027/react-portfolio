@@ -1,10 +1,18 @@
 .container {
-  margin-left: 12%;
+  margin-left: 40px;
+  height: 100%;
+  width: calc(100% - 12%);
   overflow-y: hidden;
   overflow-x: hidden;
-  // @include px($space_4)
+  // @include px($space_4);
   @include tablet {
+    margin-left: 60px;
+    width: calc(100% - 60px);
+  }
+
+  @include desktop {
     margin-left: 80px;
+    width: calc(100% - 80px);
   }
 }
 
@@ -130,18 +138,19 @@
         gap: $space_32;
       }
       li {
-        display: flex;
-        align-items: center;
-        gap: $space_4;
-        @include desktop {
-          gap: $space_6;
+        > div {
+          display: flex;
+          align-items: center;
+          gap: $space_4;
+          @include desktop {
+            gap: $space_6;
+          }
         }
-        &:nth-child(1) {
+        &:nth-child(1) > div {
           @include laptop {
             order: 1;
           }
         }
-
         // img {
         //   max-width: 100%;
         //   display: block;
@@ -184,7 +193,7 @@
         li {
           width: fit-content;
           position: relative;
-          cursor: pointer;
+          cursor: default;
           display: flex;
           align-items: center;
           &::before {
@@ -204,6 +213,7 @@
           }
 
           a {
+            cursor: default;
             display: flex;
             align-items: center;
             gap: $space_4;
@@ -215,15 +225,15 @@
             }
           }
 
-          &:hover {
-            a {
-              color: $tertiary-color;
-            }
-            &::before {
-              background-color: $tertiary-color;
-              transform: scale(1.5);
-            }
-          }
+          // &:hover {
+          //   a {
+          //     color: $tertiary-color;
+          //   }
+          //   &::before {
+          //     background-color: $tertiary-color;
+          //     transform: scale(1.5);
+          //   }
+          // }
 
           .rating {
             position: absolute;
@@ -242,12 +252,12 @@
             @include laptop {
               left: $space_20;
             }
-            &.show,
-            &:hover {
-              z-index: 1;
-              opacity: 100%;
-              // animation: fadeIn 0.600s ease-in-out;
-            }
+            // &.show,
+            // &:hover {
+            //   z-index: 1;
+            //   opacity: 100%;
+            //   // animation: fadeIn 0.600s ease-in-out;
+            // }
             h6 {
               font-size: 0.9em;
               margin-bottom: $space_1;
@@ -482,6 +492,7 @@
   }
   .container {
     margin-left: 0;
+    width: 100%;
     .row {
       position: relative;
       padding-bottom: $space_24;

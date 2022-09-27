@@ -42,7 +42,7 @@ const Nav = () => {
 
   return (
     <nav>
-      <div className='section-content'>
+      <div className='section-content animate__animated animate__bounceInRight'>
         <a
           href={Resume}
           target='_blank'

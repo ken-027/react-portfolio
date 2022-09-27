@@ -128,7 +128,12 @@ const Contact = () => {
             onSubmit={sendEmail}>
             <div className='row'>
               <div className=''>
-                <div className='group-container'>
+                <AnimationOnScroll
+                  animateIn='animate__fadeInUp'
+                  animateOut='animate__fadeOutUp'
+                  animateOnce={true}
+                  delay={200}
+                  className='group-container'>
                   <div className='group'>
                     <label>Name</label>
                     <input
@@ -142,8 +147,13 @@ const Contact = () => {
                       <TiWarning size={16} /> {errors.name}
                     </p>
                   ) : null}
-                </div>
-                <div className='group-container'>
+                </AnimationOnScroll>
+                <AnimationOnScroll
+                  animateIn='animate__fadeInUp'
+                  animateOut='animate__fadeOutUp'
+                  animateOnce={true}
+                  delay={300}
+                  className='group-container'>
                   <div className='group'>
                     <label>Subject</label>
                     <input
@@ -157,8 +167,13 @@ const Contact = () => {
                       <TiWarning size={16} /> {errors.subject}
                     </p>
                   ) : null}
-                </div>
-                <div className='group-container'>
+                </AnimationOnScroll>
+                <AnimationOnScroll
+                  animateIn='animate__fadeInUp'
+                  animateOut='animate__fadeOutUp'
+                  animateOnce={true}
+                  delay={400}
+                  className='group-container'>
                   <div className='group'>
                     <label>Email</label>
                     <input
@@ -172,9 +187,14 @@ const Contact = () => {
                       <TiWarning size={16} /> {errors.email}
                     </p>
                   ) : null}
-                </div>
+                </AnimationOnScroll>
               </div>
-              <div className='group-container'>
+              <AnimationOnScroll
+                animateIn='animate__fadeInUp'
+                animateOut='animate__fadeOutUp'
+                animateOnce={true}
+                delay={500}
+                className='group-container'>
                 <div className='group'>
                   <label>Message</label>
                   <textarea
@@ -188,16 +208,22 @@ const Contact = () => {
                     </p>
                   ) : null}
                 </div>
-              </div>
+              </AnimationOnScroll>
             </div>
-            <button
-              type='submit'
-              className={`btn ${btnText === 'Sending ...' ? `sending` : ``}`}>
-              <i>
-                <FiSend size={20} />
-              </i>
-              {btnText}
-            </button>
+            <AnimationOnScroll
+              animateIn='animate__fadeInUp'
+              animateOut='animate__fadeOutUp'
+              animateOnce={true}
+              delay={300}>
+              <button
+                type='submit'
+                className={`btn ${btnText === 'Sending ...' ? `sending` : ``}`}>
+                <i>
+                  <FiSend size={20} />
+                </i>
+                {btnText}
+              </button>
+            </AnimationOnScroll>
           </form>
         </AnimationOnScroll>
       </div>

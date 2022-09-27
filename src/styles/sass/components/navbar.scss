@@ -10,6 +10,7 @@ nav {
   top: 0;
   left: 0;
   right: 0;
+  overflow: hidden;
   @include laptop {
     position: relative;
     padding-top: $space_2;
@@ -27,7 +28,7 @@ nav {
   .menu-container {
     padding-top: $space_2;
     @include px($space_4);
-    padding-left: calc(12% + $space_4);
+    padding-left: calc(40px + $space_4);
     text-align: start;
     position: fixed;
     inset: 0;
@@ -40,7 +41,7 @@ nav {
     transform: translateX(100%);
     transition: $transition;
     @include tablet {
-      padding-left: calc(80px + $space_4);
+      padding-left: calc(60px + $space_4);
     }
     @include laptop {
       padding-left: $space_8;
