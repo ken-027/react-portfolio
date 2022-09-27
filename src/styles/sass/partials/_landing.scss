@@ -673,6 +673,12 @@
       display: flex;
       gap: $space_2;
       align-items: center;
+      width: 100%;
+      justify-content: center;
+      @include large-mobile {
+        width: fit-content;
+        justify-content: center;
+      }
       &.sending {
         background-color: $tertiary-color;
         color: $white;
