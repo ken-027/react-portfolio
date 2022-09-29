@@ -1,5 +1,5 @@
 import logo from '../assets/logo.svg'
-import { FaLinkedinIn, FaInstagram, FaTwitter } from 'react-icons/fa'
+import { FaLinkedinIn, FaInstagram, FaTwitter, FaGithub } from 'react-icons/fa'
 import { SiCodewars } from 'react-icons/si'
 import info from '../shared/info'
 
@@ -19,6 +19,14 @@ const Sidebar = () => (
     <div className='social'>
       <a
         className='animate__animated animate__bounceIn ex'
+        href={info.socials.github}
+        target='_blank'>
+        <span>
+          <FaGithub />
+        </span>
+      </a>
+      <a
+        className='animate__animated animate__bounceIn ex'
         href={info.socials.linkedIn}
         target='_blank'>
         <span>
@@ -33,16 +41,9 @@ const Sidebar = () => (
           <FaInstagram />
         </span>
       </a>
+
       <a
-        className='animate__animated animate__bounceIn ex'
-        href={info.socials.twitter}
-        target='_blank'>
-        <span>
-          <FaTwitter />
-        </span>
-      </a>
-      <a
-        className='animate__animated animate__bounceIn ex'
+        className='animate__animated animate__bounceIn ex codewars'
         href={info.socials.codewars}
         target='_blank'>
         <span>

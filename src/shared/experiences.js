@@ -9,10 +9,9 @@ const experiences = [
           ended: 'September 2022',
         },
         description: [
-            'Implemented API integration',
-            'Develop frontend applications from the scratch',
-            'Write and maintain codes of the existing frontend applications',
-            'Use trend tech React as Frontend Developer in the company',
+            'Maintained and developed frontend projects using React, Sass, Bootstrap, and Tailwindcss',
+            'Worked with backend developer to implement API integration',
+            'Managed tasks for project progress using ClickUp and app versioning using BitBucket',
         ]
     },
     {
@@ -25,9 +24,8 @@ const experiences = [
         ended: 'April 2022',
       },
       description: [
-        'Given access to the web hosting sites for updating changes of an online and staging site',
-        'Manage SEO of the online site',
-        'Use trend Laravel tech to rebuild the backend application of an e-commerce site',
+        'Developed and rebuild the admin application site of an ecommerce site using Laravel, Jquery, and Bootstrap',
+        'Maintained onboarding site and managed SEO tasks of an online site and give access to upload changes to the web hosting',
       ]
     },
     {
@@ -40,10 +38,8 @@ const experiences = [
         ended: 'March 2020',
       },
       description: [
-        'Write and maintain codes for clients and company projects',
-        'Write and fix bugs of online site for adding features',
-        'Adopt the MVC structure of an application',
-        'Use CodeIgniter tech for the company projects',
+        'Managed tasks for project progress using Trello and app versioning using Bitbucket',
+        'Works with the team to develop and maintain client and internal projects using technologies like JQuery, Bootstrap, and CodeIgniter',
       ]
     },
     {
@@ -56,10 +52,9 @@ const experiences = [
         ended: 'April 2019',
       },
       description: [
-        'Develop an internal website for the Customer Service employee',
-        'Manage task for API payment integration',
-        'Write and maintain codes of existing PHP boilerplate projects',
-        'Train the basic to advanced PHP programming',
+        'Train the basic to advanced PHP programming and web development',
+        'Maintained and Developed codes of every projects primarily HTML, CSS, Javascript, JQuery, and PHP',
+        'Developed an internal website for the Customer Service employees',
       ]
     },
   ]

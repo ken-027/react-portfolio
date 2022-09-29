@@ -12,8 +12,8 @@ const Experience = () => {
   const Description = () => {
     const [animation, setAnimation] = useState('')
     useEffect(() => {
-      setAnimation('animate__fadeInUp')
-      return () => setAnimation('animate__fadeInDown')
+      setAnimation('animate__fadeIn')
+      return () => setAnimation('animate__fadeOut')
     }, [animation, tabIndex])
 
     return (
@@ -71,9 +71,10 @@ const Experience = () => {
       <div className='section-content'>
         <h2 id='experience'>Where I've Worked</h2>
         <AnimationOnScroll
-          animateIn='animate__fadeInUp'
-          animateOut='animate__fadeOutUp'
+          animateIn='animate__fadeIn'
+          animateOut='animate__fadeOut'
           animateOnce={true}
+          delay={400}
           className='tab-container'>
           <ul className='bullet-container'>
             <li
@@ -129,8 +130,9 @@ const Experience = () => {
           </ul>
         </AnimationOnScroll>
         <AnimationOnScroll
-          animateIn='animate__fadeInUp'
-          animateOut='animate__fadeOutUp'
+          animateIn='animate__fadeIn'
+          animateOut='animate__fadeOut'
+          delay={600}
           animateOnce={true}>
           <Description tabIndex={tabIndex} />
         </AnimationOnScroll>

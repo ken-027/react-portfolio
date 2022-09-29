@@ -7,7 +7,7 @@ const Footer = () => (
       animateIn='animate__fadeInUp'
       animateOut='animate__fadeOutUp'
       animateOnce={true}
-      delay={600}
+      delay={200}
       className='footer'
       offset={30}>
       <h4>Design & Built by {info.user.fullName}</h4>

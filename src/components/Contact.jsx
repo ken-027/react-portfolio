@@ -117,11 +117,11 @@ const Contact = () => {
       className='contact section'>
       <div className='section-content'>
         <h2 id='contact'>Get In Touch</h2>
-        <AnimationOnScroll
-          animateIn='animate__fadeInUp'
-          animateOut='animate__fadeOutUp'
-          delay={600}
-          animateOnce={true}
+        <div
+          // animateIn='animate__fadeInUp'
+          // animateOut='animate__fadeOutUp'
+          // delay={600}
+          // animateOnce={true}
           className='form'>
           <form
             ref={form}
@@ -129,10 +129,11 @@ const Contact = () => {
             <div className='row'>
               <div className=''>
                 <AnimationOnScroll
-                  animateIn='animate__fadeInUp'
-                  animateOut='animate__fadeOutUp'
+                  animateIn='animate__fadeIn'
+                  animateOut='animate__fadeOut'
                   animateOnce={true}
                   delay={200}
+                  // offset={10}
                   className='group-container'>
                   <div className='group'>
                     <label>Name</label>
@@ -149,9 +150,10 @@ const Contact = () => {
                   ) : null}
                 </AnimationOnScroll>
                 <AnimationOnScroll
-                  animateIn='animate__fadeInUp'
-                  animateOut='animate__fadeOutUp'
+                  animateIn='animate__fadeIn'
+                  animateOut='animate__fadeOut'
                   animateOnce={true}
+                  // offset={10}
                   delay={300}
                   className='group-container'>
                   <div className='group'>
@@ -169,9 +171,10 @@ const Contact = () => {
                   ) : null}
                 </AnimationOnScroll>
                 <AnimationOnScroll
-                  animateIn='animate__fadeInUp'
-                  animateOut='animate__fadeOutUp'
+                  animateIn='animate__fadeIn'
+                  animateOut='animate__fadeOut'
                   animateOnce={true}
+                  // offset={10}
                   delay={400}
                   className='group-container'>
                   <div className='group'>
@@ -190,9 +193,10 @@ const Contact = () => {
                 </AnimationOnScroll>
               </div>
               <AnimationOnScroll
-                animateIn='animate__fadeInUp'
-                animateOut='animate__fadeOutUp'
+                animateIn='animate__fadeIn'
+                animateOut='animate__fadeOut'
                 animateOnce={true}
+                // offset={10}
                 delay={500}
                 className='group-container'>
                 <div className='group'>
@@ -211,10 +215,12 @@ const Contact = () => {
               </AnimationOnScroll>
             </div>
             <AnimationOnScroll
-              animateIn='animate__fadeInUp'
-              animateOut='animate__fadeOutUp'
+              animateIn='animate__fadeIn'
+              animateOut='animate__fadeOut'
+              // offset={10}
+              // delay={600}
               animateOnce={true}
-              delay={300}>
+              >
               <button
                 type='submit'
                 className={`btn ${btnText === 'Sending ...' ? `sending` : ``}`}>
@@ -225,7 +231,7 @@ const Contact = () => {
               </button>
             </AnimationOnScroll>
           </form>
-        </AnimationOnScroll>
+        </div>
       </div>
     </AnimationOnScroll>
   )

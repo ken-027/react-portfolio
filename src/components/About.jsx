@@ -55,30 +55,30 @@ const About = () => {
         <div className='me'>
           <div className='description'>
             <AnimationOnScroll
-              animateIn='animate__fadeInUp'
-              animateOut='animate__fadeOutUp'
+              animateIn='animate__fadeIn'
+              animateOut='animate__fadeOut'
               delay={400}
               animateOnce={true}>
               <p>{info.about[0]}</p>
             </AnimationOnScroll>
             <AnimationOnScroll
-              animateIn='animate__fadeInUp'
-              animateOut='animate__fadeOutUp'
+              animateIn='animate__fadeIn'
+              animateOut='animate__fadeOut'
               delay={500}
               animateOnce={true}>
               <p>{info.about[1]}</p>
             </AnimationOnScroll>
             <AnimationOnScroll
-              animateIn='animate__fadeInUp'
-              animateOut='animate__fadeOutUp'
+              animateIn='animate__fadeIn'
+              animateOut='animate__fadeOut'
               delay={600}
               animateOnce={true}>
               <p>{info.about[2]}</p>
             </AnimationOnScroll>
           </div>
           <AnimationOnScroll
-            animateIn='animate__fadeInUp'
-            animateOut='animate__fadeOutUp'
+            animateIn='animate__fadeIn'
+            animateOut='animate__fadeOut'
             animateOnce={true}
             delay={400}
             className='profile'>
@@ -90,8 +90,8 @@ const About = () => {
         </div>
 
         <AnimationOnScroll
-          animateIn='animate__fadeInUp'
-          animateOut='animate__fadeOutUp'
+          animateIn='animate__fadeIn'
+          animateOut='animate__fadeOut'
           animateOnce={true}
           className='education'>
           <h3>Education</h3>
@@ -101,8 +101,8 @@ const About = () => {
           <ul className=''>
             <li>
               <AnimationOnScroll
-                animateIn='animate__fadeInUp'
-                animateOut='animate__fadeOutUp'
+                animateIn='animate__fadeIn'
+                animateOut='animate__fadeOut'
                 animateOnce={true}>
                 <div className=''>
                   <img src={Graduated} />
@@ -115,8 +115,8 @@ const About = () => {
             </li>
             <li>
               <AnimationOnScroll
-                animateIn='animate__fadeInUp'
-                animateOut='animate__fadeOutUp'
+                animateIn='animate__fadeIn'
+                animateOut='animate__fadeOut'
                 delay={300}
                 animateOnce={true}>
                 <div className=''>
@@ -131,8 +131,8 @@ const About = () => {
           </ul>
         </AnimationOnScroll>
         <AnimationOnScroll
-          animateIn='animate__fadeInUp'
-          animateOut='animate__fadeOutUp'
+          animateIn='animate__fadeIn'
+          animateOut='animate__fadeOut'
           animateOnce={true}
           className='skills'>
           <h3>Skills</h3>
@@ -140,8 +140,8 @@ const About = () => {
           <div className='skillset'>
             {Object.values(skills).map((skill, index) => (
               <AnimationOnScroll
-                animateIn='animate__fadeInUp'
-                animateOut='animate__fadeOutUp'
+                animateIn='animate__fadeIn'
+                animateOut='animate__fadeOut'
                 delay={++index * 200}
                 key={index}
                 animateOnce={true}>
@@ -153,6 +153,7 @@ const About = () => {
                       key={index}>
                       <a
                         onMouseOver={onHover}
+                        className='ex'
                         data-description={skill.description}>
                         <img
                           src={skill.icon}

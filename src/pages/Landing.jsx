@@ -25,7 +25,7 @@ const Landing = () => {
       <Nav />
       <section className='header'>
         <div className='section-content'>
-          <p className='animate__animated animate__backInLeft'>
+          <p className='animate__animated animate__fadeInDown'>
             Hi, my name is
           </p>
           <h1 className='name animate__animated animate__bounceIn'>

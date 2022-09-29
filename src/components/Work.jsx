@@ -7,7 +7,7 @@ const Work = () => (
     animateIn='animate__fadeInUp'
     animateOut='animate__fadeOutUp'
     animateOnce={true}
-    offset={400}
+    // offset={400}
     className='work section'>
     <div className='section-content'>
       <h2 id='work'>Some Things I've Built</h2>
@@ -15,12 +15,11 @@ const Work = () => (
         {works.map((work, index) => (
           <AnimationOnScroll
             key={index}
-            animateIn='animate__fadeInUp'
-            animateOut='animate__fadeOutUp'
+            animateIn='animate__fadeIn'
+            animateOut='animate__fadeOut'
             animateOnce={true}
-            // delay={200}
-            delay={index === 0 ? 400 : 0}
-            offset={30}
+            delay={200}
+            offset={400}
             className='row'>
             <div className='box'>
               <p>{work.title}</p>
@@ -62,8 +61,8 @@ const Work = () => (
           </AnimationOnScroll>
         ))}
         <AnimationOnScroll
-          animateIn='animate__fadeInUp'
-          animateOut='animate__fadeOutUp'
+          animateIn='animate__fadeIn'
+          animateOut='animate__fadeOut'
           animateOnce={true}
           className='manymore'>
           <p className=''>many more to come</p>

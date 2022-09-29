@@ -55,7 +55,7 @@
     padding-bottom: $space_6;
 
     a {
-      font-size: 25px;
+      font-size: 22px;
       transition: $transition;
       @include large-mobile {
         font-size: 25px;
@@ -64,6 +64,8 @@
         font-size: 28px;
       }
 
+      &.codewars {
+      }
       span {
         transition: $transition;
         display: inline-block;
@@ -79,6 +81,10 @@
         color: $primary-light-color;
         &:hover {
           background-color: $tertiary-color;
+        }
+
+        path {
+          stroke: $primary-light-color;
         }
       }
 
