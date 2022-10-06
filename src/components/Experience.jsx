@@ -71,8 +71,8 @@ const Experience = () => {
       <div className='section-content'>
         <h2 id='experience'>Where I've Worked</h2>
         <AnimationOnScroll
-          animateIn='animate__fadeIn'
-          animateOut='animate__fadeOut'
+          animateIn='animate__fadeInUp'
+          animateOut='animate__fadeOutUp'
           animateOnce={true}
           delay={400}
           className='tab-container'>
@@ -130,8 +130,8 @@ const Experience = () => {
           </ul>
         </AnimationOnScroll>
         <AnimationOnScroll
-          animateIn='animate__fadeIn'
-          animateOut='animate__fadeOut'
+          animateIn='animate__fadeInUp'
+          animateOut='animate__fadeOutUp'
           delay={600}
           animateOnce={true}>
           <Description tabIndex={tabIndex} />

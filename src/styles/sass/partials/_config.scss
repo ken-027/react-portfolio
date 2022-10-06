@@ -124,7 +124,7 @@ h3 {
 
 .section-content {
   max-width: 1100px;
-  padding-left: $space_4;
+  padding-left: $space_2;
   @include tablet {
     padding-top: $space_6;
     padding-bottom: $space_10;
@@ -180,17 +180,31 @@ textarea {
   }
 }
 
-.error {
-  color: $red;
-  font-size: 0.9em;
-  font: {
-    size: 0.8em;
-    weight: 400;
+.error-container {
+  overflow: hidden;
+  .error {
+    color: $red;
+    font-size: 0.9em;
+    transition: $transition;
+    // transform: translateY(-110%);
+    animation: down 0.3s ease-in-out;
+    font: {
+      size: 0.8em;
+      weight: 400;
+    }
+    padding-left: $space_1;
+    display: flex;
+    align-items: center;
+    gap: $space_2;
+
+    &.show {
+      transform: translateY(0);
+    }
+    &.hide {
+      // transform: translateY(-110%);
+      animation: down 0.3s ease-in-out;
+    }
   }
-  padding-left: $space_1;
-  display: flex;
-  align-items: center;
-  gap: $space_2;
 }
 
 .loading {

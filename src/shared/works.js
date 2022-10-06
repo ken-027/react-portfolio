@@ -10,7 +10,7 @@ const works = [
     title: 'FindEasyJob',
     description: 'This is a simple job posting where employer looking for employee.',
     website: 'https://findeasyjob.herokuapp.com/',
-    repository: 'https://github.com/kean7296/laravelfindeasyjob',
+    repository: 'https://github.com/ken-027/laravelfindeasyjob',
     technologies: [
       skills.frontend[0].name,
       skills.frontend[1].name,
@@ -27,7 +27,7 @@ const works = [
     title: 'Wiwo Site',
     description: 'This is a branding simple static site.',
     website: 'https://wiwosite.herokuapp.com/',
-    repository: 'https://github.com/kean7296/wiwosite',
+    repository: 'https://github.com/ken-027/wiwosite',
     technologies: [
       skills.frontend[1].name,
       skills.frontend[3].name,

@@ -1,9 +1,28 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { AnimationOnScroll } from 'react-animation-on-scroll'
 import emailjs from '@emailjs/browser'
 
 import { FiSend } from 'react-icons/fi'
 import { TiWarning } from 'react-icons/ti'
+
+const ErrorText = ({ content }) => {
+  const [status, setStatus] = useState('show')
+
+  useEffect(() => {
+    // setStatus('show')
+    return () => {
+      setStatus('hide')
+    }
+  }, [])
+
+  return (
+    <div className='error-container'>
+      <p className={`error ${status}`}>
+        <TiWarning size={16} /> {content}
+      </p>
+    </div>
+  )
+}
 
 const Contact = () => {
   const form = useRef(null)
@@ -129,8 +148,8 @@ const Contact = () => {
             <div className='row'>
               <div className=''>
                 <AnimationOnScroll
-                  animateIn='animate__fadeIn'
-                  animateOut='animate__fadeOut'
+                  animateIn='animate__fadeInUp'
+                  animateOut='animate__fadeOutUp'
                   animateOnce={true}
                   delay={200}
                   // offset={10}
@@ -144,14 +163,15 @@ const Contact = () => {
                     />
                   </div>
                   {errors.name ? (
-                    <p className='error'>
-                      <TiWarning size={16} /> {errors.name}
-                    </p>
+                    // <p className='error'>
+                    //   <TiWarning size={16} /> {errors.name}
+                    // </p>
+                    <ErrorText content={errors.name} />
                   ) : null}
                 </AnimationOnScroll>
                 <AnimationOnScroll
-                  animateIn='animate__fadeIn'
-                  animateOut='animate__fadeOut'
+                  animateIn='animate__fadeInUp'
+                  animateOut='animate__fadeOutUp'
                   animateOnce={true}
                   // offset={10}
                   delay={300}
@@ -165,14 +185,15 @@ const Contact = () => {
                     />
                   </div>
                   {errors.subject ? (
-                    <p className='error'>
-                      <TiWarning size={16} /> {errors.subject}
-                    </p>
+                    // <p className='error'>
+                    //   <TiWarning size={16} /> {errors.subject}
+                    // </p>
+                    <ErrorText content={errors.subject} />
                   ) : null}
                 </AnimationOnScroll>
                 <AnimationOnScroll
-                  animateIn='animate__fadeIn'
-                  animateOut='animate__fadeOut'
+                  animateIn='animate__fadeInUp'
+                  animateOut='animate__fadeOutUp'
                   animateOnce={true}
                   // offset={10}
                   delay={400}
@@ -186,15 +207,16 @@ const Contact = () => {
                     />
                   </div>
                   {errors.email ? (
-                    <p className='error'>
-                      <TiWarning size={16} /> {errors.email}
-                    </p>
+                    // <p className='error'>
+                    //   <TiWarning size={16} /> {errors.email}
+                    // </p>
+                    <ErrorText content={errors.email} />
                   ) : null}
                 </AnimationOnScroll>
               </div>
               <AnimationOnScroll
-                animateIn='animate__fadeIn'
-                animateOut='animate__fadeOut'
+                animateIn='animate__fadeInUp'
+                animateOut='animate__fadeOutUp'
                 animateOnce={true}
                 // offset={10}
                 delay={500}
@@ -215,12 +237,11 @@ const Contact = () => {
               </AnimationOnScroll>
             </div>
             <AnimationOnScroll
-              animateIn='animate__fadeIn'
-              animateOut='animate__fadeOut'
+              animateIn='animate__fadeInUp'
+              animateOut='animate__fadeOutUp'
               // offset={10}
               // delay={600}
-              animateOnce={true}
-              >
+              animateOnce={true}>
               <button
                 type='submit'
                 className={`btn ${btnText === 'Sending ...' ? `sending` : ``}`}>

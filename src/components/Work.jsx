@@ -15,10 +15,10 @@ const Work = () => (
         {works.map((work, index) => (
           <AnimationOnScroll
             key={index}
-            animateIn='animate__fadeIn'
-            animateOut='animate__fadeOut'
+            animateIn='animate__fadeInUp'
+            animateOut='animate__fadeOutUp'
             animateOnce={true}
-            delay={200}
+            // delay={200}
             offset={400}
             className='row'>
             <div className='box'>
@@ -61,11 +61,11 @@ const Work = () => (
           </AnimationOnScroll>
         ))}
         <AnimationOnScroll
-          animateIn='animate__fadeIn'
-          animateOut='animate__fadeOut'
+          animateIn='animate__fadeInUp'
+          animateOut='animate__fadeOutUp'
           animateOnce={true}
           className='manymore'>
-          <p className=''>many more to come</p>
+          <p className=''>more to come</p>
           <p className=''>others are contributed to the companies</p>
         </AnimationOnScroll>
       </div>

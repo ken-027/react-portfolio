@@ -4,7 +4,7 @@ const info = {
     instagram: 'https://www.instagram.com/kenolitan/',
     twitter: 'https://twitter.com/whyme_27',
     codewars: 'https://www.codewars.com/users/ken@27',
-    github: 'https://github.com/kenneth-andales',
+    github: 'https://github.com/ken-027',
   },
   user: {
     fullName: 'Kenneth Andales',
