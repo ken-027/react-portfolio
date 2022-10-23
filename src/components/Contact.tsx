@@ -1,11 +1,20 @@
-import { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { AnimationOnScroll } from 'react-animation-on-scroll'
 import emailjs from '@emailjs/browser'
 
 import { FiSend } from 'react-icons/fi'
 import { TiWarning } from 'react-icons/ti'
 
-const ErrorText = ({ content }) => {
+import '../styles/sass/components/_contact.scss'
+import {
+  serviceId,
+  serviceDefaultId,
+  templateId,
+  templateDefaultId,
+  publicKey,
+} from '../config'
+
+const ErrorText = ({ content }: { content: string }): React.ReactElement => {
   const [status, setStatus] = useState('show')
 
   useEffect(() => {
@@ -24,8 +33,8 @@ const ErrorText = ({ content }) => {
   )
 }
 
-const Contact = () => {
-  const form = useRef(null)
+const Contact = (): React.ReactElement => {
+  const form: React.MutableRefObject<any> = useRef(null)
   const [btnText, setbtnText] = useState('Send Message')
   const [isSending, setisSending] = useState(false)
   const [errors, setErrors] = useState({
@@ -35,13 +44,7 @@ const Contact = () => {
     message: '',
   })
 
-  let serviceId = import.meta.env.VITE_EMAIL_SERVICE
-  let serviceDefaultId = import.meta.env.VITE_EMAIL_SERVICE_DEFAULT
-  let templateId = import.meta.env.VITE_EMAIL_TEMPLATE
-  let templateDefaultId = import.meta.env.VITE_EMAIL_TEMPLATE_DEFAULT
-  let publicKey = import.meta.env.VITE_EMAIL_PUBLIC_KEY
-
-  // useEffect(() => {}, [])
+  useEffect(() => {}, [])
 
   const clearFields = () => {
     let currentForm = form.current.elements
@@ -78,7 +81,7 @@ const Contact = () => {
     return isEmptyName || isEmptySubject || isEmptyEmail
   }
 
-  const sendEmail = (e) => {
+  const sendEmail = (e: any): void | boolean => {
     e.preventDefault()
 
     if (isSending || isEmptyFields()) return false
@@ -87,17 +90,17 @@ const Contact = () => {
     setbtnText('Sending ...')
     setisSending(true)
     emailjs.sendForm(serviceId, templateId, form.current, publicKey).then(
-      (result) => {
+      () => {
         // console.log(result.text)
         emailjs
           .sendForm(
             serviceDefaultId,
             templateDefaultId,
             form.current,
-            publicKey
+            publicKey,
           )
           .then(
-            (result) => {
+            () => {
               // console.log(result.text)
               clearFields()
               setbtnText('Message Sent')
@@ -106,24 +109,24 @@ const Contact = () => {
                 setisSending(false)
               }, 5000)
             },
-            (error) => {
+            () => {
               // console.log(error.text)
               setbtnText('Failed To Send')
               setTimeout(() => {
                 setbtnText('Send Message')
               }, 3000)
               setisSending(false)
-            }
+            },
           )
       },
-      (error) => {
+      () => {
         // console.log(error.text)
         setbtnText('Failed To Send')
         setTimeout(() => {
           setbtnText('Send Message')
         }, 3000)
         setisSending(false)
-      }
+      },
     )
   }
 
@@ -226,8 +229,8 @@ const Contact = () => {
                   <textarea
                     placeholder='Your Message'
                     name='message'
-                    cols='30'
-                    rows='10'></textarea>
+                    cols={30}
+                    rows={10}></textarea>
                   {errors.message ? (
                     <p className='error'>
                       <TiWarning size={16} /> {errors.message}

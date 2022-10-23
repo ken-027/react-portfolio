@@ -1,18 +1,14 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { BiMenuAltRight } from 'react-icons/bi'
 import { AiOutlineClose } from 'react-icons/ai'
 import { FaDownload } from 'react-icons/fa'
-import '../styles/sass/components/navbar.scss'
+import '../styles/sass/components/_navbar.scss'
 
 import Resume from '../assets/Resume.pdf'
 
-const Nav = () => {
+const Nav = (): React.ReactElement => {
   const [isShow, setisShow] = useState(false)
   const [screenWidth, setscreenWidth] = useState(window.innerWidth)
-
-  // const isMobile = useMemo(() => {
-  //   return window.innerWidth <= 1025
-  // }, [window.innerWidth])
 
   useEffect(() => {
     if (isShow) {
@@ -32,12 +28,11 @@ const Nav = () => {
     window.addEventListener(
       'resize',
       () => setscreenWidth(window.innerWidth),
-      false
+      false,
     )
   }, [])
 
   const toggleNav = () => setisShow((prevState) => !prevState)
-
   const hideNav = () => setisShow(false)
 
   return (

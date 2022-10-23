@@ -1,8 +1,12 @@
+import React from 'react'
 import { AnimationOnScroll } from 'react-animation-on-scroll'
 import works from '../shared/works'
 import { FaShareSquare, FaGithub } from 'react-icons/fa'
 
-const Work = () => (
+import '../styles/sass/components/_work.scss'
+import { IWork } from '../ts-interfaces'
+
+const Work = (): React.ReactElement => (
   <AnimationOnScroll
     animateIn='animate__fadeInUp'
     animateOut='animate__fadeOutUp'
@@ -12,7 +16,7 @@ const Work = () => (
     <div className='section-content'>
       <h2 id='work'>Some Things I've Built</h2>
       <div className='container'>
-        {works.map((work, index) => (
+        {works.map((work: IWork, index: number) => (
           <AnimationOnScroll
             key={index}
             animateIn='animate__fadeInUp'
@@ -25,7 +29,7 @@ const Work = () => (
               <p>{work.title}</p>
               <p>{work.description}</p>
               <ul className='techno'>
-                {work.technologies.map((technology, index) => (
+                {work.technologies.map((technology: string, index: number) => (
                   <li key={index}>{technology}</li>
                 ))}
               </ul>
@@ -48,7 +52,7 @@ const Work = () => (
             </div>
             <div className='image-container'>
               <div className='images'>
-                {work.images.map((image, index) => (
+                {work.images.map((image: string, index: number) => (
                   <img
                     className='img'
                     key={index}
@@ -65,7 +69,7 @@ const Work = () => (
           animateOut='animate__fadeOutUp'
           animateOnce={true}
           className='manymore'>
-          <p className=''>more to come</p>
+          {/* <p className=''>more to come</p> */}
           <p className=''>others are contributed to the companies</p>
         </AnimationOnScroll>
       </div>

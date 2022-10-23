@@ -1,0 +1,63 @@
+@use '../partials/variables' as var;
+@use '../partials/responsive' as res;
+
+//contactsection
+.section.contact {
+  margin-bottom: var.$space_8;
+  form {
+    width: 100%;
+    .row {
+      @include res.laptop {
+        display: flex;
+        gap: var.$space_4;
+      }
+      > div {
+        @include res.laptop {
+          flex: 1;
+        }
+      }
+      .group-container {
+        margin-bottom: var.$space_4;
+        .group {
+          display: flex;
+          flex-direction: column;
+          gap: var.$space_2;
+          margin-bottom: var.$space_1;
+        }
+        textarea {
+          @include res.laptop {
+            height: 100%;
+            display: block;
+          }
+        }
+      }
+    }
+    .btn {
+      display: flex;
+      gap: var.$space_2;
+      align-items: center;
+      width: 100%;
+      justify-content: center;
+      @include res.large-mobile {
+        width: fit-content;
+        justify-content: center;
+      }
+      &.sending {
+        background-color: var.$tertiary-color;
+        color: var.$white;
+        i {
+          animation: sliteRotate 0.3s ease-in-out infinite;
+          svg {
+            transform: rotate(35deg);
+          }
+        }
+      }
+      &:not(.sending):hover {
+        svg {
+          animation: sliteRotate 0.3s ease-in-out infinite;
+        }
+      }
+    }
+  }
+}
+//endcontactsection

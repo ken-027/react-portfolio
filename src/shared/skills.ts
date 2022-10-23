@@ -1,3 +1,4 @@
+import { ISkills } from './../ts-interfaces/index';
 import html from '../assets/html.png'
 import css from '../assets/css.png'
 import sass from '../assets/sass.png'
@@ -13,7 +14,7 @@ import codeigniter from '../assets/codeigniter.png'
 import mongo from '../assets/mongo.png'
 import mysql from '../assets/mysql.png'
 
-const skills = {
+const skills: ISkills = {
   language: [
     {
       name: 'HTML',

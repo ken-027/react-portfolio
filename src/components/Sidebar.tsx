@@ -1,21 +1,26 @@
+import React from 'react'
 import logo from '../assets/logo.svg'
-import { FaLinkedinIn, FaInstagram, FaTwitter, FaGithub } from 'react-icons/fa'
+import { FaLinkedinIn, FaInstagram, FaGithub } from 'react-icons/fa'
 import { SiCodewars } from 'react-icons/si'
 import info from '../shared/info'
 
-import '../styles/sass/components/sidebar.scss'
+import { motion } from 'framer-motion'
+import { motionAnimate } from '../config/animate'
 
-const Sidebar = () => (
+import '../styles/sass/components/_sidebar.scss'
+
+const Sidebar = (): React.ReactElement => (
   <div className='sidebar'>
-    <a
+    <motion.a
       href='/'
-      className='animate__animated animate__bounceIn logo-container'>
+      {...motionAnimate({})}
+      className='logo-container'>
       <img
         src={logo}
         className='logo'
         alt='logo'
       />
-    </a>
+    </motion.a>
     <div className='social'>
       <a
         className='animate__animated animate__bounceIn ex'

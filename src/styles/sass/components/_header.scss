@@ -1,0 +1,63 @@
+@use '../partials/variables' as var;
+@use '../partials/responsive' as res;
+@use '../partials/mixin' as mix;
+
+//headersection
+.header {
+  padding-top: 150px;
+  @include res.tablet {
+    padding-top: 200px;
+  }
+  @include res.laptop {
+    padding-top: 180px;
+  }
+  @include res.desktop {
+    // padding-top: 100px;
+    padding-top: 20vh;
+  }
+
+  height: 100vh;
+  // @include px($space_4);
+  @include mix.padding-x;
+
+  .name {
+    animation-delay: 900ms;
+    @include res.tablet {
+      font-size: 40px;
+    }
+    @include res.laptop {
+      font-size: 50px;
+    }
+    @include res.desktop {
+      font-size: 70px;
+    }
+  }
+
+  p:first-child {
+    color: var.$white;
+    @include res.desktop {
+      font-size: 20px;
+    }
+  }
+
+  p:last-child {
+    animation-delay: 1100ms;
+    @include res.laptop {
+      max-width: 90%;
+      font-size: 18px;
+    }
+    @include res.desktop {
+      font-size: 20px;
+    }
+  }
+
+  h1 {
+    color: var.$secondary-light-color;
+    font: {
+      weight: bold;
+      size: 30px;
+    }
+    @include mix.my(var.$space_4);
+  }
+}
+//endheadersection
