@@ -1,15 +1,17 @@
-import { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import experiences from '../shared/experiences'
+
+import '../styles/sass/components/_experience.scss'
 
 import { AnimationOnScroll } from 'react-animation-on-scroll'
 
 const Experience = () => {
-  const ulContent = useRef(null)
+  const ulContent: React.MutableRefObject<any> = useRef(null)
   const [tabIndex, settabIndex] = useState(0)
 
   useEffect(() => {}, [tabIndex])
 
-  const Description = () => {
+  const Description = (): React.ReactElement => {
     const [animation, setAnimation] = useState('')
     useEffect(() => {
       setAnimation('animate__fadeIn')
@@ -26,7 +28,7 @@ const Experience = () => {
           {experiences[tabIndex].date.ended}
         </small>
         <ul>
-          {experiences[tabIndex].description.map((description, index) => (
+          {experiences[tabIndex].description.map((description: string, index) => (
             <li
               className={`animate__animated ${animation}`}
               key={index}>
@@ -38,7 +40,7 @@ const Experience = () => {
     )
   }
 
-  const changeTab = (e) => {
+  const changeTab = (e: any): void => {
     let index = e.target.dataset.index
     if (index) {
       settabIndex(index)
@@ -134,7 +136,7 @@ const Experience = () => {
           animateOut='animate__fadeOutUp'
           delay={600}
           animateOnce={true}>
-          <Description tabIndex={tabIndex} />
+          <Description />
         </AnimationOnScroll>
       </div>
     </AnimationOnScroll>

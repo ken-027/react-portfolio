@@ -1,0 +1,5 @@
+export const serviceId: string = import.meta.env.VITE_EMAIL_SERVICE || ''
+export const serviceDefaultId: string = import.meta.env.VITE_EMAIL_SERVICE_DEFAULT || ''
+export const templateId: string = import.meta.env.VITE_EMAIL_TEMPLATE || ''
+export const templateDefaultId: string = import.meta.env.VITE_EMAIL_TEMPLATE_DEFAULT || ''
+export const publicKey: string = import.meta.env.VITE_EMAIL_PUBLIC_KEY || ''

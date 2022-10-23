@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import Nav from '../components/Nav'
 import Sidebar from '../components/Sidebar'
 import About from '../components/About'
@@ -7,35 +7,23 @@ import Work from '../components/Work'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 import Loading from './Loading'
+import Header from '../components/Header'
 
-import info from '../shared/info'
-import { AnimationOnScroll } from 'react-animation-on-scroll'
+import '../styles/sass/components/_landing.scss'
 
-const Landing = () => {
+const Landing = (): React.ReactElement => {
   const [isLoading, setisLoading] = useState(true)
 
   setTimeout(() => {
     setisLoading(false)
   }, 3000)
 
-  if (isLoading) return <Loading />
+  // if (isLoading) return <Loading />
 
   return (
     <div className='container animate__animated animate__fadeIn'>
       <Nav />
-      <section className='header'>
-        <div className='section-content'>
-          <p className='animate__animated animate__fadeInDown'>
-            Hi, my name is
-          </p>
-          <h1 className='name animate__animated animate__bounceIn'>
-            {info.user.fullName}
-          </h1>
-          <p className='animate__animated animate__fadeInUp'>
-            {info.landing.intro}
-          </p>
-        </div>
-      </section>
+      <Header />
       <About />
       <Experience />
       <Work />

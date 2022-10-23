@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import logo from '../assets/webdeveloperlogo.gif'
+import '../styles/sass/components/_loading.scss'
 
-const Loading = () => {
+const Loading = (): React.ReactElement => {
   const [isUnmount, setisUnmount] = useState(false)
 
   useEffect(() => {

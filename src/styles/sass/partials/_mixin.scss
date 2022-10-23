@@ -1,48 +1,63 @@
 @use './responsive' as res;
+@use './variables' as var;
 
-@mixin  font-family {
-    font-family: 'Source Code Pro', monospace;
-    font-weight: 500;
+@mixin font-family {
+  font-family: 'Source Code Pro', monospace;
+  font-weight: 500;
 }
 
 //margin
 @mixin mx($margin) {
-    margin: {
-        left: $margin;
-        right: $margin;
-    }
+  margin: {
+    left: $margin;
+    right: $margin;
+  }
 }
 
 @mixin my($margin) {
-    margin: {
-        top: $margin;
-        bottom: $margin;
-    }
+  margin: {
+    top: $margin;
+    bottom: $margin;
+  }
 }
 
 @mixin px($padding) {
-    padding: {
-        left: $padding;
-        right: $padding;
-    }
+  padding: {
+    left: $padding;
+    right: $padding;
+  }
 }
 
 @mixin py($padding) {
-    padding: {
-        top: $padding;
-        bottom: $padding;
-    }
+  padding: {
+    top: $padding;
+    bottom: $padding;
+  }
 }
 
 @mixin padding-x {
-    @include px($space_4);
-    @include res.large-mobile {
-        @include px($space_5)
-    }
-    @include res.tablet {
-        @include px($space_8)
-    }
-    @include res.laptop {
-        padding-right: $space_24;
-    }
+  @include px(var.$space_4);
+  @include res.large-mobile {
+    @include px(var.$space_5);
+  }
+  @include res.tablet {
+    @include px(var.$space_8);
+  }
+  @include res.laptop {
+    padding-right: var.$space_24;
+  }
+}
+
+@mixin box {
+  border: 1px solid var.$border-color;
+  background-color: var.$primary-light-color;
+  animation: fadeIn 0.6s ease-in-out;
+  @include px(var.$space_4);
+  padding-top: var.$space_8;
+  padding-bottom: var.$space_12;
+  @include res.laptop {
+    padding-top: var.$space_14;
+    @include px(var.$space_8);
+    padding-bottom: var.$space_20;
+  }
 }

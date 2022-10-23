@@ -1,0 +1,200 @@
+@use '../partials/variables' as var;
+@use '../partials/responsive' as res;
+@use '../partials/mixin' as mix;
+
+//experiencesection
+.section.experience {
+  .section-content {
+    @include res.laptop {
+      display: flex;
+      gap: var.$space_14;
+    }
+    .tab-container {
+      @include res.laptop {
+        display: flex;
+        gap: var.$space_12;
+        justify-content: center;
+        align-items: center;
+      }
+      .bullet-container {
+        position: relative;
+        border-top: 1px solid var.$border-color;
+        @include mix.mx(auto);
+        width: 75%;
+        padding-top: var.$space_4;
+        display: flex;
+        justify-content: space-between;
+        @include res.laptop {
+          flex-direction: column;
+          border-top: none;
+          height: 80%;
+          border-left: 1px solid var.$border-color;
+          @include mix.py(unset);
+          @include mix.my(unset);
+        }
+        li {
+          cursor: pointer;
+          &:nth-child(2)::after {
+            animation-delay: 300ms;
+          }
+          &:nth-child(3)::after {
+            animation-delay: 600ms;
+          }
+          &:nth-child(4)::after {
+            animation-delay: 900ms;
+          }
+          &::after {
+            position: absolute;
+            cursor: pointer;
+            display: inline-block;
+            content: '';
+            top: -4px;
+            width: 0.5em;
+            height: 0.5em;
+            border-radius: 100%;
+            background-color: var.$white;
+            animation: scaleUpSmall 1.5s ease-in-out infinite;
+            @include res.laptop {
+              left: -4px;
+              top: unset;
+            }
+          }
+
+          .bullet {
+            position: absolute;
+            top: -6px;
+            left: -2px;
+            width: 0.8em;
+            height: 0.8em;
+            z-index: 1;
+            border-radius: 100%;
+            background-color: var.$secondary-color;
+            transition: var.$transition;
+            @include res.laptop {
+              transition-duration: 600ms;
+            }
+          }
+
+          &:nth-child(1).active ~ .position .bullet {
+            left: -2px;
+            @include res.laptop {
+              top: -3px;
+              left: -6px;
+            }
+          }
+          &:nth-child(2).active ~ .position .bullet {
+            left: 33%;
+            @include res.laptop {
+              left: -6px;
+              top: 32.7%;
+            }
+          }
+          &:nth-child(3).active ~ .position .bullet {
+            left: 66.5%;
+            @include res.large-mobile {
+              left: 66%;
+            }
+            @include res.laptop {
+              left: -6px;
+              top: 65.7%;
+            }
+          }
+          &:nth-child(4).active .bullet {
+            left: 99.8%;
+            @include res.laptop {
+              left: -6px;
+              top: 99.5%;
+            }
+          }
+        }
+      }
+      .bullet-content {
+        @include mix.mx(var.$space_4);
+        display: flex;
+        margin-bottom: var.$space_8;
+        @include mix.mx(auto);
+        width: 90%;
+        justify-content: space-between;
+        @include res.large-mobile {
+          width: 85%;
+        }
+        @include res.tablet {
+          justify-content: space-around;
+          width: 95%;
+        }
+        @include res.laptop {
+          flex-direction: column;
+          justify-content: space-between;
+          height: 87%;
+          @include mix.mx(auto);
+          @include mix.my(auto);
+          @include mix.py(auto);
+          padding-top: var.$space_2;
+        }
+        li {
+          transition: var.$transition;
+          width: max-content;
+          opacity: 0%;
+          @include res.laptop {
+            opacity: 100%;
+            color: var.$white;
+          }
+          &.show {
+            opacity: 100%;
+            color: var.$secondary-color;
+          }
+        }
+      }
+    }
+
+    .box {
+      @include mix.box;
+      small {
+        display: inline-block;
+        @include res.laptop {
+          margin-bottom: var.$space_3;
+        }
+      }
+      p:first-child {
+        color: var.$secondary-light-color;
+        font-size: 1.2em;
+        @include res.laptop {
+          margin-bottom: var.$space_2;
+        }
+      }
+      p:nth-child(2) {
+        @include res.laptop {
+          margin-bottom: var.$space_2;
+        }
+      }
+      ul {
+        margin-top: var.$space_4;
+        li {
+          margin-bottom: var.$space_3;
+          padding-left: var.$space_2;
+          display: flex;
+          align-items: center;
+          &::before {
+            content: '';
+            display: inline-block;
+            vertical-align: middle;
+            border: 1px solid var.$secondary-color;
+            margin-right: var.$space_3;
+            width: var.$space_3;
+            min-width: var.$space_3;
+          }
+          @include res.laptop {
+            margin-bottom: var.$space_4;
+          }
+
+          @for $i from 1 to 10 {
+            &:nth-child(#{$i}) {
+              animation-delay: ($i + 1) * 100ms;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+//endexperiencesection

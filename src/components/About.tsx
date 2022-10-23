@@ -1,3 +1,4 @@
+import React from 'react'
 import { AnimationOnScroll } from 'react-animation-on-scroll'
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai'
 
@@ -5,14 +6,16 @@ import skills from '../shared/skills'
 import info from '../shared/info'
 
 import Profile from '../assets/profile.png'
-import Book from '../assets/book.png'
 import Graduated from '../assets/graduated.png'
 
-const PopUp = ({ data }) => (
+import '../styles/sass/components/_about.scss'
+import { ISkill } from '../ts-interfaces'
+
+const PopUp = ({ data }: { data: ISkill }): React.ReactElement => (
   <div className='rating animate__animated animate__fadeIn'>
     <h6>Skills Rating</h6>
     <div className='stars'>
-      {[...Array(10)].map((x, index) => {
+      {[Array(10)].map((x: any, index: number) => {
         return data.rating > index ? (
           <AiFillStar key={index} />
         ) : (
@@ -25,20 +28,20 @@ const PopUp = ({ data }) => (
   </div>
 )
 
-const About = () => {
-  const onHover = (e) => {
-    let liParent = e.target.offsetParent
+const About = (): React.ReactElement => {
+  const onHover = (e: any): void => {
+    let liParent = e?.target.offsetParent
     let hoverContainer = liParent.children[1]
 
-    document.querySelectorAll('li .rating').forEach((el) => {
+    document.querySelectorAll('li .rating').forEach((el: Element) => {
       el.classList.remove('show')
     })
 
     hoverContainer.classList.add('show')
   }
 
-  const onHoverOut = (e) => {
-    document.querySelectorAll('li .rating').forEach((el) => {
+  const onHoverOut = (): void => {
+    document.querySelectorAll('li .rating').forEach((el: Element) => {
       el.classList.remove('show')
     })
   }
@@ -95,9 +98,7 @@ const About = () => {
           animateOnce={true}
           className='education'>
           <h3>Education</h3>
-          <p>
-            Here’s the following that I’d studied at Palawan State University:
-          </p>
+          <p>Here is the course that I take at Palawan State University:</p>
           <ul className=''>
             <li>
               <AnimationOnScroll
@@ -113,21 +114,6 @@ const About = () => {
                 </div>
               </AnimationOnScroll>
             </li>
-            <li>
-              <AnimationOnScroll
-                animateIn='animate__fadeInUp'
-                animateOut='animate__fadeOutUp'
-                delay={300}
-                animateOnce={true}>
-                <div className=''>
-                  <img src={Book} />
-                </div>
-                <div className=''>
-                  <p>{info.education[1].degree}</p>
-                  <small>{info.education[1].year}</small>
-                </div>
-              </AnimationOnScroll>
-            </li>
           </ul>
         </AnimationOnScroll>
         <AnimationOnScroll
@@ -136,7 +122,10 @@ const About = () => {
           animateOnce={true}
           className='skills'>
           <h3>Skills</h3>
-          <p>Here’s the following technologies that I knew:</p>
+          <p>
+            Here’s the following Programming Languages and technologies that I
+            knew:
+          </p>
           <div className='skillset'>
             {Object.values(skills).map((skill, index) => (
               <AnimationOnScroll
@@ -146,7 +135,7 @@ const About = () => {
                 key={index}
                 animateOnce={true}>
                 <ul className=''>
-                  {skill.map((skill, index) => (
+                  {skill.map((skill: ISkill, index: number) => (
                     <li
                       className=''
                       onMouseLeave={onHoverOut}

@@ -1,7 +1,9 @@
+import React from 'react'
 import { AnimationOnScroll } from 'react-animation-on-scroll'
 import info from '../shared/info'
+import '../styles/sass/components/_footer.scss'
 
-const Footer = () => (
+const Footer = (): React.ReactElement => (
   <footer>
     <AnimationOnScroll
       animateIn='animate__fadeInUp'
