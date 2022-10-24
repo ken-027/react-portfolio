@@ -54,6 +54,10 @@
     gap: 1rem;
     padding-bottom: $space_6;
 
+    @include desktop {
+      gap: 1.5rem;
+    }
+
     a {
       font-size: 22px;
       transition: $transition;
@@ -62,6 +66,9 @@
       }
       @include tablet {
         font-size: 28px;
+      }
+      @include desktop {
+        font-size: 33px;
       }
 
       &.codewars {

@@ -15,6 +15,18 @@ const Work = (): React.ReactElement => (
     className='work section'>
     <div className='section-content'>
       <h2 id='work'>Some Things I've Built</h2>
+      <AnimationOnScroll
+        animateIn='animate__fadeInUp'
+        animateOut='animate__fadeOutUp'
+        animateOnce={true}
+        // delay={200}
+        offset={400}>
+        <p className='description'>
+          As I maintained and developed projects for every company that I've
+          worked for, Here's some extra project that I made while I'd still
+          learning different technologies:
+        </p>
+      </AnimationOnScroll>
       <div className='container'>
         {works.map((work: IWork, index: number) => (
           <AnimationOnScroll
@@ -64,14 +76,13 @@ const Work = (): React.ReactElement => (
             </div>
           </AnimationOnScroll>
         ))}
-        <AnimationOnScroll
+        {/* <AnimationOnScroll
           animateIn='animate__fadeInUp'
           animateOut='animate__fadeOutUp'
           animateOnce={true}
           className='manymore'>
-          {/* <p className=''>more to come</p> */}
-          <p className=''>others are contributed to the companies</p>
-        </AnimationOnScroll>
+          <p className=''>more to come</p>
+        </AnimationOnScroll> */}
       </div>
     </div>
   </AnimationOnScroll>

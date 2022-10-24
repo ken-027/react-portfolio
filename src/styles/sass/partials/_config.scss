@@ -25,7 +25,10 @@ body {
   width: 100%;
   font-size: 14px;
   @include res.tablet {
-    font-size: 16px;
+    font-size: 18px;
+  }
+  @include res.desktop {
+    font-size: 20px;
   }
   background-color: var.$primary-color;
   color: var.$secondary-color;
@@ -118,7 +121,10 @@ h2 {
 
 h3 {
   color: var.$tertiary-color;
-  font-size: 16px;
+  font: {
+    size: 16px;
+    weight: bold;
+  }
   margin-bottom: var.$space_6;
   @include res.tablet {
     font-size: 22px;
@@ -195,4 +201,3 @@ textarea {
     }
   }
 }
-

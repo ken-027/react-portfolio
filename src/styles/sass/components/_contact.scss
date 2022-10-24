@@ -4,6 +4,9 @@
 //contactsection
 .section.contact {
   margin-bottom: var.$space_8;
+  .description {
+    margin-bottom: var.$space_12;
+  }
   form {
     width: 100%;
     .row {

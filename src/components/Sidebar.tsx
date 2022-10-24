@@ -5,16 +5,14 @@ import { SiCodewars } from 'react-icons/si'
 import info from '../shared/info'
 
 import { motion } from 'framer-motion'
-import { motionAnimate } from '../config/animate'
 
 import '../styles/sass/components/_sidebar.scss'
 
 const Sidebar = (): React.ReactElement => (
-  <div className='sidebar'>
+  <aside className='sidebar'>
     <motion.a
       href='/'
-      {...motionAnimate({})}
-      className='logo-container'>
+      className='animate__animated animate__bounceIn logo-container'>
       <img
         src={logo}
         className='logo'
@@ -52,11 +50,11 @@ const Sidebar = (): React.ReactElement => (
         href={info.socials.codewars}
         target='_blank'>
         <span>
-          <SiCodewars className='codewarsicon' />
+          <SiCodewars className='' />
         </span>
       </a>
     </div>
-  </div>
+  </aside>
 )
 
 export default Sidebar

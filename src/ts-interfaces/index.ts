@@ -26,12 +26,15 @@ export interface IInfo {
   socials: {
     linkedIn: string,
     codewars: string,
-    instagram?: string,
-    twitter?: string,
+    instagram: string,
+    twitter: string,
     github: string,
-    upwork?: string,
-    turing?: string,
-    onlineJobPh?: string,
+    upwork: string,
+    onlineJobPh: string,
+    viber: string,
+    discord: string,
+    skye: string,
+    whatsapp: string
   }
   user: {
     fullName: string,
@@ -45,11 +48,16 @@ export interface IInfo {
   education: Education[]
 }
 
-
+export type Skill = {
+  name: string,
+  skills: ISkill[]
+}
 export interface ISkills {
-  language: ISkill[]
-  frontend: ISkill[]
-  backend: ISkill[]
+  markupLanguage: Skill
+  programminglanguage: Skill
+  frontend: Skill
+  backend: Skill
+  database: Skill
 }
 
 export interface IWork {

@@ -5,13 +5,13 @@
 //footer
 .footer {
   border-top: 1px solid var.$border-color;
-  text-align: center;
   position: relative;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   @include mix.py(var.$space_6);
   h4 {
     position: absolute;
+    font-weight: bold;
     text-align: center;
     @include mix.px(var.$space_4);
     left: 13%;
@@ -39,6 +39,23 @@
   }
   a {
     margin-bottom: var.$space_2;
+  }
+  .icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+    max-width: 300px;
+    @include res.desktop {
+      @include mix.py(var.$space_4);
+    }
+    img {
+      aspect-ratio: 1 / 1;
+      width: 25px;
+      @include res.desktop {
+        width: 35px;
+      }
+    }
   }
 }
 

@@ -7,6 +7,12 @@ const info: IInfo = {
     twitter: 'https://twitter.com/whyme_27',
     codewars: 'https://www.codewars.com/users/ken@27',
     github: 'https://github.com/ken-027',
+    upwork: 'https://www.upwork.com/freelancers/~0130a2e851c15789e3',
+    onlineJobPh: 'https://www.onlinejobs.ph/jobseekers/info/1870035',
+    discord: 'KenNeth#2394',
+    skye: '',
+    viber: '+639072363667',
+    whatsapp: '+639072363667'
   },
   user: {
     fullName: 'Kenneth Andales',
@@ -14,12 +20,12 @@ const info: IInfo = {
     phone: '+639072363667',
   },
   landing: {
-    intro: `I’m a Web Developer. I've gained many experiences as a developer in different companies. Currently, I'm focused on building websites using modern technologies.`,
+    intro: `I am a Web Developer. I have gained many experiences as a developer in different companies. Currently, I'm focused on building websites using any technologies.`,
   },
   about: [
-    `Hello, My name is Kenneth and I love learning and watching tutorial videos on the internet, and I enjoy those stuff.`,
-    `My interest in programming started back in 2015 when I’m in the second semester of my first year of college, reading programming tutorials that I downloaded from the internet is my habit.`,
-    `Fast-forward to today, I’d gained many experiences and now my main focus these days is to build website for clients and companies using modern technologies.`,
+    `Hello, My name is Kenneth, and I love learning and watching tutorial videos on the internet, and I enjoy those stuff.`,
+    `My interest in programming started in 2015, In the second semester of my first year of college. Reading programming tutorials that I downloaded from the internet is my habit.`,
+    `Fast-forward to today, I've gained many experiences, and now my main focus these days is to build websites for clients and companies using modern and trendy technologies.`,
   ],
   education: [
     {

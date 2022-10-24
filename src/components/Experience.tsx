@@ -28,13 +28,15 @@ const Experience = () => {
           {experiences[tabIndex].date.ended}
         </small>
         <ul>
-          {experiences[tabIndex].description.map((description: string, index) => (
-            <li
-              className={`animate__animated ${animation}`}
-              key={index}>
-              {description}
-            </li>
-          ))}
+          {experiences[tabIndex].description.map(
+            (description: string, index) => (
+              <li
+                className={`animate__animated ${animation}`}
+                key={index}>
+                {description}
+              </li>
+            ),
+          )}
         </ul>
       </div>
     )
@@ -76,68 +78,82 @@ const Experience = () => {
           animateIn='animate__fadeInUp'
           animateOut='animate__fadeOutUp'
           animateOnce={true}
-          delay={400}
-          className='tab-container'>
-          <ul className='bullet-container'>
-            <li
-              data-index={0}
-              className='active'
-              onClick={changeTab}></li>
-            <li
-              data-index={1}
-              className=''
-              onClick={changeTab}></li>
-            <li
-              data-index={2}
-              className=''
-              onClick={changeTab}></li>
-            <li
-              data-index={3}
-              className='position'
-              onClick={changeTab}>
-              <div className='bullet'></div>
-            </li>
-          </ul>
-          <ul
-            ref={ulContent}
-            className='bullet-content'>
-            <li className='show'>
-              <a
+          // delay={200}
+          offset={400}>
+          <p className='description'>
+            Following companies that I'd worked for, I started working in 2018,
+            stopped when it has a pandemic, and then I'd continue my career in
+            2022:
+          </p>
+        </AnimationOnScroll>
+        <div className='content'>
+          <AnimationOnScroll
+            animateIn='animate__fadeInUp'
+            animateOut='animate__fadeOutUp'
+            animateOnce={true}
+            delay={400}
+            className='tab-container'>
+            <ul className='bullet-container'>
+              <li
                 data-index={0}
-                onClick={changeTab}>
-                {experiences[0].name}
-              </a>
-            </li>
-            <li className=''>
-              <a
+                className='active'
+                onClick={changeTab}></li>
+              <li
                 data-index={1}
-                onClick={changeTab}>
-                {experiences[1].name}
-              </a>
-            </li>
-            <li className=''>
-              <a
+                className=''
+                onClick={changeTab}></li>
+              <li
                 data-index={2}
-                onClick={changeTab}>
-                {experiences[2].name}
-              </a>
-            </li>
-            <li className=''>
-              <a
+                className=''
+                onClick={changeTab}></li>
+              <li
                 data-index={3}
+                className='position'
                 onClick={changeTab}>
-                {experiences[3].name}
-              </a>
-            </li>
-          </ul>
-        </AnimationOnScroll>
-        <AnimationOnScroll
-          animateIn='animate__fadeInUp'
-          animateOut='animate__fadeOutUp'
-          delay={600}
-          animateOnce={true}>
-          <Description />
-        </AnimationOnScroll>
+                <div className='bullet'></div>
+              </li>
+            </ul>
+            <ul
+              ref={ulContent}
+              className='bullet-content'>
+              <li className='show'>
+                <a
+                  data-index={0}
+                  onClick={changeTab}>
+                  {experiences[0].name}
+                </a>
+              </li>
+              <li className=''>
+                <a
+                  data-index={1}
+                  onClick={changeTab}>
+                  {experiences[1].name}
+                </a>
+              </li>
+              <li className=''>
+                <a
+                  data-index={2}
+                  onClick={changeTab}>
+                  {experiences[2].name}
+                </a>
+              </li>
+              <li className=''>
+                <a
+                  data-index={3}
+                  onClick={changeTab}>
+                  {experiences[3].name}
+                </a>
+              </li>
+            </ul>
+          </AnimationOnScroll>
+          <AnimationOnScroll
+            animateIn='animate__fadeInUp'
+            animateOut='animate__fadeOutUp'
+            delay={600}
+            animateOnce={true}>
+            <Description />
+          </AnimationOnScroll>
+        </div>
       </div>
     </AnimationOnScroll>
   )

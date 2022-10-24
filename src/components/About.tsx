@@ -9,7 +9,7 @@ import Profile from '../assets/profile.png'
 import Graduated from '../assets/graduated.png'
 
 import '../styles/sass/components/_about.scss'
-import { ISkill } from '../ts-interfaces'
+import { ISkill, Skill } from '../ts-interfaces'
 
 const PopUp = ({ data }: { data: ISkill }): React.ReactElement => (
   <div className='rating animate__animated animate__fadeIn'>
@@ -30,20 +30,18 @@ const PopUp = ({ data }: { data: ISkill }): React.ReactElement => (
 
 const About = (): React.ReactElement => {
   const onHover = (e: any): void => {
-    let liParent = e?.target.offsetParent
-    let hoverContainer = liParent.children[1]
-
-    document.querySelectorAll('li .rating').forEach((el: Element) => {
-      el.classList.remove('show')
-    })
-
-    hoverContainer.classList.add('show')
+    // let liParent = e?.target.offsetParent
+    // let hoverContainer = liParent.children[1]
+    // document.querySelectorAll('li .rating').forEach((el: Element) => {
+    //   el.classList.remove('show')
+    // })
+    // hoverContainer.classList.add('show')
   }
 
   const onHoverOut = (): void => {
-    document.querySelectorAll('li .rating').forEach((el: Element) => {
-      el.classList.remove('show')
-    })
+    // document.querySelectorAll('li .rating').forEach((el: Element) => {
+    //   el.classList.remove('show')
+    // })
   }
 
   return (
@@ -98,7 +96,7 @@ const About = (): React.ReactElement => {
           animateOnce={true}
           className='education'>
           <h3>Education</h3>
-          <p>Here is the course that I take at Palawan State University:</p>
+          <p>Here's the course that I take at Palawan State University:</p>
           <ul className=''>
             <li>
               <AnimationOnScroll
@@ -123,33 +121,41 @@ const About = (): React.ReactElement => {
           className='skills'>
           <h3>Skills</h3>
           <p>
-            Here’s the following Programming Languages and technologies that I
-            knew:
+            Here are the following Programming Languages and Frameworks that I
+            know:
           </p>
           <div className='skillset'>
-            {Object.values(skills).map((skill, index) => (
+            {Object.values(skills).map((skill: Skill, index: number) => (
               <AnimationOnScroll
                 animateIn='animate__fadeInUp'
                 animateOut='animate__fadeOutUp'
                 delay={++index * 200}
                 key={index}
                 animateOnce={true}>
+                <h3 className='name'>{skill.name}</h3>
                 <ul className=''>
-                  {skill.map((skill: ISkill, index: number) => (
+                  {skill.skills.map((skill: ISkill, index: number) => (
                     <li
                       className=''
                       onMouseLeave={onHoverOut}
                       key={index}>
-                      <a
-                        onMouseOver={onHover}
-                        className='ex'
-                        data-description={skill.description}>
-                        <img
-                          src={skill.icon}
-                          alt={skill.name}
-                        />
-                        {skill.name}
-                      </a>
+                      <AnimationOnScroll
+                        animateIn='animate__fadeInUp'
+                        animateOut='animate__fadeOutUp'
+                        delay={++index * 100}
+                        key={index}
+                        animateOnce={true}>
+                        <a
+                          onMouseOver={onHover}
+                          className='ex'
+                          data-description={skill.description}>
+                          <img
+                            src={skill.icon}
+                            alt={skill.name}
+                          />
+                          {skill.name}
+                        </a>
+                      </AnimationOnScroll>
                       <PopUp data={skill} />
                     </li>
                   ))}

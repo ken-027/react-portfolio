@@ -13,6 +13,10 @@
   }
   @include res.desktop {
     // padding-top: 100px;
+    padding-top: 10vh;
+  }
+  @include res.large-desktop {
+    // padding-top: 100px;
     padding-top: 20vh;
   }
 
@@ -26,7 +30,7 @@
       font-size: 40px;
     }
     @include res.laptop {
-      font-size: 50px;
+      font-size: 60px;
     }
     @include res.desktop {
       font-size: 70px;
@@ -35,8 +39,8 @@
 
   p:first-child {
     color: var.$white;
-    @include res.desktop {
-      font-size: 20px;
+    @include res.laptop {
+      font-size: 28px;
     }
   }
 
@@ -44,11 +48,11 @@
     animation-delay: 1100ms;
     @include res.laptop {
       max-width: 90%;
-      font-size: 18px;
+      font-size: 30px;
     }
-    @include res.desktop {
-      font-size: 20px;
-    }
+    // @include res.desktop {
+    //   font-size: 0px;
+    // }
   }
 
   h1 {
@@ -58,6 +62,9 @@
       size: 30px;
     }
     @include mix.my(var.$space_4);
+    @include res.laptop {
+      font-size: 70px;
+    }
   }
 }
 //endheadersection

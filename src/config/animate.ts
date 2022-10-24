@@ -20,5 +20,8 @@ export const motionAnimate = ({
     stiffness: 150,
     duration: duration,
     delay: delay,
+    transition: {
+      ease: "easeInOut"
+    }
   },
 })

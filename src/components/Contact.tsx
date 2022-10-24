@@ -6,6 +6,7 @@ import { FiSend } from 'react-icons/fi'
 import { TiWarning } from 'react-icons/ti'
 
 import '../styles/sass/components/_contact.scss'
+import info from '../shared/info'
 import {
   serviceId,
   serviceDefaultId,
@@ -32,6 +33,22 @@ const ErrorText = ({ content }: { content: string }): React.ReactElement => {
     </div>
   )
 }
+
+const OtherContact = (): React.ReactElement => (
+  <div className='other-contact'>
+    <ul>
+      <li>
+        <a href={info.socials.discord}>Discord</a>
+      </li>
+      <li>
+        <a href={info.socials.upwork}>Upwork</a>
+      </li>
+      <li>
+        <a href={info.socials.upwork}>Upwork</a>
+      </li>
+    </ul>
+  </div>
+)
 
 const Contact = (): React.ReactElement => {
   const form: React.MutableRefObject<any> = useRef(null)
@@ -139,6 +156,17 @@ const Contact = (): React.ReactElement => {
       className='contact section'>
       <div className='section-content'>
         <h2 id='contact'>Get In Touch</h2>
+        <AnimationOnScroll
+          animateIn='animate__fadeInUp'
+          animateOut='animate__fadeOutUp'
+          animateOnce={true}
+          // delay={200}
+          offset={400}>
+          <p className='description'>
+            You can reach out with this contact form. I appreciate receiving a
+            message from you:
+          </p>
+        </AnimationOnScroll>
         <div
           // animateIn='animate__fadeInUp'
           // animateOut='animate__fadeOutUp'

@@ -18,10 +18,12 @@ const Landing = (): React.ReactElement => {
     setisLoading(false)
   }, 3000)
 
-  // if (isLoading) return <Loading />
+  if (isLoading) return <Loading />
 
   return (
-    <div className='container animate__animated animate__fadeIn'>
+    <div
+      id='scroll'
+      className='container animate__animated animate__fadeIn'>
       <Nav />
       <Header />
       <About />

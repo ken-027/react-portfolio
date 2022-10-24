@@ -5,162 +5,169 @@
 //worksection
 .section.work {
   position: relative;
-  .manymore {
-    margin-top: var.$space_40;
-    p {
-      &:first-child {
-        font-size: 1em;
-        text-align: center;
-      }
-      &:last-child {
-        text-align: center;
-        font-size: 0.8em;
-        // color: var.$secondary-dark-color;
+
+  .section-content {
+    .description {
+      margin-bottom: var.$space_12;
+    }
+
+    .manymore {
+      margin-top: var.$space_40;
+      p {
+        &:first-child {
+          font-size: 1em;
+          text-align: center;
+        }
+        &:last-child {
+          text-align: center;
+          font-size: 0.8em;
+          // color: var.$secondary-dark-color;
+        }
       }
     }
-  }
-  .container {
-    margin-left: 0;
-    width: 100%;
-    .row {
-      position: relative;
-      padding-bottom: var.$space_24;
-      margin-bottom: var.$space_60;
-      @include res.large-mobile {
-        margin-bottom: var.$space_80;
-      }
-      @include res.tablet {
-        margin-bottom: var.$space_96;
-      }
-      @include res.laptop {
-        width: 90%;
-        @include mix.mx(auto);
-        display: flex;
-        justify-content: center;
-        padding-bottom: unset;
-        margin-bottom: var.$space_60;
-        min-height: min-content;
-      }
-
-      .box {
-        @include mix.box;
-        padding-bottom: var.$space_20;
+    .container {
+      margin-left: 0;
+      width: 100%;
+      .row {
+        position: relative;
+        padding-bottom: var.$space_18;
+        margin-bottom: var.$space_40;
+        @include res.large-mobile {
+          margin-bottom: var.$space_80;
+        }
+        @include res.tablet {
+          margin-bottom: var.$space_96;
+        }
         @include res.laptop {
-          width: 80%;
-          max-width: 500px;
-          order: 2;
-          padding-left: calc(var.$space_20 + var.$space_4);
-          height: 300px;
-          padding-bottom: 0;
-        }
-      }
-
-      p:first-child {
-        color: var.$secondary-light-color;
-        font-size: 1.2em;
-        margin-bottom: var.$space_4;
-      }
-
-      ul {
-        @include mix.my(var.$space_6);
-        display: flex;
-        gap: var.$space_2;
-        flex-wrap: wrap;
-        li {
-          font-size: 0.9em;
+          width: 90%;
+          @include mix.mx(auto);
+          display: flex;
+          justify-content: center;
+          padding-bottom: unset;
+          margin-bottom: var.$space_60;
+          min-height: min-content;
         }
 
-        &.links {
-          margin-left: var.$space_2;
-          gap: var.$space_4;
+        .box {
+          @include mix.box;
+          padding-bottom: var.$space_20;
+          @include res.laptop {
+            width: 80%;
+            max-width: 500px;
+            order: 2;
+            padding-left: calc(var.$space_20 + var.$space_4);
+            // height: 300px;
+            // padding-bottom: 0;
+          }
+        }
+
+        p:first-child {
+          color: var.$secondary-light-color;
+          font-size: 1.2em;
+          margin-bottom: var.$space_4;
+        }
+
+        ul {
+          @include mix.my(var.$space_6);
+          display: flex;
+          gap: var.$space_2;
+          flex-wrap: wrap;
           li {
-            a {
-              font-size: 25px;
-              display: inline-block;
-              &:hover {
-                transform: scale(1.2);
+            font-size: 0.9em;
+          }
+
+          &.links {
+            margin-left: var.$space_2;
+            gap: var.$space_4;
+            li {
+              a {
+                font-size: 25px;
+                display: inline-block;
+                &:hover {
+                  transform: scale(1.2);
+                }
               }
             }
           }
         }
-      }
-      .image-container {
-        max-width: 400px;
-        position: relative;
-        overflow: visible;
-        height: fit-content;
-        width: 90%;
-        @include mix.mx(auto);
-        margin-top: - var.$space_16;
-        @include res.tablet {
-          max-width: 600px;
-        }
-        @include res.laptop {
-          margin-top: var.$space_16;
-          order: 1;
-          width: 100%;
-          margin-right: - var.$space_16;
-          height: 100%;
-          background-color: red;
-        }
-        // @include desktop {
-        //   max-width: 500px;
-        // }
-        .images {
-          position: absolute;
-          right: 0;
-          left: 0;
-          min-height: 200px;
-          @include res.laptop {
-            min-height: 400px;
+        .image-container {
+          max-width: 400px;
+          position: relative;
+          overflow: visible;
+          height: fit-content;
+          width: 90%;
+          @include mix.mx(auto);
+          margin-top: -(var.$space_16);
+          @include res.tablet {
+            max-width: 600px;
           }
-          img {
+          @include res.laptop {
+            margin-top: var.$space_16;
+            order: 1;
+            width: 100%;
+            margin-right: -(var.$space_16);
+            height: 100%;
+            background-color: red;
+          }
+          // @include desktop {
+          //   max-width: 500px;
+          // }
+          .images {
             position: absolute;
-            max-width: 100%;
-            display: block;
-            transition: var.$transition;
+            right: 0;
+            left: 0;
+            min-height: 200px;
+            @include res.laptop {
+              min-height: 400px;
+            }
+            img {
+              position: absolute;
+              max-width: 100%;
+              display: block;
+              transition: var.$transition;
+              &:nth-child(1) {
+                width: 90%;
+              }
+              &:nth-child(2) {
+                width: 30%;
+                right: 0%;
+                top: 15%;
+              }
+            }
+          }
+        }
+
+        &:nth-child(even) {
+          .box {
+            @include mix.box;
+            @include res.laptop {
+              order: 0;
+              padding-right: calc(var.$space_16 + var.$space_4);
+              padding-left: var.$space_8;
+            }
+          }
+          .image-container {
+            @include res.laptop {
+              margin-left: -(var.$space_16);
+              margin-right: var.$space_0;
+            }
+          }
+          .images img {
             &:nth-child(1) {
-              width: 90%;
+              left: 10%;
             }
             &:nth-child(2) {
               width: 30%;
-              right: 0%;
+              left: 0%;
               top: 15%;
             }
           }
         }
-      }
 
-      &:nth-child(even) {
-        .box {
-          @include mix.box;
-          @include res.laptop {
-            order: 0;
-            padding-right: calc(var.$space_16 + var.$space_4);
-            padding-left: var.$space_8;
+        @for $i from 1 to 10 {
+          &:nth-child(#{$i}) {
+            animation-delay: ($i + 1) * 100ms;
           }
-        }
-        .image-container {
-          @include res.laptop {
-            margin-left: - var.$space_16;
-            margin-right: var.$space_0;
-          }
-        }
-        .images img {
-          &:nth-child(1) {
-            left: 10%;
-          }
-          &:nth-child(2) {
-            width: 30%;
-            left: 0%;
-            top: 15%;
-          }
-        }
-      }
-
-      @for $i from 1 to 10 {
-        &:nth-child(#{$i}) {
-          animation-delay: ($i + 1) * 100ms;
         }
       }
     }
