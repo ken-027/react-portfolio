@@ -58,6 +58,6 @@
   @include res.laptop {
     padding-top: var.$space_14;
     @include px(var.$space_8);
-    padding-bottom: var.$space_20;
+    // padding-bottom: var.$space_20;
   }
 }

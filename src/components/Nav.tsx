@@ -61,7 +61,7 @@ const Nav = (): React.ReactElement => {
             <a
               onClick={hideNav}
               href='#about'
-              className=''>
+              className='animate__animated animate__bounceInRight ex'>
               About
             </a>
           </li>
@@ -69,7 +69,7 @@ const Nav = (): React.ReactElement => {
             <a
               onClick={hideNav}
               href='#experience'
-              className='expe'>
+              className='expe animate__animated animate__bounceInRight ex'>
               Experience
             </a>
           </li>
@@ -77,7 +77,7 @@ const Nav = (): React.ReactElement => {
             <a
               onClick={hideNav}
               href='#work'
-              className=''>
+              className='animate__animated animate__bounceInRight ex'>
               Work
             </a>
           </li>
@@ -85,7 +85,7 @@ const Nav = (): React.ReactElement => {
             <a
               onClick={hideNav}
               href='#contact'
-              className=''>
+              className='animate__animated animate__bounceInRight ex'>
               Contact
             </a>
           </li>

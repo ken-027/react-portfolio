@@ -18,7 +18,7 @@ nav {
     @include mx(calc($space_24 + $space_4));
   }
   @include large-desktop {
-    @include mx(auto)
+    @include mx(auto);
   }
 
   > button {
@@ -100,6 +100,27 @@ nav {
         margin-bottom: $space_6;
         @include laptop {
           background-color: $primary-color;
+        }
+
+        &:nth-child(1) {
+          a {
+            animation-delay: 200ms;
+          }
+        }
+        &:nth-child(2) {
+          a {
+            animation-delay: 400ms;
+          }
+        }
+        &:nth-child(3) {
+          a {
+            animation-delay: 600ms;
+          }
+        }
+        &:nth-child(4) {
+          a {
+            animation-delay: 800ms;
+          }
         }
         a {
           display: block;

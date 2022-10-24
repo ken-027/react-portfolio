@@ -9,6 +9,9 @@
   .section-content {
     .description {
       margin-bottom: var.$space_12;
+      @include res.tablet {
+        margin-bottom: var.$space_20;
+      }
     }
 
     .manymore {
@@ -31,12 +34,12 @@
       .row {
         position: relative;
         padding-bottom: var.$space_18;
-        margin-bottom: var.$space_40;
+        margin-bottom: var.$space_36;
         @include res.large-mobile {
-          margin-bottom: var.$space_80;
+          margin-bottom: var.$space_40;
         }
         @include res.tablet {
-          margin-bottom: var.$space_96;
+          // margin-bottom: var.$space_96;
         }
         @include res.laptop {
           width: 90%;
@@ -44,19 +47,19 @@
           display: flex;
           justify-content: center;
           padding-bottom: unset;
-          margin-bottom: var.$space_60;
-          min-height: min-content;
+          // margin-bottom: var.$space_60;
+          height: max-content;
         }
 
         .box {
           @include mix.box;
-          padding-bottom: var.$space_20;
+          // padding-bottom: var.$space_20;
           @include res.laptop {
             width: 80%;
             max-width: 500px;
             order: 2;
             padding-left: calc(var.$space_20 + var.$space_4);
-            // height: 300px;
+            min-height: max-content;
             // padding-bottom: 0;
           }
         }
