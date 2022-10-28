@@ -9,7 +9,14 @@ import { motion } from 'framer-motion'
 import '../styles/sass/components/_sidebar.scss'
 
 const Sidebar = (): React.ReactElement => (
-  <aside className='sidebar'>
+  <aside
+    // initial={{
+    //   x: -100,
+    // }}
+    // animate={{
+    //   x: [-100, 0],
+    // }}
+    className='sidebar'>
     <motion.a
       href='/'
       className='animate__animated animate__bounceIn logo-container'>

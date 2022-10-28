@@ -1,46 +1,22 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef, useEffect, useMemo } from 'react'
 import experiences from '../shared/experiences'
 
 import '../styles/sass/components/_experience.scss'
+import { motion } from 'framer-motion'
+import { contentAnimation } from '../config/animate'
+import Description from './Decription'
 
-import { AnimationOnScroll } from 'react-animation-on-scroll'
-
-const Experience = () => {
+const Experience = ({ onViewPort }: { onViewPort: () => void | Function }) => {
   const ulContent: React.MutableRefObject<any> = useRef(null)
   const [tabIndex, settabIndex] = useState(0)
+  const memo = useMemo(
+    () => <Description experience={experiences[tabIndex]} />,
+    [tabIndex],
+  )
 
-  useEffect(() => {}, [tabIndex])
-
-  const Description = (): React.ReactElement => {
-    const [animation, setAnimation] = useState('')
-    useEffect(() => {
-      setAnimation('animate__fadeIn')
-      return () => setAnimation('animate__fadeOut')
-    }, [animation, tabIndex])
-
-    return (
-      <div className='box'>
-        <p>{experiences[tabIndex].position}</p>
-        <p className=''>@{experiences[tabIndex].company}</p>
-        <small>{experiences[tabIndex].location}</small>
-        <small>
-          {experiences[tabIndex].date.started} -{' '}
-          {experiences[tabIndex].date.ended}
-        </small>
-        <ul>
-          {experiences[tabIndex].description.map(
-            (description: string, index) => (
-              <li
-                className={`animate__animated ${animation}`}
-                key={index}>
-                {description}
-              </li>
-            ),
-          )}
-        </ul>
-      </div>
-    )
-  }
+  useEffect(() => {
+    console.log('rerendered')
+  }, [tabIndex])
 
   const changeTab = (e: any): void => {
     let index = e.target.dataset.index
@@ -66,32 +42,20 @@ const Experience = () => {
   }
 
   return (
-    <AnimationOnScroll
-      animateIn='animate__fadeInUp'
-      animateOut='animate__fadeOutUp'
-      animateOnce={true}
-      offset={400}
-      className='experience section'>
+    <motion.div className='experience section'>
       <div className='section-content'>
         <h2 id='experience'>Where I've Worked</h2>
-        <AnimationOnScroll
-          animateIn='animate__fadeInUp'
-          animateOut='animate__fadeOutUp'
-          animateOnce={true}
-          // delay={200}
-          offset={400}>
-          <p className='description'>
-            Following companies that I'd worked for, I started working in 2018,
-            stopped when it has a pandemic, and then I'd continue my career in
-            2022:
-          </p>
-        </AnimationOnScroll>
+        <motion.div onViewportEnter={() => onViewPort()}></motion.div>
+        <motion.p
+          {...contentAnimation}
+          className='description'>
+          Following companies that I'd worked for, I started working in 2018,
+          stopped when it has a pandemic, and then I'd continue my career in
+          2022:
+        </motion.p>
         <div className='content'>
-          <AnimationOnScroll
-            animateIn='animate__fadeInUp'
-            animateOut='animate__fadeOutUp'
-            animateOnce={true}
-            delay={400}
+          <motion.div
+            {...contentAnimation}
             className='tab-container'>
             <ul className='bullet-container'>
               <li
@@ -145,17 +109,12 @@ const Experience = () => {
                 </a>
               </li>
             </ul>
-          </AnimationOnScroll>
-          <AnimationOnScroll
-            animateIn='animate__fadeInUp'
-            animateOut='animate__fadeOutUp'
-            delay={600}
-            animateOnce={true}>
-            <Description />
-          </AnimationOnScroll>
+          </motion.div>
+          {memo}
         </div>
+        <motion.div onViewportEnter={() => onViewPort()}></motion.div>
       </div>
-    </AnimationOnScroll>
+    </motion.div>
   )
 }
 

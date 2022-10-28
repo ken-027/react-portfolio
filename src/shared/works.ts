@@ -12,7 +12,7 @@ const works: IWork[] = [
     website: 'https://findeasyjob.herokuapp.com/',
     repository: 'https://github.com/ken-027/laravelfindeasyjob',
     technologies: [
-      skills.markupLanguage.skills[0].name,
+      skills.programminglanguage.skills[0].name,
       skills.frontend.skills[0].name,
       skills.frontend.skills[1].name,
       skills.programminglanguage.skills[3].name,
@@ -29,7 +29,7 @@ const works: IWork[] = [
     website: 'https://wiwosite.herokuapp.com/',
     repository: 'https://github.com/ken-027/wiwosite',
     technologies: [
-      skills.markupLanguage.skills[0].name,
+      skills.programminglanguage.skills[0].name,
       skills.frontend.skills[1].name,
       skills.frontend.skills[3].name,
       skills.programminglanguage.skills[3].name,

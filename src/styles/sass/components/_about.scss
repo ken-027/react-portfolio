@@ -65,13 +65,11 @@
         gap: var.$space_32;
       }
       li {
-        > div {
-          display: flex;
-          align-items: center;
-          gap: var.$space_4;
-          @include res.desktop {
-            gap: var.$space_6;
-          }
+        display: flex;
+        align-items: center;
+        gap: var.$space_4;
+        @include res.desktop {
+          gap: var.$space_6;
         }
         &:nth-child(1) > div {
           @include res.laptop {

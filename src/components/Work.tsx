@@ -1,41 +1,36 @@
 import React from 'react'
-import { AnimationOnScroll } from 'react-animation-on-scroll'
+import { motion } from 'framer-motion'
+// import { AnimationOnScroll } from 'react-animation-on-scroll'
 import works from '../shared/works'
 import { FaShareSquare, FaGithub } from 'react-icons/fa'
 
 import '../styles/sass/components/_work.scss'
 import { IWork } from '../ts-interfaces'
+import { contentAnimation } from '../config/animate'
 
-const Work = (): React.ReactElement => (
-  <AnimationOnScroll
-    animateIn='animate__fadeInUp'
-    animateOut='animate__fadeOutUp'
-    animateOnce={true}
-    // offset={400}
+const Work = ({
+  onViewPort,
+}: {
+  onViewPort: () => void | Function
+}): React.ReactElement => (
+  <div
+    // {...contentAnimation}
     className='work section'>
     <div className='section-content'>
       <h2 id='work'>Some Things I've Built</h2>
-      <AnimationOnScroll
-        animateIn='animate__fadeInUp'
-        animateOut='animate__fadeOutUp'
-        animateOnce={true}
-        // delay={200}
-        offset={400}>
-        <p className='description'>
-          As I maintained and developed projects for every company that I've
-          worked for, Here's some extra project that I made while I'd still
-          learning different technologies:
-        </p>
-      </AnimationOnScroll>
+      <motion.div onViewportEnter={() => onViewPort()}></motion.div>
+      <motion.p
+        {...contentAnimation}
+        className='description'>
+        As I maintained and developed projects for every company that I've
+        worked for, Here's some extra project that I made while I'd still
+        learning different technologies:
+      </motion.p>
       <div className='container'>
         {works.map((work: IWork, index: number) => (
-          <AnimationOnScroll
+          <motion.div
             key={index}
-            animateIn='animate__fadeInUp'
-            animateOut='animate__fadeOutUp'
-            animateOnce={true}
-            // delay={200}
-            offset={400}
+            {...contentAnimation}
             className='row'>
             <div className='box'>
               <p>{work.title}</p>
@@ -63,7 +58,9 @@ const Work = (): React.ReactElement => (
               </ul>
             </div>
             <div className='image-container'>
-              <div className='images'>
+              <motion.div
+                {...contentAnimation}
+                className='images'>
                 {work.images.map((image: string, index: number) => (
                   <img
                     className='img'
@@ -72,9 +69,9 @@ const Work = (): React.ReactElement => (
                     alt={work.title}
                   />
                 ))}
-              </div>
+              </motion.div>
             </div>
-          </AnimationOnScroll>
+          </motion.div>
         ))}
         {/* <AnimationOnScroll
           animateIn='animate__fadeInUp'
@@ -84,8 +81,9 @@ const Work = (): React.ReactElement => (
           <p className=''>more to come</p>
         </AnimationOnScroll> */}
       </div>
+      <motion.div onViewportEnter={() => onViewPort()}></motion.div>
     </div>
-  </AnimationOnScroll>
+  </div>
 )
 
 export default Work

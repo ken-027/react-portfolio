@@ -1,19 +1,31 @@
 @use '../partials/responsive' as res;
 
-.container {
-  margin-left: 40px;
+#root {
   height: 100%;
-  width: calc(100% - 12%);
-  overflow-y: hidden;
+  width: 100%;
   overflow-x: hidden;
-  // @include px($space_4);
-  @include res.tablet {
-    margin-left: 60px;
-    width: calc(100% - 60px);
-  }
+  overflow-y: auto;
+  #scroll-container {
+    height: 100%;
+    width: 100%;
+    .scroll-content {
+      > .container {
+        margin-left: 40px;
+        height: 100%;
+        width: calc(100% - 12%);
+        overflow-y: hidden;
+        overflow-x: hidden;
+        // @include px($space_4);
+        @include res.tablet {
+          margin-left: 60px;
+          width: calc(100% - 60px);
+        }
 
-  @include res.desktop {
-    margin-left: 80px;
-    width: calc(100% - 80px);
+        @include res.desktop {
+          margin-left: 80px;
+          width: calc(100% - 80px);
+        }
+      }
+    }
   }
 }

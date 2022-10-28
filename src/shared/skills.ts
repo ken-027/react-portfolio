@@ -8,7 +8,7 @@ import bootstrap from '../assets/bootstrap.png'
 import tailwind from '../assets/tailwind.png'
 import jquery from '../assets/jquery.png'
 import react from '../assets/react.png'
-import node from '../assets/node.png'
+import express from '../assets/express.png'
 import laravel from '../assets/laravel.png'
 import codeigniter from '../assets/codeigniter.png'
 import mongo from '../assets/mongo.png'
@@ -17,8 +17,8 @@ import typescript from '../assets/typescript.png'
 import python from '../assets/python.png'
 
 const skills: ISkills = {
-  markupLanguage: {
-    name: 'Markup and Styling',
+  programminglanguage: {
+    name: 'Languages and Styling',
     skills: [
       {
         name: 'HTML',
@@ -32,11 +32,6 @@ const skills: ISkills = {
         rating: 8,
         icon: css,
       },
-    ]
-  },
-  programminglanguage: {
-    name: 'Programming Language(s)',
-    skills: [
       {
         name: 'SASS',
         description: 'This is a sass',
@@ -70,7 +65,7 @@ const skills: ISkills = {
     ]
   },
   frontend: {
-    name: 'Frontend(s)',
+    name: 'Frontend Frameworks',
     skills: [
       {
         name: 'Bootstrap',
@@ -99,13 +94,13 @@ const skills: ISkills = {
     ]
   },
   backend: {
-    name: "Backend(s)",
+    name: "Backend Frameworks",
     skills: [
       {
-        name: 'Node.js',
-        description: 'This is a nodejs',
+        name: 'Express JS',
+        description: 'This is a expressjs',
         rating: 6,
-        icon: node,
+        icon: express,
       },
       {
         name: 'CodeIgniter',
@@ -123,7 +118,7 @@ const skills: ISkills = {
     ]
   },
   database: {
-    name: "Database(s)",
+    name: "Database",
     skills: [
       {
         name: 'MongoDB',

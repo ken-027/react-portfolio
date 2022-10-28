@@ -4,9 +4,14 @@ import info from '../shared/info'
 import '../styles/sass/components/_header.scss'
 import { motionAnimate } from '../config/animate'
 
-const Header = (): React.ReactElement => {
+const Header = ({
+  onViewPort,
+}: {
+  onViewPort: () => void | Function
+}): React.ReactElement => {
   return (
-    <section className='header'>
+    <motion.section className='header'>
+      <motion.div onViewportEnter={() => onViewPort()}></motion.div>
       <div className='section-content'>
         <motion.p {...motionAnimate({})}>Hi, my name is</motion.p>
         <motion.h1 {...motionAnimate({ delay: 0.1 })}>
@@ -16,7 +21,8 @@ const Header = (): React.ReactElement => {
           {info.landing.intro}
         </motion.p>
       </div>
-    </section>
+      <motion.div onViewportEnter={() => onViewPort()}></motion.div>
+    </motion.section>
   )
 }
 

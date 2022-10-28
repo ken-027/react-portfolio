@@ -38,7 +38,7 @@
   }
 
   p:first-child {
-    color: var.$white;
+    color: var.$secondary-light-color;
     @include res.laptop {
       font-size: 28px;
     }

@@ -53,7 +53,6 @@ export type Skill = {
   skills: ISkill[]
 }
 export interface ISkills {
-  markupLanguage: Skill
   programminglanguage: Skill
   frontend: Skill
   backend: Skill

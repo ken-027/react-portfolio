@@ -1,5 +1,5 @@
 import React from 'react'
-import { AnimationOnScroll } from 'react-animation-on-scroll'
+import { motion } from 'framer-motion'
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai'
 
 import skills from '../shared/skills'
@@ -10,6 +10,7 @@ import Graduated from '../assets/graduated.png'
 
 import '../styles/sass/components/_about.scss'
 import { ISkill, Skill } from '../ts-interfaces'
+import { contentAnimation, labelAnimation } from '../config/animate'
 
 const PopUp = ({ data }: { data: ISkill }): React.ReactElement => (
   <div className='rating animate__animated animate__fadeIn'>
@@ -28,7 +29,11 @@ const PopUp = ({ data }: { data: ISkill }): React.ReactElement => (
   </div>
 )
 
-const About = (): React.ReactElement => {
+const About = ({
+  onViewPort,
+}: {
+  onViewPort: () => void | Function
+}): React.ReactElement => {
   const onHover = (e: any): void => {
     // let liParent = e?.target.offsetParent
     // let hoverContainer = liParent.children[1]
@@ -45,127 +50,103 @@ const About = (): React.ReactElement => {
   }
 
   return (
-    <AnimationOnScroll
-      animateIn='animate__fadeInUp'
-      animateOut='animate__fadeOutUp'
-      offset={400}
-      animateOnce={true}
-      className='about section'>
+    <div className='about section'>
       <div className='section-content'>
-        <h2 id='about'>About Me</h2>
+        <motion.h2 id='about'>About Me</motion.h2>
+        <motion.div onViewportEnter={() => onViewPort()}></motion.div>
         <div className='me'>
           <div className='description'>
-            <AnimationOnScroll
-              animateIn='animate__fadeInUp'
-              animateOut='animate__fadeOutUp'
-              delay={400}
-              animateOnce={true}>
-              <p>{info.about[0]}</p>
-            </AnimationOnScroll>
-            <AnimationOnScroll
-              animateIn='animate__fadeInUp'
-              animateOut='animate__fadeOutUp'
-              delay={500}
-              animateOnce={true}>
-              <p>{info.about[1]}</p>
-            </AnimationOnScroll>
-            <AnimationOnScroll
-              animateIn='animate__fadeInUp'
-              animateOut='animate__fadeOutUp'
-              delay={600}
-              animateOnce={true}>
-              <p>{info.about[2]}</p>
-            </AnimationOnScroll>
+            <motion.p
+              // initial={{ opacity: 0, y: 0 }}
+              {...contentAnimation}
+              className=''>
+              {info.about[0]}
+            </motion.p>
+            <motion.p
+              {...contentAnimation}
+              className=''>
+              {info.about[1]}
+            </motion.p>
+            <motion.p
+              {...contentAnimation}
+              className=''>
+              {info.about[2]}
+            </motion.p>
           </div>
-          <AnimationOnScroll
-            animateIn='animate__fadeInUp'
-            animateOut='animate__fadeOutUp'
-            animateOnce={true}
-            delay={400}
+          <motion.div
+            {...contentAnimation}
             className='profile'>
             <img
               src={Profile}
               alt=''
             />
-          </AnimationOnScroll>
+          </motion.div>
         </div>
-
-        <AnimationOnScroll
-          animateIn='animate__fadeInUp'
-          animateOut='animate__fadeOutUp'
-          animateOnce={true}
-          className='education'>
-          <h3>Education</h3>
-          <p>Here's the course that I take at Palawan State University:</p>
+        <div className='education'>
+          <motion.h3 {...labelAnimation}>Education</motion.h3>
+          <motion.p {...contentAnimation}>
+            Here's the course that I take at Palawan State University:
+          </motion.p>
           <ul className=''>
-            <li>
-              <AnimationOnScroll
-                animateIn='animate__fadeInUp'
-                animateOut='animate__fadeOutUp'
-                animateOnce={true}>
-                <div className=''>
-                  <img src={Graduated} />
-                </div>
-                <div className=''>
-                  <p>{info.education[0].degree}</p>
-                  <small>{info.education[0].year}</small>
-                </div>
-              </AnimationOnScroll>
-            </li>
+            <motion.li {...contentAnimation}>
+              <div className=''>
+                <img src={Graduated} />
+              </div>
+              <div className=''>
+                <p>{info.education[0].degree}</p>
+                <small>{info.education[0].year}</small>
+              </div>
+            </motion.li>
           </ul>
-        </AnimationOnScroll>
-        <AnimationOnScroll
-          animateIn='animate__fadeInUp'
-          animateOut='animate__fadeOutUp'
-          animateOnce={true}
+        </div>
+        <motion.div
+          {...contentAnimation}
           className='skills'>
-          <h3>Skills</h3>
+          <motion.h3 {...labelAnimation}>Skills</motion.h3>
           <p>
             Here are the following Programming Languages and Frameworks that I
             know:
           </p>
           <div className='skillset'>
             {Object.values(skills).map((skill: Skill, index: number) => (
-              <AnimationOnScroll
-                animateIn='animate__fadeInUp'
-                animateOut='animate__fadeOutUp'
-                delay={++index * 200}
+              <motion.div
+                {...contentAnimation}
+                // delay={++index * 200}
                 key={index}
-                animateOnce={true}>
-                <h3 className='name'>{skill.name}</h3>
+                className=''>
+                <motion.h3
+                  {...labelAnimation}
+                  className='name'>
+                  {skill.name}
+                </motion.h3>
                 <ul className=''>
                   {skill.skills.map((skill: ISkill, index: number) => (
-                    <li
+                    <motion.li
+                      {...contentAnimation}
                       className=''
                       onMouseLeave={onHoverOut}
                       key={index}>
-                      <AnimationOnScroll
-                        animateIn='animate__fadeInUp'
-                        animateOut='animate__fadeOutUp'
-                        delay={++index * 100}
-                        key={index}
-                        animateOnce={true}>
-                        <a
-                          onMouseOver={onHover}
-                          className='ex'
-                          data-description={skill.description}>
-                          <img
-                            src={skill.icon}
-                            alt={skill.name}
-                          />
-                          {skill.name}
-                        </a>
-                      </AnimationOnScroll>
+                      <a
+                        onMouseOver={onHover}
+                        className='ex'
+                        data-description={skill.description}>
+                        <img
+                          src={skill.icon}
+                          alt={skill.name}
+                        />
+                        {skill.name}
+                      </a>
                       <PopUp data={skill} />
-                    </li>
+                    </motion.li>
                   ))}
                 </ul>
-              </AnimationOnScroll>
+              </motion.div>
             ))}
           </div>
-        </AnimationOnScroll>
+        </motion.div>
+        <motion.div onViewportEnter={() => onViewPort()}></motion.div>
       </div>
-    </AnimationOnScroll>
+    </div>
   )
 }
 

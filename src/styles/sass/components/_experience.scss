@@ -61,8 +61,8 @@
               width: 0.5em;
               height: 0.5em;
               border-radius: 100%;
-              background-color: var.$white;
-              animation: scaleUpSmall 1.5s ease-in-out infinite;
+              background-color: var.$border-color;
+              // animation: scaleUpSmall 1.5s ease-in-out infinite;
               @include res.laptop {
                 left: -4px;
                 top: unset;
@@ -146,11 +146,17 @@
             opacity: 0%;
             @include res.laptop {
               opacity: 100%;
-              color: var.$white;
+              color: var.$border-color;
             }
             &.show {
               opacity: 100%;
               color: var.$secondary-color;
+            }
+            a {
+              transition: var.$transition;
+              &:hover {
+                color: var.$secondary-color;
+              }
             }
           }
         }

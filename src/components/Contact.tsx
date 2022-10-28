@@ -1,12 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { AnimationOnScroll } from 'react-animation-on-scroll'
+import { motion } from 'framer-motion'
 import emailjs from '@emailjs/browser'
 
 import { FiSend } from 'react-icons/fi'
 import { TiWarning } from 'react-icons/ti'
 
 import '../styles/sass/components/_contact.scss'
-import info from '../shared/info'
+// import info from '../shared/info'
 import {
   serviceId,
   serviceDefaultId,
@@ -14,6 +14,7 @@ import {
   templateDefaultId,
   publicKey,
 } from '../config'
+import { contentAnimation, labelAnimation } from '../config/animate'
 
 const ErrorText = ({ content }: { content: string }): React.ReactElement => {
   const [status, setStatus] = useState('show')
@@ -34,23 +35,27 @@ const ErrorText = ({ content }: { content: string }): React.ReactElement => {
   )
 }
 
-const OtherContact = (): React.ReactElement => (
-  <div className='other-contact'>
-    <ul>
-      <li>
-        <a href={info.socials.discord}>Discord</a>
-      </li>
-      <li>
-        <a href={info.socials.upwork}>Upwork</a>
-      </li>
-      <li>
-        <a href={info.socials.upwork}>Upwork</a>
-      </li>
-    </ul>
-  </div>
-)
+// const OtherContact = (): React.ReactElement => (
+//   <div className='other-contact'>
+//     <ul>
+//       <li>
+//         <a href={info.socials.discord}>Discord</a>
+//       </li>
+//       <li>
+//         <a href={info.socials.upwork}>Upwork</a>
+//       </li>
+//       <li>
+//         <a href={info.socials.upwork}>Upwork</a>
+//       </li>
+//     </ul>
+//   </div>
+// )
 
-const Contact = (): React.ReactElement => {
+const Contact = ({
+  onViewPort,
+}: {
+  onViewPort: () => void | Function
+}): React.ReactElement => {
   const form: React.MutableRefObject<any> = useRef(null)
   const [btnText, setbtnText] = useState('Send Message')
   const [isSending, setisSending] = useState(false)
@@ -148,25 +153,18 @@ const Contact = (): React.ReactElement => {
   }
 
   return (
-    <AnimationOnScroll
-      animateIn='animate__fadeInUp'
-      animateOut='animate__fadeOutUp'
-      offset={400}
-      animateOnce={true}
+    <motion.div
+      {...contentAnimation}
       className='contact section'>
       <div className='section-content'>
         <h2 id='contact'>Get In Touch</h2>
-        <AnimationOnScroll
-          animateIn='animate__fadeInUp'
-          animateOut='animate__fadeOutUp'
-          animateOnce={true}
-          // delay={200}
-          offset={400}>
-          <p className='description'>
-            You can reach out with this contact form. I appreciate receiving a
-            message from you:
-          </p>
-        </AnimationOnScroll>
+        <motion.div onViewportEnter={() => onViewPort()}></motion.div>
+        <motion.p
+          {...contentAnimation}
+          className='description'>
+          You can reach out with this contact form. I appreciate receiving a
+          message from you:
+        </motion.p>
         <div
           // animateIn='animate__fadeInUp'
           // animateOut='animate__fadeOutUp'
@@ -177,16 +175,12 @@ const Contact = (): React.ReactElement => {
             ref={form}
             onSubmit={sendEmail}>
             <div className='row'>
-              <div className=''>
-                <AnimationOnScroll
-                  animateIn='animate__fadeInUp'
-                  animateOut='animate__fadeOutUp'
-                  animateOnce={true}
-                  delay={200}
-                  // offset={10}
+              <div className='col'>
+                <motion.div
+                  {...contentAnimation}
                   className='group-container'>
                   <div className='group'>
-                    <label>Name</label>
+                    <motion.label {...labelAnimation}>Name</motion.label>
                     <input
                       type='text'
                       placeholder='Your Name'
@@ -199,16 +193,12 @@ const Contact = (): React.ReactElement => {
                     // </p>
                     <ErrorText content={errors.name} />
                   ) : null}
-                </AnimationOnScroll>
-                <AnimationOnScroll
-                  animateIn='animate__fadeInUp'
-                  animateOut='animate__fadeOutUp'
-                  animateOnce={true}
-                  // offset={10}
-                  delay={300}
+                </motion.div>
+                <motion.div
+                  {...contentAnimation}
                   className='group-container'>
                   <div className='group'>
-                    <label>Subject</label>
+                    <motion.label {...labelAnimation}>Subject</motion.label>
                     <input
                       type='text'
                       placeholder='Your Subject'
@@ -221,16 +211,12 @@ const Contact = (): React.ReactElement => {
                     // </p>
                     <ErrorText content={errors.subject} />
                   ) : null}
-                </AnimationOnScroll>
-                <AnimationOnScroll
-                  animateIn='animate__fadeInUp'
-                  animateOut='animate__fadeOutUp'
-                  animateOnce={true}
-                  // offset={10}
-                  delay={400}
+                </motion.div>
+                <motion.div
+                  {...contentAnimation}
                   className='group-container'>
                   <div className='group'>
-                    <label>Email</label>
+                    <motion.label {...labelAnimation}>Email</motion.label>
                     <input
                       type='email'
                       placeholder='Your Email'
@@ -243,17 +229,13 @@ const Contact = (): React.ReactElement => {
                     // </p>
                     <ErrorText content={errors.email} />
                   ) : null}
-                </AnimationOnScroll>
+                </motion.div>
               </div>
-              <AnimationOnScroll
-                animateIn='animate__fadeInUp'
-                animateOut='animate__fadeOutUp'
-                animateOnce={true}
-                // offset={10}
-                delay={500}
+              <motion.div
+                {...contentAnimation}
                 className='group-container'>
                 <div className='group'>
-                  <label>Message</label>
+                  <motion.label {...labelAnimation}>Message</motion.label>
                   <textarea
                     placeholder='Your Message'
                     name='message'
@@ -265,27 +247,22 @@ const Contact = (): React.ReactElement => {
                     </p>
                   ) : null}
                 </div>
-              </AnimationOnScroll>
+              </motion.div>
             </div>
-            <AnimationOnScroll
-              animateIn='animate__fadeInUp'
-              animateOut='animate__fadeOutUp'
-              // offset={10}
-              // delay={600}
-              animateOnce={true}>
-              <button
-                type='submit'
-                className={`btn ${btnText === 'Sending ...' ? `sending` : ``}`}>
-                <i>
-                  <FiSend size={20} />
-                </i>
-                {btnText}
-              </button>
-            </AnimationOnScroll>
+            <motion.button
+              {...contentAnimation}
+              type='submit'
+              className={`btn ${btnText === 'Sending ...' ? `sending` : ``}`}>
+              <i>
+                <FiSend size={20} />
+              </i>
+              {btnText}
+            </motion.button>
           </form>
         </div>
+        <motion.div onViewportEnter={() => onViewPort()}></motion.div>
       </div>
-    </AnimationOnScroll>
+    </motion.div>
   )
 }
 

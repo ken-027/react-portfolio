@@ -10,8 +10,16 @@
   form {
     width: 100%;
     .row {
+      display: flex;
+      flex-direction: column;
+      gap: var.$space_4;
       @include res.laptop {
+        flex-direction: row;
+      }
+      .col {
         display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         gap: var.$space_4;
       }
       > div {
@@ -20,7 +28,7 @@
         }
       }
       .group-container {
-        margin-bottom: var.$space_4;
+        // margin-bottom: var.$space_4;
         .group {
           display: flex;
           flex-direction: column;
@@ -41,6 +49,7 @@
       align-items: center;
       width: 100%;
       justify-content: center;
+      margin-top: var.$space_4;
       @include res.large-mobile {
         width: fit-content;
         justify-content: center;
