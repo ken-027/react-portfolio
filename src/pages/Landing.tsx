@@ -26,8 +26,8 @@ const Landing = (): React.ReactElement => {
     if (!isLoading) {
       const scroll = document.getElementById('scroll-container')! as HTMLElement
       const scrollbar = Scrollbar.init(scroll, {
-        damping: 0.05,
-        renderByPixels: false,
+        damping: 0.08,
+        renderByPixels: true,
         plugins: {
           overscroll: {
             effect: 'bounce',

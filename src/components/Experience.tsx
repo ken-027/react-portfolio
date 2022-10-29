@@ -14,9 +14,7 @@ const Experience = ({ onViewPort }: { onViewPort: () => void | Function }) => {
     [tabIndex],
   )
 
-  useEffect(() => {
-    console.log('rerendered')
-  }, [tabIndex])
+  useEffect(() => {}, [tabIndex])
 
   const changeTab = (e: any): void => {
     let index = e.target.dataset.index

@@ -66,10 +66,11 @@ const Nav = (): React.ReactElement => {
         <BiMenuAltRight size={45} />
       </motion.button>
       {isShow && screenWidth < 1026 ? (
-        <div className={`menu-container ${isShow ? `show` : ``}`}>
+        <div className={`menu-container show`}>
           <motion.button
-            transition={{ duration: 0.2 }}
-            whileInView={{ opacity: [0, 0.5, 1] }}
+            transition={{ duration: 0.5 }}
+            // whileInView={{ opacity: [0, 0.5, 1] }}
+            animate={{ opacity: [0, 0.5, 1] }}
             className='close'
             onClick={toggleNav}>
             <AiOutlineClose size={35} />
