@@ -24,7 +24,7 @@
   .profile {
     // background-color: var.$white;
     overflow: hidden;
-    // border-radius: 0.8em;
+    // border-radius: var.$space_1;
     width: 80%;
     display: flex;
     align-items: flex-end;
@@ -34,6 +34,10 @@
     @include mix.mx(auto);
     @include res.tablet {
       @include mix.mx(var.$space_4);
+      // border-radius: var.$space_1_5;
+    }
+    @include res.laptop {
+      // border-radius: var.$space_2;
     }
     img {
       max-width: 100%;
@@ -154,8 +158,13 @@
             align-items: center;
             gap: var.$space_4;
             img {
+              // border-radius: 0.2rem;
               // display: none;
+              @include res.tablet {
+                // border-radius: var.$space_0_5;
+              }
               @include res.laptop {
+                // border-radius: var.$space_1;
                 display: block;
               }
             }

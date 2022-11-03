@@ -88,13 +88,13 @@
               left: -2px;
               @include res.laptop {
                 top: -3px;
-                left: -6px;
+                left: -8px;
               }
             }
             &:nth-child(2).active ~ .position .bullet {
               left: 33%;
               @include res.laptop {
-                left: -6px;
+                left: -8px;
                 top: 32.7%;
               }
             }
@@ -104,14 +104,14 @@
                 left: 66%;
               }
               @include res.laptop {
-                left: -6px;
+                left: -8px;
                 top: 65.7%;
               }
             }
             &:nth-child(4).active .bullet {
               left: 99.8%;
               @include res.laptop {
-                left: -6px;
+                left: -8px;
                 top: 99.5%;
               }
             }
@@ -165,7 +165,7 @@
       .box {
         @include mix.box;
         small {
-          display: inline-block;
+          display: block;
           @include res.laptop {
             margin-bottom: var.$space_3;
           }

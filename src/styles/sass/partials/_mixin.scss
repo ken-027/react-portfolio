@@ -52,12 +52,17 @@
   border: 1px solid var.$border-color;
   background-color: var.$primary-light-color;
   animation: fadeIn 0.6s ease-in-out;
+  // border-radius: var.$space_1;
   @include px(var.$space_4);
   padding-top: var.$space_8;
   padding-bottom: var.$space_12;
+  @include res.tablet {
+    // border-radius: var.$space_1_5;
+  }
   @include res.laptop {
     padding-top: var.$space_14;
     @include px(var.$space_8);
     // padding-bottom: var.$space_20;
+    // border-radius: var.$space_2;
   }
 }

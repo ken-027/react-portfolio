@@ -46,7 +46,10 @@ const Nav = (): React.ReactElement => {
   return (
     <nav>
       <motion.div
-        {...navAnimation()}
+        // {...navAnimation()}
+        initial={{ opacity: 0, y: -50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: 'anticipate' }}
         className='section-content'>
         <a
           href={Resume}

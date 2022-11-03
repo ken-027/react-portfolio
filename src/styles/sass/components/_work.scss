@@ -79,6 +79,10 @@
             font-size: 0.9em;
           }
 
+          &.techno {
+            font-size: smaller;
+          }
+
           &.links {
             margin-left: var.$space_2;
             gap: var.$space_4;
