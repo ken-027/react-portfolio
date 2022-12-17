@@ -12,7 +12,8 @@ const info: IInfo = {
     discord: 'KenNeth#2394',
     skye: '',
     viber: '+639072363667',
-    whatsapp: '+639072363667'
+    whatsapp: '+639072363667',
+    codepen: 'https://codepen.io/kean7296'
   },
   user: {
     fullName: 'Kenneth Andales',
@@ -23,9 +24,9 @@ const info: IInfo = {
     intro: `I am a Web Developer. I have gained many experiences as a developer in different companies. Currently, I'm focused on building websites using any technologies.`,
   },
   about: [
-    `Hello, My name is Kenneth, and I love learning and watching tutorial videos on the internet, and I enjoy those stuff.`,
-    `My interest in programming started in 2015, In the second semester of my first year of college. Reading programming tutorials that I downloaded from the internet is my habit.`,
-    `Fast-forward to today, I've gained many experiences, and now my main focus these days is to build websites for clients and companies using modern and trendy technologies.`,
+    `Hello, My name is Kenneth, and I'd love challenges, learning trend technologies and programming languages.`,
+    `My interest in programming started months after I shifted my course from a BS in Architecture to a BS in Information Technology. When I answered programming activities in our school, I got motivated bit by bit until I roled as a programmer in our Thesis group and developed a sales and inventory system.`,
+    `Fast-forward to today, I've gained experience as a developer, and now my main focus these days is learning trending technologies and freelancing while I'm still waiting and looking for an oppurtunity to work in growing companies.`,
   ],
   education: [
     {

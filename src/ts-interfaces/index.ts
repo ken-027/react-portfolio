@@ -35,6 +35,7 @@ export interface IInfo {
     discord: string,
     skye: string,
     whatsapp: string
+    codepen: string
   }
   user: {
     fullName: string,

@@ -24,7 +24,7 @@ const Work = ({
         className='description'>
         As I maintained and developed projects for every company that I've
         worked for, Here's some extra project that I made while I'd still
-        learning different technologies:
+        learning different technologies and others are in my github repository:
       </motion.p>
       <div className='container'>
         {works.map((work: IWork, index: number) => (

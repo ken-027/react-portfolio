@@ -18,8 +18,8 @@ const experiences: IExperience[] = [
   },
   {
     name: 'WerOrg',
-    position: 'Web Developer (WFH)',
-    company: 'WerOrg Buy Back Website',
+    position: 'Fullstack Web Developer (Freelance)',
+    company: 'WerOrg Buyback Website',
     location: 'Jacksonville, Florida, USA',
     date: {
       started: 'January 2022',

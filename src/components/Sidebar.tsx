@@ -1,6 +1,7 @@
 import React from 'react'
 import logo from '../assets/logo.svg'
-import { FaLinkedinIn, FaInstagram, FaGithub } from 'react-icons/fa'
+import { FaLinkedinIn, FaGithub } from 'react-icons/fa'
+import { AiOutlineCodepen } from 'react-icons/ai'
 import { SiCodewars } from 'react-icons/si'
 import info from '../shared/info'
 
@@ -45,10 +46,10 @@ const Sidebar = (): React.ReactElement => (
       </a>
       <a
         className='animate__animated animate__bounceIn ex'
-        href={info.socials.instagram}
+        href={info.socials.codepen}
         target='_blank'>
         <span>
-          <FaInstagram />
+          <AiOutlineCodepen />
         </span>
       </a>
 
@@ -57,7 +58,7 @@ const Sidebar = (): React.ReactElement => (
         href={info.socials.codewars}
         target='_blank'>
         <span>
-          <SiCodewars className='' />
+          <SiCodewars className='codewarsicon' />
         </span>
       </a>
     </div>
