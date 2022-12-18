@@ -1,4 +1,4 @@
-## Temple for Creating Static or Client Website
+## Portfolio Website
 
 ### `npm install`
 install all dependencies
