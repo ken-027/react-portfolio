@@ -41,20 +41,24 @@ const Work = ({
                 ))}
               </ul>
               <ul className='links'>
-                <li>
-                  <a
-                    target='_blank'
-                    href={work.repository}>
-                    <FaGithub />
-                  </a>
-                </li>
-                <li>
-                  <a
-                    target='_blank'
-                    href={work.website}>
-                    <FaShareSquare />
-                  </a>
-                </li>
+                {work.repository ? (
+                  <li>
+                    <a
+                      target='_blank'
+                      href={work.repository}>
+                      <FaGithub />
+                    </a>
+                  </li>
+                ) : null}
+                {work.website ? (
+                  <li>
+                    <a
+                      target='_blank'
+                      href={work.website}>
+                      <FaShareSquare />
+                    </a>
+                  </li>
+                ) : null}
               </ul>
             </div>
             <div className='image-container'>

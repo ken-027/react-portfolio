@@ -1,4 +1,4 @@
-import { ISkills } from './../ts-interfaces/index';
+import { ISkills } from './../ts-interfaces/index'
 import html from '../assets/html.png'
 import css from '../assets/css.png'
 import sass from '../assets/sass.png'
@@ -15,6 +15,7 @@ import mongo from '../assets/mongo.png'
 import mysql from '../assets/mysql.png'
 import typescript from '../assets/typescript.png'
 import python from '../assets/python.png'
+import sqlite from '../assets/sqlite.png'
 
 const skills: ISkills = {
   programminglanguage: {
@@ -54,15 +55,15 @@ const skills: ISkills = {
         name: 'TypeScript',
         description: 'This is a TypeScript',
         rating: 7,
-        icon: typescript
+        icon: typescript,
       },
       {
         name: 'Python',
         description: 'This is a Python',
         rating: 5,
-        icon: python
+        icon: python,
       },
-    ]
+    ],
   },
   frontend: {
     name: 'Frontend Frameworks',
@@ -91,10 +92,10 @@ const skills: ISkills = {
         rating: 7,
         icon: react,
       },
-    ]
+    ],
   },
   backend: {
-    name: "Backend Frameworks",
+    name: 'Backend Frameworks',
     skills: [
       {
         name: 'Express JS',
@@ -114,11 +115,10 @@ const skills: ISkills = {
         rating: 7,
         icon: laravel,
       },
-
-    ]
+    ],
   },
   database: {
-    name: "Database",
+    name: 'Database',
     skills: [
       {
         name: 'MongoDB',
@@ -132,8 +132,14 @@ const skills: ISkills = {
         rating: 8,
         icon: mysql,
       },
-    ]
-  }
+      {
+        name: 'SQLite',
+        description: 'This is a sqlite',
+        rating: 7,
+        icon: sqlite,
+      },
+    ],
+  },
 }
 
 export default skills
