@@ -21,7 +21,7 @@ const info: IInfo = {
     phone: '+639072363667',
   },
   landing: {
-    intro: `I am a Fullstack Web Developer. I have gained experience as a developer in different companies. Currently, I'm focused on building website, desktop, mobile and API as services.`,
+    intro: `I am a Fullstack Web Developer. I have gained experience as a developer in different companies. Currently, I'm focused on building website, desktop, mobile and API services.`,
   },
   about: [
     `Hello, My name is Kenneth, and I'd love challenges, learning trend technologies and programming languages.`,
