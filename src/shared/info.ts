@@ -1,20 +1,40 @@
-import { IInfo } from './../ts-interfaces/index';
+import { IInfo } from './../ts-interfaces/index'
+import { FaLinkedinIn, FaGithub } from 'react-icons/fa'
+import { AiOutlineCodepen } from 'react-icons/ai'
+import { SiCodewars } from 'react-icons/si'
 
 const info: IInfo = {
-  socials: {
-    linkedIn: 'https://www.linkedin.com/in/kenneth-andales/',
-    instagram: 'https://www.instagram.com/kenolitan/',
-    twitter: 'https://twitter.com/whyme_27',
-    codewars: 'https://www.codewars.com/users/ken@27',
-    github: 'https://github.com/ken-027',
-    upwork: 'https://www.upwork.com/freelancers/~0130a2e851c15789e3',
-    onlineJobPh: 'https://www.onlinejobs.ph/jobseekers/info/1870035',
-    discord: 'KenNeth#2394',
-    skye: '',
-    viber: '+639072363667',
-    whatsapp: '+639072363667',
-    codepen: 'https://codepen.io/kean7296'
-  },
+  socials: [
+    {
+      name: 'GitHub',
+      icon: FaGithub,
+      link: 'https://github.com/ken-027',
+    },
+    {
+      name: 'LinkedIn',
+      icon: FaLinkedinIn,
+      link: 'https://www.linkedin.com/in/kenneth-andales/',
+    },
+    {
+      name: 'CodePen',
+      icon: AiOutlineCodepen,
+      link: 'https://codepen.io/kean7296'
+    },
+    {
+      name: 'Codewars',
+      icon: SiCodewars,
+      link: 'https://www.codewars.com/users/ken@27'
+    }
+  ],
+  //  {
+  //   instagram: 'https://www.instagram.com/kenolitan/',
+  //   twitter: 'https://twitter.com/whyme_27',
+  //   upwork: 'https://www.upwork.com/freelancers/~0130a2e851c15789e3',
+  //   onlineJobPh: 'https://www.onlinejobs.ph/jobseekers/info/1870035',
+  //   discord: 'KenNeth#2394',
+  //   viber: '+639072363667',
+  //   whatsapp: '+639072363667',
+  // },
   user: {
     fullName: 'Kenneth Andales',
     email: 'keanolida7296@gmail.com',
@@ -31,11 +51,11 @@ const info: IInfo = {
   education: [
     {
       degree: 'Bachelor of Sciene in Information Technology',
-      year: '2014-2018'
+      year: '2014-2018',
     },
     {
       degree: 'Bachelor of Sciene in Architecture',
-      year: '2013-2014'
+      year: '2013-2014',
     },
   ],
 }

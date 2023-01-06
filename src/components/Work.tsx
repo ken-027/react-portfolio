@@ -1,93 +1,81 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+
 // import { AnimationOnScroll } from 'react-animation-on-scroll'
 import works from '../shared/works'
-import { FaShareSquare, FaGithub } from 'react-icons/fa'
+import restAPI from '../shared/restAPI'
 
 import '../styles/sass/components/_work.scss'
 import { IWork } from '../ts-interfaces'
 import { contentAnimation } from '../config/animate'
+import Images from './work/Images'
+import Details from './work/Details'
+import WordCard from './work/WordCard'
 
 const Work = ({
   onViewPort,
 }: {
   onViewPort: () => void | Function
-}): React.ReactElement => (
-  <div
-    // {...contentAnimation}
-    className='work section'>
-    <div className='section-content'>
-      <h2 id='work'>Some Things I've Built</h2>
-      <motion.div onViewportEnter={() => onViewPort()}></motion.div>
-      <motion.p
-        {...contentAnimation}
-        className='description'>
-        As I maintained and developed projects for every company that I've
-        worked for, Here's some extra project that I made while I'd still
-        learning different technologies and others are in my github repository:
-      </motion.p>
-      <div className='container'>
-        {works.map((work: IWork, index: number) => (
-          <motion.div
-            key={index}
+}): React.ReactElement => {
+  return (
+    <div
+      // {...contentAnimation}
+      className='work section'>
+      <div className='section-content'>
+        <h2 id='work'>Some Things I've Built</h2>
+        <motion.div onViewportEnter={() => onViewPort()}></motion.div>
+        <motion.p
+          {...contentAnimation}
+          className='description'>
+          As I maintained and developed projects for every company that I've
+          worked for, Here's some extra project that I made while I'd still
+          learning different technologies and others are in my github
+          repository:
+        </motion.p>
+        <motion.h3
+          {...contentAnimation}
+          className='description'>
+          Website
+        </motion.h3>
+        <div className='container'>
+          {works.map((work: IWork, index: number) => (
+            <motion.div
+              key={index}
+              {...contentAnimation}
+              className='row'>
+              <div className='box'>
+                <Details info={work} />
+                <Images info={work} />
+              </div>
+            </motion.div>
+          ))}
+          <div className=''>
+            <motion.h3
+              {...contentAnimation}
+              className='description'>
+              Rest API
+            </motion.h3>
+            <div className='work-container'>
+              {restAPI.map((api: IWork) => (
+                <WordCard info={api} />
+              ))}
+            </div>
+          </div>
+          <motion.h3
             {...contentAnimation}
-            className='row'>
-            <div className='box'>
-              <p>{work.title}</p>
-              <p>{work.description}</p>
-              <ul className='techno'>
-                {work.technologies.map((technology: string, index: number) => (
-                  <li key={index}>{technology}</li>
-                ))}
-              </ul>
-              <ul className='links'>
-                {work.repository ? (
-                  <li>
-                    <a
-                      target='_blank'
-                      href={work.repository}>
-                      <FaGithub />
-                    </a>
-                  </li>
-                ) : null}
-                {work.website ? (
-                  <li>
-                    <a
-                      target='_blank'
-                      href={work.website}>
-                      <FaShareSquare />
-                    </a>
-                  </li>
-                ) : null}
-              </ul>
-            </div>
-            <div className='image-container'>
-              <motion.div
-                {...contentAnimation}
-                className='images'>
-                {work.images.map((image: string, index: number) => (
-                  <img
-                    className='img'
-                    key={index}
-                    src={image}
-                    alt={work.title}
-                  />
-                ))}
-              </motion.div>
-            </div>
-          </motion.div>
-        ))}
-        {/* <AnimationOnScroll
-          animateIn='animate__fadeInUp'
-          animateOut='animate__fadeOutUp'
-          animateOnce={true}
-          className='manymore'>
-          <p className=''>more to come</p>
-        </AnimationOnScroll> */}
+            className='description'>
+            Extra Programs
+          </motion.h3>
+          <motion.h3
+            {...contentAnimation}
+            className='description'>
+            Projects I have handled
+          </motion.h3>
+        </div>
+        <motion.div onViewportEnter={() => onViewPort()}></motion.div>
       </div>
-      <motion.div onViewportEnter={() => onViewPort()}></motion.div>
     </div>
-  </div>
-)
+  )
+}
 
 export default Work

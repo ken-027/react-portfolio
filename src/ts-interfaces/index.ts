@@ -10,36 +10,29 @@ export interface ISkill {
   icon: string
 }
 
+export interface ISocial {
+  name: string
+  icon: object
+  link: string
+}
+
 export interface IExperience {
   name: string
   position: string
   company: string
   location: string
   date: {
-    started: string,
-    ended: string,
+    started: string
+    ended: string
   }
   description: string[]
 }
 
 export interface IInfo {
-  socials: {
-    linkedIn: string,
-    codewars: string,
-    instagram: string,
-    twitter: string,
-    github: string,
-    upwork: string,
-    onlineJobPh: string,
-    viber: string,
-    discord: string,
-    skye: string,
-    whatsapp: string
-    codepen: string
-  }
+  socials: ISocial[]
   user: {
-    fullName: string,
-    email: string,
+    fullName: string
+    email: string
     phone: string
   }
   landing: {
@@ -50,7 +43,7 @@ export interface IInfo {
 }
 
 export type Skill = {
-  name: string,
+  name: string
   skills: ISkill[]
 }
 export interface ISkills {
@@ -65,6 +58,6 @@ export interface IWork {
   description: string
   website: string
   repository: string
-  technologies: string[]
+  technologies: string[][]
   images: string[]
 }

@@ -16,10 +16,15 @@ import mysql from '../assets/mysql.png'
 import typescript from '../assets/typescript.png'
 import python from '../assets/python.png'
 import sqlite from '../assets/sqlite.png'
+import vb from '../assets/vb.png'
+import rust from '../assets/rust.png'
+import dotnet from '../assets/dotnet.png'
+import nextjs from '../assets/nextjs.png'
+import csharp from '../assets/csharp.png'
 
 const skills: ISkills = {
   programminglanguage: {
-    name: 'Languages and Styling',
+    name: 'Programming Languages',
     skills: [
       {
         name: 'HTML',
@@ -62,6 +67,24 @@ const skills: ISkills = {
         description: 'This is a Python',
         rating: 5,
         icon: python,
+      },
+      {
+        name: 'Visual Basic',
+        description: 'This is a Visual Basic',
+        rating: 5,
+        icon: vb,
+      },
+      {
+        name: 'C#',
+        description: 'This is a c#',
+        rating: 5,
+        icon: csharp,
+      },
+      {
+        name: 'Rust',
+        description: 'This is a Rust',
+        rating: 5,
+        icon: rust,
       },
     ],
   },
@@ -114,6 +137,18 @@ const skills: ISkills = {
         description: 'This is a laravel',
         rating: 7,
         icon: laravel,
+      },
+      {
+        name: '.NET',
+        description: 'This is a .net',
+        rating: 7,
+        icon: dotnet,
+      },
+      {
+        name: 'Next.js',
+        description: 'This is a next.js',
+        rating: 7,
+        icon: nextjs,
       },
     ],
   },
