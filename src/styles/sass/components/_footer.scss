@@ -8,7 +8,7 @@
   position: relative;
   display: flex;
   justify-content: center;
-  @include mix.py(var.$space_6);
+  @include mix.py(var.$space_14);
   h4 {
     position: absolute;
     font-weight: bold;
@@ -39,6 +39,67 @@
   }
   a {
     margin-bottom: var.$space_2;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: var.$space_10;
+
+    @include res.laptop {
+      flex-direction: row;
+    }
+
+    ul {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      gap: var.$space_3;
+
+      &.navigation {
+        @include res.laptop {
+          display: none;
+        }
+      }
+
+      @include res.laptop {
+        align-items: flex-start;
+      }
+
+      li {
+        p {
+          display: flex;
+          align-items: center;
+          gap: var.$space_2;
+        }
+        a {
+          display: flex;
+          align-items: center;
+          gap: var.$space_2;
+          overflow: hidden;
+          position: relative;
+          width: fit-content;
+
+          // &::after {
+          //   display: block;
+          //   content: '';
+          //   margin-top: var.$space_1;
+          //   border-bottom: 2px solid var.$tertiary-color;
+          //   transition: var.$transition;
+          //   transform: translateX(-105%);
+          // }
+
+          &:hover {
+            // padding-left: var.$space_2;
+            transform: scale(1.3);
+            color: var.$tertiary-color;
+            // &::after {
+            //   transform: translateX(0);
+            // }
+          }
+        }
+      }
+    }
   }
   .icons {
     display: flex;

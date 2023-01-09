@@ -84,7 +84,10 @@ const About = ({
           </p>
           <div className='skillset'>
             {Object.values(skills).map((skill: Skill, index: number) => (
-              <Skills skill={skill} />
+              <Skills
+                key={index}
+                skill={skill}
+              />
             ))}
           </div>
         </motion.div>

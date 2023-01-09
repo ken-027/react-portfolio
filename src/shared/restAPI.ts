@@ -6,14 +6,24 @@ const restAPI: Omit<IWork, 'website' | 'images'>[] = [
   {
     title: 'Portfolio',
     description: 'This is description',
+    developmentType: 'Backend',
     repository: `${info.socials[0].link}/express-api`,
-    technologies: [[skills.programminglanguage.skills[0].name]],
+    technologies: [
+      skills.programminglanguage.skills[5].name,
+      skills.backend.skills[0].name,
+      skills.database.skills[0].name,
+    ],
   },
   {
     title: 'Recipe',
     description: 'This is description',
+    developmentType: 'Backend',
     repository: `${info.socials[0].link}/node-js`,
-    technologies: [[skills.programminglanguage.skills[0].name]],
+    technologies: [
+      skills.programminglanguage.skills[3].name,
+      skills.backend.skills[0].name,
+      skills.database.skills[1].name,
+    ],
   },
 ]
 

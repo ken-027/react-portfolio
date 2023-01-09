@@ -21,6 +21,13 @@
       }
     }
 
+    .github-link {
+      color: var.$secondary-light-color;
+      &:hover {
+        color: var.$tertiary-color;
+      }
+    }
+
     // .manymore {
     //   margin-top: var.$space_40;
     //   p {
@@ -47,6 +54,12 @@
           display: flex;
           gap: 0.5rem;
           align-items: center;
+          svg {
+            font-size: 20px;
+          }
+          // &:hover svg {
+          //   transform: scale(1.2);
+          // }
         }
       }
 
@@ -58,6 +71,42 @@
       .swiper-pagination-bullet {
         background-color: var.$border-color;
         opacity: 1;
+      }
+
+      .techno-container {
+        display: flex;
+        @include mix.my(var.$space_4);
+        gap: var.$space_2;
+        ul {
+          // @include mix.my(var.$space_6);
+          display: flex;
+          gap: var.$space_2;
+          flex-wrap: wrap;
+          li {
+            font-size: 0.9em;
+          }
+
+          &.techno {
+            font-size: smaller;
+            display: flex;
+            // flex-direction: column;
+          }
+        }
+      }
+
+      .links {
+        margin-left: var.$space_1;
+        display: flex;
+        gap: var.$space_4;
+        li {
+          a {
+            font-size: 20px;
+            display: inline-block;
+            &:hover {
+              transform: scale(1.2);
+            }
+          }
+        }
       }
 
       .row {
@@ -104,13 +153,20 @@
             flex-basis: 50%;
             @include mix.px(var.$space_4);
             padding-top: var.$space_8;
-            // padding-bottom: var.$space_8;
+            padding-bottom: var.$space_8;
+            .title-container {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              margin-bottom: var.$space_4;
+            }
           }
 
           .image-container {
             // max-width: 400px;
+            background: var.$white;
             border-bottom: 1px solid var.$border-color;
-            // flex-basis: 50%;
+            flex-basis: 50%;
             // position: relative;
             // height: fit-content;
             // width: 100%;
@@ -168,41 +224,11 @@
         p:first-child {
           color: var.$secondary-light-color;
           font-size: 1.2em;
-          margin-bottom: var.$space_4;
+          margin-bottom: var.$space_1;
         }
 
-        ul {
-          @include mix.my(var.$space_6);
-          display: flex;
-          gap: var.$space_2;
-          flex-wrap: wrap;
-          li {
-            font-size: 0.9em;
-          }
-
-          &.techno {
-            font-size: smaller;
-            display: flex;
-            flex-direction: column;
-            .row {
-              gap: var.$space_2;
-              display: flex;
-            }
-          }
-
-          &.links {
-            margin-left: var.$space_2;
-            gap: var.$space_4;
-            li {
-              a {
-                font-size: 25px;
-                display: inline-block;
-                &:hover {
-                  transform: scale(1.2);
-                }
-              }
-            }
-          }
+        p.type {
+          margin-bottom: var.$space_4;
         }
 
         // &:nth-child(even) {
@@ -243,17 +269,28 @@
     .work-container {
       display: flex;
       flex-direction: column;
-      gap: var.$space_14;
+      gap: var.$space_8;
       .work-box {
+        max-width: 700px;
         @include mix.box;
-        // padding: {
-          // top: var.$space_2;
-          // bottom: var.$space_5;
-        // }
+        @include mix.px(var.$space_4);
+        padding-top: var.$space_8;
+        padding-bottom: var.$space_8;
         .title {
           color: var.$secondary-light-color;
           font-size: 1.2em;
           margin-bottom: var.$space_4;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+        .techno-container {
+          flex-wrap: wrap;
+          display: flex;
+          gap: var.$space_2;
+          p {
+            font-size: smaller;
+          }
         }
       }
     }

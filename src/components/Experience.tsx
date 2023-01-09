@@ -66,14 +66,15 @@ const Experience = ({ onViewPort }: { onViewPort: () => void | Function }) => {
                 onClick={changeTab}></li>
               <li
                 data-index={2}
-                className=''
-                onClick={changeTab}></li>
-              <li
-                data-index={3}
                 className='position'
                 onClick={changeTab}>
                 <div className='bullet'></div>
-              </li>
+                </li>
+              {/* <li
+                data-index={3}
+                className='position'
+                onClick={changeTab}>
+              </li> */}
             </ul>
             <ul
               ref={ulContent}
@@ -99,13 +100,13 @@ const Experience = ({ onViewPort }: { onViewPort: () => void | Function }) => {
                   {experiences[2].name}
                 </a>
               </li>
-              <li className=''>
+              {/* <li className=''>
                 <a
                   data-index={3}
                   onClick={changeTab}>
                   {experiences[3].name}
                 </a>
-              </li>
+              </li> */}
             </ul>
           </motion.div>
           {memo}

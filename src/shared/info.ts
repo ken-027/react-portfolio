@@ -1,7 +1,13 @@
 import { IInfo } from './../ts-interfaces/index'
-import { FaLinkedinIn, FaGithub } from 'react-icons/fa'
+import {
+  FaLinkedinIn,
+  FaGithub,
+  FaPhoneAlt,
+  FaViber,
+  FaDiscord,
+} from 'react-icons/fa'
 import { AiOutlineCodepen } from 'react-icons/ai'
-import { SiCodewars } from 'react-icons/si'
+import { SiCodewars, SiGmail, SiUpwork, SiWhatsapp } from 'react-icons/si'
 
 const info: IInfo = {
   socials: [
@@ -18,13 +24,13 @@ const info: IInfo = {
     {
       name: 'CodePen',
       icon: AiOutlineCodepen,
-      link: 'https://codepen.io/kean7296'
+      link: 'https://codepen.io/kean7296',
     },
     {
       name: 'Codewars',
       icon: SiCodewars,
-      link: 'https://www.codewars.com/users/ken@27'
-    }
+      link: 'https://www.codewars.com/users/ken@27',
+    },
   ],
   //  {
   //   instagram: 'https://www.instagram.com/kenolitan/',
@@ -37,9 +43,47 @@ const info: IInfo = {
   // },
   user: {
     fullName: 'Kenneth Andales',
-    email: 'keanolida7296@gmail.com',
-    phone: '+639072363667',
+    // email: 'keanolida7296@gmail.com',
+    // phone: '+639072363667',
   },
+  contacts: [
+    {
+      name: 'Gmail',
+      text: 'keanolida7296@gmail.com',
+      icon: SiGmail,
+      link: 'mailto:keanolida7296@gmail.com',
+    },
+    {
+      name: 'Phone Number',
+      text: '+63 (907) 236 3667',
+      icon: FaPhoneAlt,
+      link: 'tel:+639072363667',
+    },
+    {
+      name: 'Upwork',
+      text: 'Kenneth Andales',
+      icon: SiUpwork,
+      link: 'https://www.upwork.com/freelancers/~0135c2e932c50f312f',
+    },
+    {
+      name: 'Discord',
+      text: 'KenNeth#2394',
+      icon: FaDiscord,
+      link: 'https://discord.com/users/1003602086493167686',
+    },
+    {
+      name: 'Viber',
+      text: '+63 (907) 236 3667',
+      icon: FaViber,
+      link: '',
+    },
+    // {
+    //   name: 'Whatsapp',
+    //   text: '+639072363667',
+    //   icon: SiWhatsapp,
+    //   link: 'https://www.upwork.com/freelancers/~0130a2e851c15789e3',
+    // },
+  ],
   landing: {
     intro: `I am a Fullstack Web Developer. I have gained experience as a developer in different companies. Currently, I'm focused on building website, desktop, mobile and API services.`,
   },
@@ -58,6 +102,7 @@ const info: IInfo = {
       year: '2013-2014',
     },
   ],
+  websiteRepo: 'https://github.com/ken-027/react-portfolio'
 }
 
 export default info

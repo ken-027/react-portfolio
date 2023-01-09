@@ -21,6 +21,8 @@ export interface IExperience {
   position: string
   company: string
   location: string
+  workType: 'On-site' | 'WFH' | 'Hybrid'
+  jobStatus: 'Part-time' | 'Fulltime' | 'Freelance'
   date: {
     started: string
     ended: string
@@ -32,14 +34,18 @@ export interface IInfo {
   socials: ISocial[]
   user: {
     fullName: string
-    email: string
-    phone: string
   }
   landing: {
     intro: string
   }
   about: string[]
   education: Education[]
+  contacts: IContact[]
+  websiteRepo: string
+}
+
+export interface IContact extends ISocial {
+  text: string
 }
 
 export type Skill = {
@@ -58,6 +64,7 @@ export interface IWork {
   description: string
   website: string
   repository: string
-  technologies: string[][]
+  technologies: string[]
   images: string[]
+  developmentType: 'Frontend' | 'Backend' | 'Full Stack'
 }

@@ -162,7 +162,7 @@ const Contact = ({
         <motion.p
           {...contentAnimation}
           className='description'>
-          You can reach out with this contact form. I appreciate receiving a
+          You can reach out with this contact form or the links provided in the footer. I appreciate receiving a
           message from you:
         </motion.p>
         <div

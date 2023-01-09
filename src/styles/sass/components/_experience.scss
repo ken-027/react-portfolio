@@ -92,29 +92,35 @@
               }
             }
             &:nth-child(2).active ~ .position .bullet {
-              left: 33%;
+              // left: 66%;
+              left: 50%;
               @include res.laptop {
                 left: -8px;
-                top: 32.7%;
+                top: 50%;
+                // top: 32.7%;
               }
             }
-            &:nth-child(3).active ~ .position .bullet {
-              left: 66.5%;
+            // &:nth-child(3).active ~ .position .bullet {
+            &:nth-child(3).active .bullet {
+              // left: 66.5%;
+              left: 100%;
               @include res.large-mobile {
-                left: 66%;
+                // left: 66%;
+                left: 100%;
               }
               @include res.laptop {
                 left: -8px;
-                top: 65.7%;
+                // top: 65.7%;
+                top: 100%;
               }
             }
-            &:nth-child(4).active .bullet {
-              left: 99.8%;
-              @include res.laptop {
-                left: -8px;
-                top: 99.5%;
-              }
-            }
+            // &:nth-child(4).active .bullet {
+            //   left: 99.8%;
+            //   @include res.laptop {
+            //     left: -8px;
+            //     top: 99.5%;
+            //   }
+            // }
           }
         }
         .bullet-content {
@@ -141,18 +147,23 @@
             padding-top: var.$space_2;
           }
           li {
+            flex: 1;
+            flex-basis: content;
             transition: var.$transition;
             width: max-content;
             opacity: 0%;
             @include res.laptop {
               opacity: 100%;
               color: var.$border-color;
+              flex: none;
             }
             &.show {
               opacity: 100%;
               color: var.$secondary-color;
             }
             a {
+              display: flex;
+              justify-content: center;
               transition: var.$transition;
               &:hover {
                 color: var.$secondary-color;

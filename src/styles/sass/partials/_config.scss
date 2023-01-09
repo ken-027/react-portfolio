@@ -243,3 +243,28 @@ textarea {
     }
   }
 }
+
+.popup {
+  max-width: 200px;
+  font-size: smaller;
+  &.link {
+    max-width: 250px;
+    @include res.laptop {
+      max-width: none;
+    }
+  }
+  @include res.laptop {
+    max-width: none;
+  }
+  * {
+    // color: var.$border-color;
+    // color: var.$white;
+    color: #e7e7e7;
+  }
+}
+
+.popup-title {
+  display: flex;
+  font-weight: 800;
+  flex-direction: column;
+}

@@ -65,7 +65,6 @@ nav {
       content: '';
       width: 10%;
       z-index: 10;
-      // background-color: red;
       @include laptop {
         display: none;
       }

@@ -25,22 +25,22 @@ const Description = ({
       {...contentAnimation}
       className='box'>
       <p>{experience.position}</p>
-      <p className=''>@{experience.company}</p>
+      <p className=''>
+        {experience.jobStatus} ({experience.workType})
+      </p>
+      <p className=''>{experience.company}</p>
       <small>{experience.location}</small>
       <small>
-        {experience.date.started} -{' '}
-        {experience.date.ended}
+        {experience.date.started} - {experience.date.ended}
       </small>
       <ul>
-        {experience.description.map(
-          (description: string, index: number) => (
-            <ListItem
-              key={index}
-              text={description}
-              index={index}
-            />
-          ),
-        )}
+        {experience.description.map((description: string, index: number) => (
+          <ListItem
+            key={index}
+            text={description}
+            index={index}
+          />
+        ))}
       </ul>
     </motion.div>
   )

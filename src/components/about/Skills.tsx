@@ -2,41 +2,9 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { contentAnimation, labelAnimation } from '../../config/animate'
 import { ISkill, Skill } from '../../ts-interfaces'
-import { AiFillStar, AiOutlineStar } from 'react-icons/ai'
+import { Popover } from 'antd'
 
 const Skills = ({ skill }: { skill: Skill }) => {
-  // const PopUp = ({ data }: { data: ISkill }): React.ReactElement => (
-  //   <div className='rating animate__animated animate__fadeIn'>
-  //     <h6>Skills Rating</h6>
-  //     <div className='stars'>
-  //       {[Array(10)].map((x: any, index: number) => {
-  //         return data.rating > index ? (
-  //           <AiFillStar key={index} />
-  //         ) : (
-  //           <AiOutlineStar key={index} />
-  //         )
-  //       })}
-  //       |{data.rating}/10
-  //     </div>
-  //     <p>{data.description}</p>
-  //   </div>
-  // )
-
-  const onHover = (e: any): void => {
-    // let liParent = e?.target.offsetParent
-    // let hoverContainer = liParent.children[1]
-    // document.querySelectorAll('li .rating').forEach((el: Element) => {
-    //   el.classList.remove('show')
-    // })
-    // hoverContainer.classList.add('show')
-  }
-
-  const onHoverOut = (): void => {
-    // document.querySelectorAll('li .rating').forEach((el: Element) => {
-    //   el.classList.remove('show')
-    // })
-  }
-
   return (
     <motion.div
       {...contentAnimation}
@@ -52,19 +20,35 @@ const Skills = ({ skill }: { skill: Skill }) => {
           <motion.li
             {...contentAnimation}
             className=''
-            onMouseLeave={onHoverOut}
             key={index}>
-            <a
-              onMouseOver={onHover}
-              className='ex'
-              data-description={skill.description}>
-              <img
-                src={skill.icon}
-                alt={skill.name}
-              />
-              {skill.name}
-            </a>
-            {/* <PopUp data={skill} /> */}
+            <Popover
+              color={'#E45323'}
+              autoAdjustOverflow
+              // title={`Rating ${skill.rating}`}
+              title={
+                <p className='popup-title'>
+                  {skill.name} <small>Rating {skill.rating}</small>
+                </p>
+              }
+              placement='bottomLeft'
+              overlayClassName='popup skill'
+              content={
+                <div>
+                  <p>{skill.description}</p>
+                </div>
+              }
+              trigger={['hover', 'click']}>
+              <a
+                className='ex'
+                data-description={skill.description}>
+                <img
+                  src={skill.icon}
+                  alt={skill.name}
+                />
+                {skill.name}
+              </a>
+              {/* <PopUp data={skill} /> */}
+            </Popover>
           </motion.li>
         ))}
       </ul>

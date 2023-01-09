@@ -4,13 +4,15 @@ import { motion } from 'framer-motion'
 // import { AnimationOnScroll } from 'react-animation-on-scroll'
 import works from '../shared/works'
 import restAPI from '../shared/restAPI'
+import extraPrograms from '../shared/extraPrograms'
+import projects from '../shared/projects'
 
 import '../styles/sass/components/_work.scss'
 import { IWork } from '../ts-interfaces'
 import { contentAnimation } from '../config/animate'
 import Images from './work/Images'
 import Details from './work/Details'
-import WordCard from './work/WordCard'
+import WorkCard from './work/WorkCard'
 
 const Work = ({
   onViewPort,
@@ -35,7 +37,7 @@ const Work = ({
         <motion.h3
           {...contentAnimation}
           className='description'>
-          Website
+          Websites
         </motion.h3>
         <div className='container'>
           {works.map((work: IWork, index: number) => (
@@ -56,21 +58,44 @@ const Work = ({
               Rest API
             </motion.h3>
             <div className='work-container'>
-              {restAPI.map((api: IWork) => (
-                <WordCard info={api} />
+              {restAPI.map((api, index: number) => (
+                <WorkCard
+                  key={index}
+                  info={api}
+                />
               ))}
             </div>
           </div>
-          <motion.h3
-            {...contentAnimation}
-            className='description'>
-            Extra Programs
-          </motion.h3>
-          <motion.h3
-            {...contentAnimation}
-            className='description'>
-            Projects I have handled
-          </motion.h3>
+          <div className=''>
+            <motion.h3
+              {...contentAnimation}
+              className='description'>
+              Extra Programs
+            </motion.h3>
+            <div className='work-container'>
+              {extraPrograms.map((extra, index: number) => (
+                <WorkCard
+                  key={index}
+                  info={extra}
+                />
+              ))}
+            </div>
+          </div>
+          <div className=''>
+            <motion.h3
+              {...contentAnimation}
+              className='description'>
+              Projects I have handled
+            </motion.h3>
+            <div className='work-container'>
+              {projects.map((project, index: number) => (
+                <WorkCard
+                  key={index}
+                  info={project}
+                />
+              ))}
+            </div>
+          </div>
         </div>
         <motion.div onViewportEnter={() => onViewPort()}></motion.div>
       </div>
