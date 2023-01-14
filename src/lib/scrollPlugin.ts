@@ -1,64 +1,64 @@
-import { ScrollbarPlugin } from 'smooth-scrollbar';
+import { ScrollbarPlugin } from 'smooth-scrollbar'
 
 export class ModalPlugin extends ScrollbarPlugin {
-  static pluginName = 'modal'
+	static pluginName = 'modal'
 
-  static defaultOptions = {
-    open: false,
-  }
+	static defaultOptions = {
+		open: false,
+	}
 
-  transformDelta(delta: any) {
-    return this.options.open ? { x: 0, y: 0 } : delta
-  }
+	transformDelta(delta: any) {
+		return this.options.open ? { x: 0, y: 0 } : delta
+	}
 }
 
 export class AnchorPlugin extends ScrollbarPlugin {
-  static pluginName = 'anchor'
+	static pluginName = 'anchor'
 
-  onHashChange = () => {
-    this.jumpToHash(window.location.hash)
-  }
+	onHashChange = () => {
+		this.jumpToHash(window.location.hash)
+	}
 
-  onClick = (event: any) => {
-    const { target } = event
+	onClick = (event: any) => {
+		const { target } = event
 
-    if (target.tagName !== 'A') {
-      return
-    }
+		if (target.tagName !== 'A') {
+			return
+		}
 
-    const hash = target.getAttribute('href')
+		const hash = target.getAttribute('href')
 
-    if (!hash || hash.charAt(0) !== '#') {
-      return
-    }
+		if (!hash || hash.charAt(0) !== '#') {
+			return
+		}
 
-    this.jumpToHash(hash)
-  }
+		this.jumpToHash(hash)
+	}
 
-  jumpToHash = (hash: any) => {
-    const { scrollbar } = this
+	jumpToHash = (hash: any) => {
+		const { scrollbar } = this
 
-    if (!hash) {
-      return
-    }
+		if (!hash) {
+			return
+		}
 
-    // reset scrollTop
-    scrollbar.containerEl.scrollTop = 0
+		// reset scrollTop
+		scrollbar.containerEl.scrollTop = 0
 
-    scrollbar.scrollIntoView(document.querySelector(hash))
-  }
+		scrollbar.scrollIntoView(document.querySelector(hash))
+	}
 
-  onInit() {
-    this.jumpToHash(window.location.hash)
+	onInit() {
+		this.jumpToHash(window.location.hash)
 
-    window.addEventListener('hashchange', this.onHashChange)
+		window.addEventListener('hashchange', this.onHashChange)
 
-    this.scrollbar.contentEl.addEventListener('click', this.onClick)
-  }
+		this.scrollbar.contentEl.addEventListener('click', this.onClick)
+	}
 
-  onDestory() {
-    window.removeEventListener('hashchange', this.onHashChange)
+	onDestory() {
+		window.removeEventListener('hashchange', this.onHashChange)
 
-    this.scrollbar.contentEl.removeEventListener('click', this.onClick)
-  }
+		this.scrollbar.contentEl.removeEventListener('click', this.onClick)
+	}
 }

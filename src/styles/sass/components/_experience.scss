@@ -151,10 +151,9 @@
             flex-basis: content;
             transition: var.$transition;
             width: max-content;
-            opacity: 0%;
+            color: var.$border-color;
             @include res.laptop {
               opacity: 100%;
-              color: var.$border-color;
               flex: none;
             }
             &.show {
@@ -180,6 +179,12 @@
           @include res.laptop {
             margin-bottom: var.$space_3;
           }
+        }
+
+        @include res.desktop {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
         }
         p:first-child {
           color: var.$secondary-light-color;

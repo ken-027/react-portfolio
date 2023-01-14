@@ -4,7 +4,7 @@
 
 .sidebar {
   // width: 12%;
-  width: 40px;
+  // width: 40px;
   position: fixed;
   left: 0;
   top: 0;
@@ -23,11 +23,15 @@
 
   @include mobile {
     width: 12%;
-    max-width: 40px;
+    max-width: 50px;
+  }
+
+  @include large-mobile {
+    max-width: 60px;
   }
 
   @include tablet {
-    max-width: 60px;
+    max-width: 70px;
   }
   @include desktop {
     max-width: 80px;
@@ -59,13 +63,13 @@
     }
 
     a {
-      font-size: 22px;
+      font-size: 28px;
       transition: $transition;
       @include large-mobile {
-        font-size: 25px;
+        font-size: 28px;
       }
       @include tablet {
-        font-size: 28px;
+        font-size: 30px;
       }
       @include desktop {
         font-size: 33px;

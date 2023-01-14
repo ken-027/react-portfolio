@@ -49,15 +49,21 @@
       flex-direction: column;
       gap: var.$space_14;
 
-      .title {
-        a {
-          display: flex;
-          gap: 0.5rem;
-          align-items: center;
-          svg {
-            font-size: 20px;
+      .title-container {
+        // display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: var.$space_4;
+        .title {
+          a {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            svg {
+              font-size: 20px;
+            }
+            // &:hover svg {
           }
-          // &:hover svg {
           //   transform: scale(1.2);
           // }
         }
@@ -105,6 +111,14 @@
             &:hover {
               transform: scale(1.2);
             }
+
+            @include res.tablet {
+              font-size: 23px;
+            }
+
+            @include res.desktop {
+              font-size: 26px;
+            }
           }
         }
       }
@@ -140,6 +154,23 @@
           flex-direction: column-reverse;
           justify-content: center;
           align-items: center;
+
+          @include res.tablet {
+            flex-direction: row-reverse;
+            align-items: stretch;
+            padding-right: 0;
+          }
+
+          @include res.laptop {
+            padding-top: 0;
+            padding-left: 0;
+            min-height: 300px;
+          }
+
+          @include res.desktop {
+            min-height: 350px;
+          }
+
           // @include res.laptop {
           //   width: 80%;
           //   max-width: 500px;
@@ -150,21 +181,35 @@
           // }
 
           .details {
-            flex-basis: 50%;
+            // flex-basis: 50%;
+            width: 100%;
             @include mix.px(var.$space_4);
             padding-top: var.$space_8;
             padding-bottom: var.$space_8;
-            .title-container {
+            // .title-container {
+            //   display: flex;
+            //   align-items: center;
+            //   justify-content: space-between;
+            //   margin-bottom: var.$space_4;
+            // }
+            @include res.tablet {
+              width: 50%;
               display: flex;
-              align-items: center;
+              flex-direction: column;
               justify-content: space-between;
-              margin-bottom: var.$space_4;
+            }
+
+            @include res.desktop {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
             }
           }
 
           .image-container {
             // max-width: 400px;
             background: var.$white;
+            // backdrop-filter: blur(5px);
             border-bottom: 1px solid var.$border-color;
             flex-basis: 50%;
             // position: relative;
@@ -173,6 +218,10 @@
             // margin: auto;
             // padding-top: 5rem;
             max-width: 100%;
+
+            @include res.tablet {
+              // height: 100%;
+            }
             // @include mix.mx(auto);
             // margin-top: -(var.$space_16);
             // @include res.tablet {
@@ -188,34 +237,70 @@
             // @include desktop {
             //   max-width: 500px;
             // }
+            @include res.tablet {
+              width: 50%;
+            }
             .images {
+              display: flex;
               // height: 200px;
               // display: flex;
               // justify-content: center;
               // align-items: center;
-              @include res.laptop {
-                // min-height: 400px;
+              @include res.tablet {
+                height: 100%;
               }
-              img {
-                object-fit: fill;
-                max-height: 100%;
-                display: block;
-                height: 200px;
+              @include res.laptop {
+                // max-height: 400px;
+              }
+
+              .ant-image {
+                height: 100%;
                 width: 100%;
-                // max-width: 100%;
-                // max-height: 100%;
-                // position: absolute;
-                // max-width: 100%;
-                // display: block;
-                // transition: var.$transition;
-                // &:nth-child(1) {
-                //   width: 90%;
-                // }
-                // &:nth-child(2) {
-                //   width: 30%;
-                //   right: 0%;
-                //   top: 15%;
-                // }
+
+                @include res.tablet {
+                  display: flex;
+                  align-items: center;
+                }
+                img {
+                  object-fit: fill;
+                  max-height: 100%;
+                  max-width: 100%;
+                  display: block;
+                  height: 200px;
+                  width: 100%;
+
+                  @include res.large-mobile {
+                    height: 250px;
+                  }
+
+                  @include res.tablet {
+                    width: 100%;
+                    height: 100%;
+                    max-height: 250px;
+                  }
+
+                  @include res.desktop {
+                    max-height: 350px;
+                  }
+
+                  // @include res.tablet {
+                  //   height: 350px;
+                  // }
+                  // max-width: 100%;
+                  // max-height: 100%;
+                  // position: absolute;
+                  // max-width: 100%;
+                  // display: block;
+                  // transition: var.$transition;
+                  // &:nth-child(1) {
+                  //   width: 90%;
+                  // }
+                  // &:nth-child(2) {
+                  //   width: 30%;
+                  //   right: 0%;
+                  //   top: 15%;
+                  // }
+                }
               }
             }
           }
@@ -263,6 +348,25 @@
             animation-delay: ($i + 1) * 100ms;
           }
         }
+        &:nth-child(even) {
+          @include res.tablet {
+            .box {
+              flex-direction: row;
+            }
+
+            .details {
+              align-items: flex-end;
+            }
+
+            .techno {
+              justify-content: flex-end;
+            }
+
+            .links {
+              flex-direction: row-reverse;
+            }
+          }
+        }
       }
     }
 
@@ -270,19 +374,40 @@
       display: flex;
       flex-direction: column;
       gap: var.$space_8;
+
+      @include res.large-mobile {
+        gap: var.$space_10;
+      }
+
+      @include res.tablet {
+        gap: var.$space_20;
+      }
+
       .work-box {
-        max-width: 700px;
+        max-width: 900px;
         @include mix.box;
         @include mix.px(var.$space_4);
         padding-top: var.$space_8;
         padding-bottom: var.$space_8;
+        width: 100%;
+
+        @include res.tablet {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          width: 90%;
+        }
+
         .title {
           color: var.$secondary-light-color;
           font-size: 1.2em;
-          margin-bottom: var.$space_4;
+          // margin-bottom: var.$space_4;
           display: flex;
           align-items: center;
           justify-content: space-between;
+        }
+        .company {
+          font-size: smaller;
         }
         .techno-container {
           flex-wrap: wrap;
@@ -290,6 +415,46 @@
           gap: var.$space_2;
           p {
             font-size: smaller;
+          }
+        }
+      }
+      .no-project {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        span {
+          gap: var.$space_2;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          img {
+            max-width: 150px;
+            width: 40%;
+            display: block;
+          }
+          .text {
+            // 21406C
+            cursor: default;
+            color: #385a89;
+          }
+        }
+      }
+
+      &:nth-child(even) {
+        @include res.tablet {
+          .work-box {
+            &:nth-child(even) {
+              align-self: flex-end;
+              align-items: flex-end;
+
+              .title-container {
+                text-align: right;
+                .title {
+                  justify-content: right;
+                }
+              }
+            }
           }
         }
       }

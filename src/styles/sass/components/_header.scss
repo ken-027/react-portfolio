@@ -46,6 +46,7 @@
 
   p:last-child {
     animation-delay: 1100ms;
+    font-size: larger;
     @include res.laptop {
       max-width: 90%;
       font-size: 30px;

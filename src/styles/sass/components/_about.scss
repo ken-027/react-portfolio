@@ -132,8 +132,9 @@
         li {
           width: fit-content;
           position: relative;
-          cursor: default;
+          cursor: pointer;
           display: flex;
+          width: 50%;
           align-items: center;
           &::before {
             cursor: default;
@@ -152,10 +153,15 @@
             }
           }
 
+          @include res.desktop {
+            width: 100%;
+          }
+
           a {
-            cursor: default;
+            cursor: pointer;
             display: flex;
             align-items: center;
+            width: 100%;
             gap: var.$space_4;
             img {
               // border-radius: 0.2rem;

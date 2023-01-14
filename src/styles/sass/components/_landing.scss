@@ -17,8 +17,11 @@
         overflow-y: hidden;
         overflow-x: hidden;
         // @include px($space_4);
+        @include res.large-mobile {
+          margin-left: 50px;
+        }
         @include res.tablet {
-          margin-left: 60px;
+          margin-left: 70px;
           width: calc(100% - 60px);
         }
 

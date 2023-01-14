@@ -1,6 +1,7 @@
 @use './variables' as var;
 @use './mixin' as mix;
 @use './responsive' as res;
+// @use './animation' as animate;
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;300;400;500;600;700;800;900&display=swap');
 
 * {
@@ -181,7 +182,7 @@ h3 {
   }
   @include res.laptop {
     padding-left: var.$space_6;
-    padding-right: var.$space_8;
+    padding-right: var.$space_10;
   }
   @include res.desktop {
     max-width: 1400px;
@@ -196,6 +197,15 @@ h3 {
   @include mix.py(var.$space_16);
   // @include mix.px(var.$space_4);
   @include mix.padding-x;
+
+  @include res.tablet {
+    padding-left: var.$space_6;
+  }
+
+  @include res.laptop {
+    padding-right: var.$space_28;
+  }
+
   border-top: 1px solid var.$border-color;
 }
 
@@ -249,7 +259,7 @@ textarea {
   font-size: smaller;
   &.link {
     max-width: 250px;
-    @include res.laptop {
+    @include res.tablet {
       max-width: none;
     }
   }
@@ -267,4 +277,52 @@ textarea {
   display: flex;
   font-weight: 800;
   flex-direction: column;
+}
+
+.scrollTop {
+  background-color: var.$border-color;
+  border-radius: var.$space_2;
+  color: var.$secondary-light-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var.$space_1;
+  font-size: 30px;
+  z-index: 10;
+  position: fixed;
+  bottom: -(var.$space_14);
+  right: var.$space_5;
+  width: 50px;
+  aspect-ratio: 1;
+  border: 1px solid #264672;
+  // transition: var.$transition;
+  transition-property: all;
+  transition-timing-function: linear;
+  transition-delay: 300ms;
+
+  @include res.large-mobile {
+    right: var.$space_7;
+  }
+
+  &.show {
+    // transform: translateY(1.25rem);
+    bottom: var.$space_5;
+    // @include large-mobile {
+
+    // }
+  }
+  // &.hide {
+  //   bottom: -100%;
+  // }
+  // filter: drop-shadow(0px 1px 10px var.$border-color);
+  &:hover {
+    // color: var.$white !important;
+    color: var.$secondary-light-color !important;
+  }
+  svg {
+    animation: slideUp 1s ease-in-out infinite;
+  }
+  @include res.laptop {
+    display: none;
+  }
 }

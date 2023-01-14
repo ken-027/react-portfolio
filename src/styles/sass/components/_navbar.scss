@@ -33,7 +33,7 @@ nav {
   .menu-container {
     padding-top: $space_2;
     @include px($space_4);
-    padding-left: calc(40px + $space_4);
+    padding-left: calc(50px + $space_4);
     text-align: start;
     position: fixed;
     inset: 0;
@@ -46,8 +46,12 @@ nav {
     background-color: $primary-light-color;
     transform: translateX(100%);
     transition: $transition;
-    @include tablet {
+    @include large-mobile {
       padding-left: calc(60px + $space_4);
+    }
+
+    @include tablet {
+      padding-left: calc(80px + $space_4);
     }
     @include laptop {
       padding-left: $space_8;
