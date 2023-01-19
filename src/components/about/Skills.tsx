@@ -2,7 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { contentAnimation, labelAnimation } from '../../config/animate'
 import { ISkill, Skill } from '../../ts-interfaces'
-import { Popover } from 'antd'
+// import { Popover } from 'antd'
 
 const Skills = ({ skill }: { skill: Skill }) => {
 	return (
@@ -21,7 +21,7 @@ const Skills = ({ skill }: { skill: Skill }) => {
 						{...contentAnimation}
 						className=''
 						key={index}>
-						<Popover
+						{/* <Popover
 							color={'#E45323'}
 							autoAdjustOverflow
 							arrowPointAtCenter
@@ -38,18 +38,17 @@ const Skills = ({ skill }: { skill: Skill }) => {
 									<p>{skill.description}</p>
 								</div>
 							}
-							trigger={['hover', 'click']}>
-							<a
-								className='ex'
-								data-description={skill.description}>
-								<img
-									src={skill.icon}
-									alt={skill.name}
-								/>
-								{skill.name}
-							</a>
-							{/* <PopUp data={skill} /> */}
-						</Popover>
+							trigger={['hover', 'click']}> */}
+						<a
+							className='ex'
+							data-description={skill.description}>
+							<img
+								src={skill.icon}
+								alt={skill.name}
+							/>
+							{skill.name}
+						</a>
+						{/* </Popover> */}
 					</motion.li>
 				))}
 			</ul>

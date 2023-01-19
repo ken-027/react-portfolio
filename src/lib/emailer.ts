@@ -5,7 +5,7 @@ const emailer = (
 	subject: string,
 	message: string,
 	fromEmail: string,
-): void | boolean => {
+) => {
 	const toEmail = 'keanolida7296@gmail.com'
 	const options = {
 		method: 'POST',
@@ -19,8 +19,11 @@ const emailer = (
 			.replace(/(\r\n|\n|\r)/gm, ' ')}"}]}`,
 	}
 
-	fetch(rapidAPIURL, options)
-		.then((response) => response.json)
+	return fetch(rapidAPIURL, options)
+		.then((response) => { 
+			console.log(response)
+			return response.json
+		})
 		.then((response) => console.log(response))
 		.then((err) => console.error(err))
 }

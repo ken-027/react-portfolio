@@ -52,7 +52,7 @@ const Work = ({
 									{...contentAnimation}
 									className='row'>
 									<div className='box'>
-										<Details info={work} />
+										<Details totalSamples={work.images.length} info={work} />
 										<Images info={work} />
 									</div>
 								</motion.div>

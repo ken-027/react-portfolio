@@ -47,9 +47,7 @@ const Experience = ({ onViewPort }: { onViewPort: () => void | Function }) => {
 				<motion.p
 					{...contentAnimation}
 					className='description'>
-          Following companies that I'd worked for, I started working in 2018,
-          stopped when it has a pandemic, and then I'd continue my career in
-          2022:
+					Following companies that I'd worked for, I started working in 2018 and present:
 				</motion.p>
 				<div className='content'>
 					<motion.div

@@ -85,12 +85,12 @@ const info: IInfo = {
 		// },
 	],
 	landing: {
-		intro: 'I am a Full Stack Developer. I have gained experience as a developer in different companies. Currently, I\'m focused on building website, desktop, mobile and API services.',
+		intro: 'I am a Full Stack Developer. I have gained experience as a developer. Currently, I\'m focused on building website, desktop, mobile and API services.',
 	},
 	about: [
 		'Hello, My name is Kenneth, and I\'d love coding challenges, learning trend technologies and programming languages.',
 		'My interest in programming started months after I shifted my course from a BS in Architecture to a BS in Information Technology. When I answered programming activities in our school, I got motivated bit by bit until I roled as a programmer in our Thesis group and developed a sales and inventory system.',
-		'Fast-forward to today, I\'ve gained experience as a developer, and now my main focus these days is learning trending technologies and freelancing while I\'m still waiting and looking for an oppurtunity to work in growing companies.',
+		'Fast-forward to today, I\'ve gained experience as a developer, and now my main focus these days is learning trending technologies and freelancing while I\'m still waiting and looking for an opportunity to work and continue to grow my career as a developer',
 	],
 	education: [
 		{

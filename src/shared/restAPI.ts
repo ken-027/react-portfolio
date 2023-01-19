@@ -18,7 +18,7 @@ const restAPI: Omit<IWork, 'website' | 'images'>[] = [
 		title: 'Recipe',
 		description: 'This is description',
 		developmentType: 'Backend',
-		repository: `${info.socials[0].link}/node-js`,
+		repository: `${info.socials[0].link}/express-recipe`,
 		technologies: [
 			skills.language.skills[3].name,
 			skills.backend.skills[0].name,
@@ -29,7 +29,7 @@ const restAPI: Omit<IWork, 'website' | 'images'>[] = [
 		title: 'User',
 		description: 'This is description',
 		developmentType: 'Backend',
-		repository: `${info.socials[0].link}/node-js`,
+		repository: `${info.socials[0].link}/express-user`,
 		technologies: [
 			skills.language.skills[3].name,
 			skills.backend.skills[0].name,

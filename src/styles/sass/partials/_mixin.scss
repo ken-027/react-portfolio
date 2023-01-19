@@ -38,10 +38,12 @@
 @mixin padding-x {
   @include px(var.$space_4);
   @include res.large-mobile {
-    @include px(var.$space_5);
+    @include px(var.$space_6);
+    padding-right: var.$space_2;
   }
   @include res.tablet {
     @include px(var.$space_8);
+    padding-right: var.$space_10;
   }
   @include res.laptop {
     padding-right: var.$space_24;

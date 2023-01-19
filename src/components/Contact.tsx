@@ -92,7 +92,7 @@ const Contact = ({
 	const sendEmail = (e: any): void | boolean => {
 		e.preventDefault()
 
-		// if (isSending || isEmptyFields()) return false
+		if (isSending || isEmptyFields()) return false
 
 		const { email, subject, message, name } = form.current
 
@@ -100,46 +100,6 @@ const Contact = ({
 		setisSending(true)
 
 		emailer(name.value, subject.value, message.value, email.value)
-
-		// emailjs.sendForm(serviceId, templateId, form.current, publicKey).then(
-		//   () => {
-		//     // console.log(result.text)
-		//     emailjs
-		//       .sendForm(
-		//         serviceDefaultId,
-		//         templateDefaultId,
-		//         form.current,
-		//         publicKey,
-		//       )
-		//       .then(
-		//         () => {
-		//           // console.log(result.text)
-		//           clearFields()
-		//           setbtnText('Message Sent')
-		//           setTimeout(() => {
-		//             setbtnText('Send Message')
-		//             setisSending(false)
-		//           }, 5000)
-		//         },
-		//         () => {
-		//           // console.log(error.text)
-		//           setbtnText('Failed To Send')
-		//           setTimeout(() => {
-		//             setbtnText('Send Message')
-		//           }, 3000)
-		//           setisSending(false)
-		//         },
-		//       )
-		//   },
-		//   () => {
-		//     // console.log(error.text)
-		//     setbtnText('Failed To Send')
-		//     setTimeout(() => {
-		//       setbtnText('Send Message')
-		//     }, 3000)
-		//     setisSending(false)
-		//   },
-		// )
 	}
 
 	return (

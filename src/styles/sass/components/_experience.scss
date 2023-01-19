@@ -181,10 +181,18 @@
           }
         }
 
-        @include res.desktop {
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
+        @include res.tablet {
+          min-height: 630px;
+        }
+
+        @include res.laptop {
+          min-height: 550px;
+        }
+
+        @include res.tablet {
+          // display: flex;
+          // flex-direction: column;
+          // justify-content: space-between;
         }
         p:first-child {
           color: var.$secondary-light-color;

@@ -3,12 +3,13 @@ import { IWork } from '../../ts-interfaces'
 import { FaShareSquare, FaGithub } from 'react-icons/fa'
 import { Popover } from 'antd'
 
-const Details = ({ info }: { info: IWork }) => {
+const Details = ({ info, totalSamples }: { info: IWork, totalSamples: number }) => {
 	const hasWebsite: boolean = info.website.trim() ? true : false
 	const hasRepo: boolean = info.repository.trim() ? true : false
 
 	return (
 		<div className='details'>
+			<small className='total-samples'>{totalSamples} sample images</small>
 			<p className='title'>{info.title}</p>
 			<p className='type'>{`${info.developmentType} Development`}</p>
 			<p>{info.description}</p>

@@ -132,7 +132,7 @@
         li {
           width: fit-content;
           position: relative;
-          cursor: pointer;
+          cursor: default;
           display: flex;
           width: 50%;
           align-items: center;
@@ -158,7 +158,7 @@
           }
 
           a {
-            cursor: pointer;
+            cursor: default;
             display: flex;
             align-items: center;
             width: 100%;

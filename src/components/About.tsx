@@ -4,7 +4,6 @@ import { motion } from 'framer-motion'
 import skills from '../shared/skills'
 import info from '../shared/info'
 
-import Profile from '../assets/profile.png'
 import Graduated from '../assets/graduated.png'
 
 import '../styles/sass/components/_about.scss'
@@ -53,7 +52,7 @@ const About = ({
 						<Image
 							// width={200}
 							alt='Profile'
-							src={Profile}
+							src='./Profile.png'
 						/>
 					</motion.div>
 				</div>

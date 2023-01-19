@@ -11,6 +11,7 @@ nav {
   // left: 0;
   // right: 0;
   inset: 0;
+  bottom: unset;
   overflow: hidden;
   @include laptop {
     position: relative;

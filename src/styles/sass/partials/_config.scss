@@ -291,7 +291,7 @@ textarea {
   z-index: 10;
   position: fixed;
   bottom: -(var.$space_14);
-  right: var.$space_5;
+  right: calc(var.$space_5 + 3px);
   width: 50px;
   aspect-ratio: 1;
   border: 1px solid #264672;
