@@ -57,6 +57,7 @@
 
       span.swiper-pagination-bullet.swiper-pagination-bullet-active {
         background-color: var.$secondary-light-color;
+        border: thin solid var.$secondary-dark-color;
         opacity: 1;
       }
 
@@ -250,6 +251,9 @@
         }
         &:nth-child(even) {
           @include res.tablet {
+            p {
+              text-align: right;
+            }
             .box {
               flex-direction: row;
             }
@@ -353,6 +357,9 @@
                 .title {
                   justify-content: right;
                 }
+              }
+              p {
+                text-align: right;
               }
             }
           }

@@ -28,9 +28,9 @@ const WorkCard = ({
 			className='work-box box'>
 			<div className='title-container'>
 				<p className='title'>{info.title}</p>
-				{info.developmentType && info.development && (
+				{(info.developmentType || info.development) && (
 					<p>
-						{`${info.developmentType} Development`} ({info.development})
+						{`${info.developmentType} Development`} {info.development && `(${info.development})`}
 					</p>
 				)}
 				{info.applicationType && <p className=''>{`${info.applicationType} Application`}</p>}

@@ -37,9 +37,12 @@
 
 @mixin padding-x {
   @include px(var.$space_4);
+  @include res.mobile {
+    padding-right: var.$space_3;
+  }
   @include res.large-mobile {
     @include px(var.$space_6);
-    padding-right: var.$space_2;
+    padding-right: var.$space_4;
   }
   @include res.tablet {
     @include px(var.$space_8);

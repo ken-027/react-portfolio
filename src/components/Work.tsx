@@ -90,7 +90,7 @@ const Work = ({
 										<motion.p
 											className='text'
 											{...contentAnimation}>
-                      No destkop made
+                      No application made
 										</motion.p>
 									</Popover>
 								)}
@@ -128,7 +128,7 @@ const Work = ({
 										<motion.p
 											className='text'
 											{...contentAnimation}>
-                      No mobile made
+                      No application made
 										</motion.p>
 									</Popover>
 								)}

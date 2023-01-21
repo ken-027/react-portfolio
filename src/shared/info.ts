@@ -90,7 +90,7 @@ const info: IInfo = {
 	about: [
 		'Hello, My name is Kenneth, and I\'d love coding challenges, learning trend technologies and programming languages.',
 		'My interest in programming started months after I shifted my course from a BS in Architecture to a BS in Information Technology. When I answered programming activities in our school, I got motivated bit by bit until I roled as a programmer in our Thesis group and developed a sales and inventory system.',
-		'Fast-forward to today, I\'ve gained experience as a developer, and now my main focus these days is learning trending technologies and freelancing while I\'m still waiting and looking for an opportunity to work and continue to grow my career as a developer',
+		'Fast-forward to today, I\'ve gained experience as a developer, and now my main focus these days is to develop different kinds of applications like desktop and mobile. Learning trend technologies is my habit while I\'m still waiting and looking for an opportunity to work and continue to grow my career as a developer.',
 	],
 	education: [
 		{

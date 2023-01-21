@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { BiMenuAltRight } from 'react-icons/bi'
+import { HiOutlineMenuAlt3 } from 'react-icons/hi'
 import { AiOutlineClose } from 'react-icons/ai'
 import { FaDownload } from 'react-icons/fa'
 import '../styles/sass/components/_navbar.scss'
@@ -66,7 +66,7 @@ const Nav = (): React.ReactElement => {
 				animate={{ x: 0, opacity: 1 }}
 				className=''
 				onClick={toggleNav}>
-				<BiMenuAltRight size={45} />
+				<HiOutlineMenuAlt3 size={40} />
 			</motion.button>
 			{isShow && screenWidth < 1026 ? (
 				<div className={'menu-container show'}>

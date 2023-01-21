@@ -175,7 +175,14 @@ h3 {
 
 .section-content {
   max-width: 1100px;
-  padding-left: var.$space_2;
+
+  @include res.mobile {
+    padding-left: var.$space_2;
+  }
+
+  @include res.large-mobile {
+    // padding-left: var.$space_6;
+  }
   @include res.tablet {
     padding-top: var.$space_6;
     padding-bottom: var.$space_10;
@@ -216,6 +223,7 @@ textarea {
   color: var.$secondary-color;
   background-color: var.$primary-color;
   font-size: 1em;
+  transition: var.$transition;
   width: 100%;
   @include mix.px(var.$space_4);
   @include mix.py(var.$space_3);
@@ -224,6 +232,16 @@ textarea {
   }
   &::placeholder {
     color: #276472;
+  }
+  &:focus {
+    &::placeholder {
+      color: var.$white;
+    }
+    border-color: var.$white;
+    color: var.$white;
+  }
+  &.error {
+    border-color: var.$red;
   }
 }
 
@@ -291,7 +309,6 @@ textarea {
   z-index: 10;
   position: fixed;
   bottom: -(var.$space_14);
-  right: calc(var.$space_5 + 3px);
   width: 50px;
   aspect-ratio: 1;
   border: 1px solid #264672;
@@ -299,9 +316,17 @@ textarea {
   transition-property: all;
   transition-timing-function: linear;
   transition-delay: 300ms;
+  right: var.$space_3_5;
+  @include res.mobile {
+    right: calc(var.$space_5 - 1px);
+  }
 
   @include res.large-mobile {
-    right: var.$space_7;
+    right: calc(var.$space_6 + 3px);
+  }
+  
+  @include res.tablet {
+    right: calc(var.$space_6 + 5px);
   }
 
   &.show {

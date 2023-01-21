@@ -16,16 +16,13 @@ const emailer = (
 		},
 		body: `{"personalizations":[{"to":[{"email":"${toEmail}"}],"subject":"${subject.trim()}"}],"from":{"name":"Portfolio | ${name.trim()}","email":"${fromEmail.trim()}"},"content":[{"type":"text/plain","value":"${message
 			.trim()
-			.replace(/(\r\n|\n|\r)/gm, ' ')}"}]}`,
+			.replace(/(\r\n|\n|\r)/gm, ' ') || 'No content'}"}]}`,
 	}
 
 	return fetch(rapidAPIURL, options)
-		.then((response) => { 
-			console.log(response)
-			return response.json
-		})
+		.then((response) => response.json)
 		.then((response) => console.log(response))
-		.then((err) => console.error(err))
+		.catch((err) => console.error(err))
 }
 
 export default emailer

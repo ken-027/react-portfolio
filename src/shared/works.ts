@@ -7,8 +7,7 @@ import { workOne, workThree, workTwo, workFour, workFive } from './images'
 const works: IWork[] = [
 	{
 		title: 'ECommerce Backend Website',
-		description:
-      'This application has inventory, orders, email templating, showing content for pages and menus, blogs, users, and settings management. It also has printing data for pdf and excels',
+		description: 'An e-commerce website that manages records of items, orders, blogs, etc',
 		website: '',
 		repository: `${info.socials[0].link}/laravel-ecommerce`,
 		developmentType: 'Full Stack',
@@ -21,11 +20,12 @@ const works: IWork[] = [
 			skills.backend.skills[2].name,
 			skills.database.skills[1].name,
 		],
-		images: workOne
+		images: workOne,
 	},
 	{
 		title: 'Job Posting Site',
-		description: 'This is a simple posting website and has uploading and authentication',
+		description:
+      'A simple posting website that has image uploading, authentication, authorization, etc',
 		website: 'https://findeasyjob.herokuapp.com/',
 		repository: `${info.socials[0].link}/laravelfindeasyjob`,
 		developmentType: 'Full Stack',
@@ -42,7 +42,8 @@ const works: IWork[] = [
 	},
 	{
 		title: 'Simple CRUD Invoice',
-		description: 'This is a simple CRUD that has a simple algorithm and can insert multiple items via submission',
+		description:
+      'A simple Create, Read, Update, and Delete (CRUD) Application that has a simple algorithm and can insert multiple items via submission',
 		website: '',
 		repository: `${info.socials[0].link}/laravelinvoicecrud`,
 		developmentType: 'Full Stack',
@@ -56,11 +57,11 @@ const works: IWork[] = [
 			skills.backend.skills[2].name,
 			skills.database.skills[1].name,
 		],
-		images: workThree
+		images: workThree,
 	},
 	{
 		title: 'Wilson Works Static Website',
-		description: 'This is a simple static website for Wilson Works',
+		description: 'A simple static website of Wilson Works',
 		website: 'https://wiwosite.herokuapp.com/',
 		repository: `${info.socials[0].link}/wiwosite`,
 		developmentType: 'Frontend',
@@ -71,11 +72,11 @@ const works: IWork[] = [
 			skills.frontend.skills[1].name,
 			skills.frontend.skills[3].name,
 		],
-		images: workFour
+		images: workFour,
 	},
 	{
 		title: 'Libre Website',
-		description: 'This is a simple static website for Libre app',
+		description: 'A simple static website of Libre website',
 		website: '',
 		repository: `${info.socials[0].link}/libre-site`,
 		developmentType: 'Frontend',
@@ -87,7 +88,7 @@ const works: IWork[] = [
 			skills.frontend.skills[1].name,
 			skills.frontend.skills[3].name,
 		],
-		images: workFive
+		images: workFive,
 	},
 ]
 

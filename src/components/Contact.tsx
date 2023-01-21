@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import emailjs from '@emailjs/browser'
 
 import { FiSend } from 'react-icons/fi'
 import { TiWarning } from 'react-icons/ti'
@@ -40,6 +39,7 @@ const ErrorText = ({ content }: { content: string }): React.ReactElement => {
 const Contact = ({
 	onViewPort,
 }: {
+  // eslint-disable-next-line @typescript-eslint/ban-types
   onViewPort: () => void | Function
 }): React.ReactElement => {
 	const form: React.MutableRefObject<any> = useRef(null)
@@ -52,6 +52,7 @@ const Contact = ({
 		message: '',
 	})
 
+	// eslint-disable-next-line @typescript-eslint/no-empty-function
 	useEffect(() => {}, [])
 
 	const clearFields = () => {
@@ -89,17 +90,30 @@ const Contact = ({
 		return isEmptyName || isEmptySubject || isEmptyEmail
 	}
 
-	const sendEmail = (e: any): void | boolean => {
+	const sendEmail = async (e: any) => {
 		e.preventDefault()
 
 		if (isSending || isEmptyFields()) return false
 
 		const { email, subject, message, name } = form.current
 
-		setbtnText('Sending ...')
-		setisSending(true)
+		try {
+			setbtnText('Sending ...')
+			setisSending(true)
 
-		emailer(name.value, subject.value, message.value, email.value)
+			await emailer(name.value, subject.value, message.value, email.value)
+		} catch (err) {
+			// setisSending(false)
+			// setbtnText('Send Message')
+			console.error(err)
+		} finally {
+			clearFields()
+			setbtnText('Message Sent')
+			setTimeout(() => {
+				setbtnText('Send Message')
+				setisSending(false)
+			}, 5000)
+		}
 	}
 
 	return (
@@ -135,6 +149,7 @@ const Contact = ({
 											type='text'
 											placeholder='Your Name'
 											name='name'
+											className={`${errors.name && 'error'}`}
 										/>
 									</div>
 									{errors.name ? (
@@ -153,6 +168,7 @@ const Contact = ({
 											type='text'
 											placeholder='Your Subject'
 											name='subject'
+											className={`${errors.subject && 'error'}`}
 										/>
 									</div>
 									{errors.subject ? (
@@ -171,6 +187,7 @@ const Contact = ({
 											type='email'
 											placeholder='Your Email'
 											name='email'
+											className={`${errors.email && 'error'}`}
 										/>
 									</div>
 									{errors.email ? (
