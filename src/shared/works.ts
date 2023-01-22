@@ -2,7 +2,7 @@ import skills from './skills'
 import info from './info'
 import { IWork } from '../ts-interfaces'
 
-import { workOne, workThree, workTwo, workFour, workFive } from './images'
+import { workOne, workThree, workTwo, workFour, workFive, workSix } from './images'
 
 const works: IWork[] = [
 	{
@@ -89,6 +89,23 @@ const works: IWork[] = [
 			skills.frontend.skills[3].name,
 		],
 		images: workFive,
+	},
+	{
+		title: 'ClickMe Application',
+		description: 'A simple click me react application integrated with laravel api',
+		website: '',
+		repository: `${info.socials[0].link}/reactlaravel-clickme`,
+		developmentType: 'Full Stack',
+		technologies: [
+			skills.language.skills[0].name,
+			skills.language.skills[1].name,
+			skills.language.skills[2].name,
+			skills.language.skills[3].name,
+			skills.language.skills[4].name,
+			skills.frontend.skills[3].name,
+			skills.backend.skills[2].name,
+		],
+		images: workSix,
 	},
 ]
 

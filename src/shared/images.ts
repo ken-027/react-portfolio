@@ -88,6 +88,9 @@ import WorkFive20 from '../assets/work5/20.png'
 import WorkFive21 from '../assets/work5/21.png'
 import WorkFive22 from '../assets/work5/22.png'
 
+import WorkSix1 from '../assets/work6/1.png'
+import WorkSix2 from '../assets/work6/2.png'
+
 export const workOne = [
 	WorkOne1,
 	WorkOne2,
@@ -187,3 +190,5 @@ export const workFive = [
 	WorkFive21,
 	WorkFive22,
 ]
+
+export const workSix = [WorkSix1, WorkSix2]
