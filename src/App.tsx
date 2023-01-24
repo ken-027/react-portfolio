@@ -11,7 +11,7 @@ const NotFound = lazy(() => import('./pages/error/NotFound'))
 const App = (): React.ReactElement => {
 	return (
 		<Suspense fallback={<Loading />}>
-			<BrowserRouter>
+			<BrowserRouter basename='/'>
 				<Routes>
 					<Route
 						path='*'

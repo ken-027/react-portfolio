@@ -62,7 +62,7 @@ const works: IWork[] = [
 	{
 		title: 'Wilson Works Static Website',
 		description: 'A simple static website of Wilson Works',
-		website: 'https://wiwosite.herokuapp.com/',
+		website: 'https://kenneth-andales.github.io/wilson-works',
 		repository: `${info.socials[0].link}/wiwosite`,
 		developmentType: 'Frontend',
 		technologies: [
@@ -77,7 +77,7 @@ const works: IWork[] = [
 	{
 		title: 'Libre Website',
 		description: 'A simple static website of Libre website',
-		website: '',
+		website: 'https://kenneth-andales.github.io/libre',
 		repository: `${info.socials[0].link}/libre-site`,
 		developmentType: 'Frontend',
 		technologies: [
