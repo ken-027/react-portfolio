@@ -29,6 +29,11 @@ const Images = ({ info }: { info: IWork }) => {
 									className='img'
 									src={image}
 									alt={info.title}
+									preview={{
+										scaleStep: 0.1,
+										destroyOnClose: true,
+										// src: './Profile.png'
+									}}
 								/>
 							</div>
 						</SwiperSlide>

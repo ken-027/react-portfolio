@@ -56,6 +56,7 @@ const About = ({
 							src='./Profile.png'
 							preview={{
 								scaleStep: 0.1,
+								destroyOnClose: true,
 								// src: './Profile.png'
 							}}
 						/>
