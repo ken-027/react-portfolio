@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-types */
 import React from 'react'
 import { motion } from 'framer-motion'
 
@@ -53,6 +54,10 @@ const About = ({
 							// width={200}
 							alt='Profile'
 							src='./Profile.png'
+							preview={{
+								scaleStep: 0.1,
+								// src: './Profile.png'
+							}}
 						/>
 					</motion.div>
 				</div>

@@ -1,12 +1,14 @@
 {
   "name": "Ken's Portfolio",
-  "short_name": "kensportfolio",
-  "display": "browser",
+  "short_name": "Ken's Portfolio",
+  "display": "standalone",
+  "display_override": ["window-control-overlay", "minimal-ui"],
   "start_url": "/",
   "background_color": "#18263A",
+  "theme_color": "#18263A",
   "icons": [
     {
-      "src": "./res/icon-256.png",
+      "src": "./icon-256.png",
       "sizes": "256x256"
     },
     {
