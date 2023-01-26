@@ -104,6 +104,7 @@ const works: IWork[] = [
 			skills.language.skills[4].name,
 			skills.frontend.skills[3].name,
 			skills.backend.skills[2].name,
+			skills.database.skills[3].name,
 		],
 		images: workSix,
 	},

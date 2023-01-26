@@ -3,8 +3,10 @@ import {
 	FaLinkedinIn,
 	FaGithub,
 	FaPhoneAlt,
-	FaViber,
+	// FaViber,
 	FaDiscord,
+	// FaWhatsapp,
+	FaSkype
 } from 'react-icons/fa'
 import { AiOutlineCodepen } from 'react-icons/ai'
 import { SiCodewars, SiGmail, SiUpwork, SiWhatsapp } from 'react-icons/si'
@@ -69,19 +71,26 @@ const info: IInfo = {
 			name: 'Discord',
 			text: 'KenNeth#2394',
 			icon: FaDiscord,
+
 			link: 'https://discord.com/users/1003602086493167686',
 		},
 		{
-			name: 'Viber',
+			name: 'Skype',
+			text: 'Kenneth Andales',
+			icon: FaSkype,
+			link: 'https://join.skype.com/invite/xogJWKdJvCa9',
+		},
+		{
+			name: 'Whatsapp',
 			text: '+63 (907) 236 3667',
-			icon: FaViber,
-			link: '',
+			icon: SiWhatsapp,
+			link: 'https://wa.me/639072363667',
 		},
 		// {
-		//   name: 'Whatsapp',
-		//   text: '+639072363667',
-		//   icon: SiWhatsapp,
-		//   link: 'https://www.upwork.com/freelancers/~0130a2e851c15789e3',
+		// 	name: 'Viber',
+		// 	text: '+63 (907) 236 3667',
+		// 	icon: FaViber,
+		// 	link: '',
 		// },
 	],
 	landing: {

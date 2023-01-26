@@ -1,0 +1,17 @@
+{
+  "name": "Ken's Portfolio",
+  "short_name": "kensportfolio",
+  "display": "browser",
+  "start_url": "/",
+  "background_color": "#18263A",
+  "icons": [
+    {
+      "src": "./res/icon-256.png",
+      "sizes": "256x256"
+    },
+    {
+      "src": "./icon-128.png",
+      "sizes": "128x128"
+    }
+  ]
+}

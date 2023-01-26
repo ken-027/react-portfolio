@@ -12,10 +12,11 @@ import express from '../assets/express.png'
 import laravel from '../assets/laravel.png'
 import codeigniter from '../assets/codeigniter.png'
 import mongo from '../assets/mongo.png'
+import postgres from '../assets/postgresql.png'
 import mysql from '../assets/mysql.png'
 import typescript from '../assets/typescript.png'
 import python from '../assets/python.png'
-// import sqlite from '../assets/sqlite.png'
+import sqlite from '../assets/sqlite.png'
 import vb from '../assets/vb.png'
 import rust from '../assets/rust.png'
 import dotnet from '../assets/dotnet.png'
@@ -167,12 +168,18 @@ const skills: ISkills = {
 				rating: 8,
 				icon: mysql,
 			},
-			// {
-			// 	name: 'SQLite',
-			// 	description: 'This is a sqlite',
-			// 	rating: 7,
-			// 	icon: sqlite,
-			// },
+			{
+				name: 'SQLite',
+				description: 'This is a sqlite',
+				rating: 7,
+				icon: sqlite,
+			},
+			{
+				name: 'PostgreSQL',
+				description: 'This is a postgresql',
+				rating: 5,
+				icon: postgres,
+			},
 		],
 	},
 }

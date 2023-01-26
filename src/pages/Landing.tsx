@@ -27,10 +27,11 @@ const Landing = (): React.ReactElement => {
 
 	useEffect(() => {
 		if (!isLoading) {
+			// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 			const scroll = document.getElementById('scroll-container')! as HTMLElement
 			// const scrollTop = document.getElementById('scrollTop')! as HTMLElement
 			const scrollbar = Scrollbar.init(scroll, {
-				damping: 0.08,
+				damping: 0.05,
 				renderByPixels: true,
 				plugins: {
 					overscroll: {
