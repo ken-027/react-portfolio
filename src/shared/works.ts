@@ -91,11 +91,11 @@ const works: IWork[] = [
 		images: workFive,
 	},
 	{
-		title: 'ClickMe Application',
-		description: 'A simple click me react application integrated with laravel api',
-		website: '',
-		repository: `${info.socials[0].link}/reactlaravel-clickme`,
-		developmentType: 'Full Stack',
+		title: 'Educat Landing Page',
+		description: 'A simple static website of educat learning system',
+		website: 'https://kenneth-andales.github.io/educat',
+		repository: `${info.socials[0].link}/educat-landing`,
+		developmentType: 'Frontend',
 		technologies: [
 			skills.language.skills[0].name,
 			skills.language.skills[1].name,

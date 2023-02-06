@@ -90,6 +90,18 @@ import WorkFive22 from '../assets/work5/22.png'
 
 import WorkSix1 from '../assets/work6/1.png'
 import WorkSix2 from '../assets/work6/2.png'
+import WorkSix3 from '../assets/work6/3.png'
+import WorkSix4 from '../assets/work6/4.png'
+import WorkSix5 from '../assets/work6/5.png'
+import WorkSix6 from '../assets/work6/6.png'
+import WorkSix7 from '../assets/work6/7.png'
+import WorkSix8 from '../assets/work6/8.png'
+import WorkSix9 from '../assets/work6/9.png'
+import WorkSix10 from '../assets/work6/10.png'
+import WorkSix11 from '../assets/work6/11.png'
+import WorkSix12 from '../assets/work6/12.png'
+import WorkSix13 from '../assets/work6/13.png'
+import WorkSix14 from '../assets/work6/14.png'
 
 export const workOne = [
 	WorkOne1,
@@ -191,4 +203,19 @@ export const workFive = [
 	WorkFive22,
 ]
 
-export const workSix = [WorkSix1, WorkSix2]
+export const workSix = [
+	WorkSix1, 
+	WorkSix2,  
+	WorkSix3,  
+	WorkSix4,  
+	WorkSix5,
+	WorkSix6,
+	WorkSix7,
+	WorkSix8,
+	WorkSix9,
+	WorkSix10,
+	WorkSix11,
+	WorkSix12,
+	WorkSix13,
+	WorkSix14,
+]

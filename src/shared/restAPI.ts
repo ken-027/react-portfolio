@@ -36,6 +36,17 @@ const restAPI: Omit<IWork, 'website' | 'images'>[] = [
 			skills.database.skills[1].name,
 		],
 	},
+	{
+		title: 'Order',
+		description: 'A simple Order API with authentication, validation and unit testing',
+		developmentType: 'Backend',
+		repository: `${info.socials[0].link}/laravel-orderapi`,
+		technologies: [
+			skills.language.skills[4].name,
+			skills.backend.skills[2].name,
+			skills.database.skills[2].name,
+		],
+	},
 ]
 
 export default restAPI
