@@ -9,6 +9,7 @@
   margin: 0;
   padding: 0;
   @include mix.font-family;
+  user-select: none;
 }
 
 html {

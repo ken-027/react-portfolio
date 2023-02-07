@@ -53,7 +53,7 @@ const About = ({
 						<Image
 							// width={200}
 							alt='Profile'
-							src='./Profile.png'
+							src='./profile-art.png'
 							preview={{
 								scaleStep: 0.1,
 								destroyOnClose: true,
