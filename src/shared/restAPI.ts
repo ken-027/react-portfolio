@@ -44,7 +44,7 @@ const restAPI: Omit<IWork, 'website' | 'images'>[] = [
 		technologies: [
 			skills.language.skills[4].name,
 			skills.backend.skills[2].name,
-			skills.database.skills[2].name,
+			skills.database.skills[3].name,
 		],
 	},
 ]
