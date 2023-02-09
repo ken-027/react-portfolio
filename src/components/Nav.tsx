@@ -6,6 +6,7 @@ import '../styles/sass/components/_navbar.scss'
 import Scrollbar from 'smooth-scrollbar'
 import { motion } from 'framer-motion'
 import { navAnimation } from '../config/animate'
+import { Sling as Hamburger } from 'hamburger-react'
 
 import Resume from '../assets/Resume.pdf'
 
@@ -54,11 +55,12 @@ const Nav = (): React.ReactElement => {
 				<a
 					href={Resume}
 					target='_blank'
-					className='btn resume desktop' rel="noreferrer">
+					className='btn resume desktop'
+					rel='noreferrer'>
 					<FaDownload /> Resume
 				</a>
 			</motion.div>
-			<motion.button
+			{/* <motion.button
 				transition={{
 					ease: 'easeInOut',
 				}}
@@ -67,7 +69,26 @@ const Nav = (): React.ReactElement => {
 				className=''
 				onClick={toggleNav}>
 				<HiOutlineMenuAlt3 size={40} />
+			</motion.button> */}
+			<motion.button
+				transition={{
+					ease: 'easeInOut',
+				}}
+				initial={{ x: 100, opacity: 0 }}
+				animate={{ x: 0, opacity: 1 }}>
+				<Hamburger
+					toggled={isShow}
+					toggle={toggleNav}
+					size={30}
+					direction='left'
+					// duration={0.8}
+					distance='lg'
+					color='#019FC1'
+					rounded
+					easing='ease-in-out'
+				/>
 			</motion.button>
+
 			{isShow && screenWidth < 1026 ? (
 				<div className={'menu-container show'}>
 					<motion.button

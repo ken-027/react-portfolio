@@ -26,6 +26,13 @@ nav {
   > button {
     @include px($space_1);
     padding-top: $space_1;
+    &:focus {
+      border: none;
+      outline: none;
+    }
+    div {
+      z-index: 9;
+    }
     @include laptop {
       display: none;
     }
@@ -43,7 +50,7 @@ nav {
     display: flex;
     flex-direction: column;
     padding-bottom: $space_5;
-    align-items: flex-start;
+    align-items: flex-end;
     background-color: $primary-light-color;
     transform: translateX(100%);
     transition: $transition;
@@ -88,6 +95,7 @@ nav {
 
     .close {
       // animation: translateX 600ms ease-in-out reverse;
+      opacity: 0% !important;
       padding-top: $space_1;
       margin-bottom: $space_4;
       @include laptop {
@@ -109,8 +117,11 @@ nav {
       }
       li {
         margin-bottom: $space_6;
+        display: flex;
+        justify-content: flex-end;
         @include laptop {
           background-color: $primary-color;
+          display: block;
         }
 
         &:nth-child(1) {
@@ -139,7 +150,6 @@ nav {
           overflow: hidden;
           font-size: 1.2em;
           color: $secondary-color;
-
           @include laptop {
             writing-mode: vertical-rl;
             // text-orientation: upright;
@@ -153,9 +163,9 @@ nav {
             display: block;
             content: '';
             margin-top: $space_1;
-            border-bottom: 2px solid $tertiary-color;
+            border-bottom: 3px solid $tertiary-color;
             transition: $transition;
-            transform: translateX(-105%);
+            transform: translateX(105%);
             @include laptop {
               transform: translateY(-110%);
               border-left: 2px solid $tertiary-color;
@@ -166,11 +176,11 @@ nav {
           }
 
           &:hover {
-            padding-left: $space_2;
+            padding-right: $space_2;
             transform: scale(1.3);
             color: $tertiary-color;
             @include laptop {
-              transform: scale(1);
+              // transform: scale(1);
             }
             &::after {
               transform: translateX(0);
@@ -182,7 +192,7 @@ nav {
 
           &.expe {
             &:hover {
-              padding-left: $space_3;
+              padding-right: $space_4;
             }
           }
         }
@@ -220,6 +230,7 @@ nav {
     .btn.resume.desktop {
       margin-top: $space_4;
       width: max-content;
+      font-size: 1em;
       &:hover {
         color: $white;
         svg {
@@ -273,7 +284,6 @@ nav {
         content: '';
         width: 10%;
         z-index: 10;
-        // background-color: red;
         @include laptop {
           display: none;
         }
@@ -356,8 +366,9 @@ nav {
               transition: $transition;
               transform: translateX(-105%);
               @include laptop {
+                transition-duration: 500ms;
                 transform: translateY(-110%);
-                border-left: 2px solid $tertiary-color;
+                border-left: 4px solid $tertiary-color;
                 margin-top: 0;
                 margin-left: 0;
                 margin-right: $space_1;
