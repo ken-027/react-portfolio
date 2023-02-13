@@ -1,7 +1,7 @@
 import React from 'react'
 import { IWork } from '../../ts-interfaces'
 import { FaShareSquare, FaGithub } from 'react-icons/fa'
-import { Popover } from 'antd'
+import Popover from 'antd/lib/popover'
 
 const Details = ({ info, totalSamples }: { info: IWork, totalSamples: number }) => {
 	const hasWebsite: boolean = info.website.trim() ? true : false

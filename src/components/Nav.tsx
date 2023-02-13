@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react'
-import { HiOutlineMenuAlt3 } from 'react-icons/hi'
+// import { HiOutlineMenuAlt3 } from 'react-icons/hi'
 import { AiOutlineClose } from 'react-icons/ai'
 import { FaDownload } from 'react-icons/fa'
 import '../styles/sass/components/_navbar.scss'
 import Scrollbar from 'smooth-scrollbar'
 import { motion } from 'framer-motion'
 import { navAnimation } from '../config/animate'
-import { Sling as Hamburger } from 'hamburger-react'
+import { Spiral as Hamburger } from 'hamburger-react'
 
-import Resume from '../assets/Resume.pdf'
+// import Resume from '../assets/Resume.pdf'
 
 const Nav = (): React.ReactElement => {
 	const [isShow, setisShow] = useState(false)
@@ -53,7 +53,7 @@ const Nav = (): React.ReactElement => {
 				transition={{ duration: 0.5, ease: 'anticipate' }}
 				className='section-content'>
 				<a
-					href={Resume}
+					href='./resume.pdf'
 					target='_blank'
 					className='btn resume desktop'
 					rel='noreferrer'>
@@ -80,7 +80,7 @@ const Nav = (): React.ReactElement => {
 					toggled={isShow}
 					toggle={toggleNav}
 					size={30}
-					direction='left'
+					direction='right'
 					// duration={0.8}
 					distance='lg'
 					color='#019FC1'
@@ -143,7 +143,7 @@ const Nav = (): React.ReactElement => {
 					</ul>
 					<motion.a
 						{...navAnimation(0.3, false)}
-						href={Resume}
+						href='resume.pdf'
 						target='_blank'
 						className='btn resume mobile'>
 						<FaDownload /> Resume

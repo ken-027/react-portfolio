@@ -3,7 +3,7 @@ import { IWork } from '../../ts-interfaces'
 import { motion } from 'framer-motion'
 import { FaGithub, FaShareSquare } from 'react-icons/fa'
 import { contentAnimation } from '../../config/animate'
-import { Popover } from 'antd'
+import Popover from 'antd/lib/popover'
 
 const WorkCard = ({
 	info,

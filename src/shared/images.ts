@@ -103,6 +103,22 @@ import WorkSix12 from '../assets/work6/12.png'
 import WorkSix13 from '../assets/work6/13.png'
 import WorkSix14 from '../assets/work6/14.png'
 
+import WorkSeven1 from '../assets/work7/1.png'
+import WorkSeven2 from '../assets/work7/2.png'
+import WorkSeven3 from '../assets/work7/3.png'
+import WorkSeven5 from '../assets/work7/5.png'
+import WorkSeven6 from '../assets/work7/6.png'
+import WorkSeven7 from '../assets/work7/7.png'
+import WorkSeven8 from '../assets/work7/8.png'
+import WorkSeven9 from '../assets/work7/9.png'
+import WorkSeven10 from '../assets/work7/10.png'
+import WorkSeven11 from '../assets/work7/11.png'
+import WorkSeven12 from '../assets/work7/12.png'
+import WorkSeven13 from '../assets/work7/13.png'
+import WorkSeven14 from '../assets/work7/14.png'
+import WorkSeven15 from '../assets/work7/15.png'
+import WorkSeven16 from '../assets/work7/16.png'
+
 export const workOne = [
 	WorkOne1,
 	WorkOne2,
@@ -218,4 +234,22 @@ export const workSix = [
 	WorkSix12,
 	WorkSix13,
 	WorkSix14,
+]
+
+export const workSeven = [
+	WorkSeven1, 
+	WorkSeven2,  
+	WorkSeven3,  
+	WorkSeven5,
+	WorkSeven6,
+	WorkSeven7,
+	WorkSeven8,
+	WorkSeven9,
+	WorkSeven10,
+	WorkSeven11,
+	WorkSeven12,
+	WorkSeven13,
+	WorkSeven14,
+	WorkSeven15,
+	WorkSeven16,
 ]

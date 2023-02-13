@@ -28,7 +28,7 @@
     width: 80%;
     display: flex;
     align-items: flex-end;
-    max-width: 250px;
+    max-width: 300px;
     // max-height: 300px;
     margin-bottom: var.$space_12;
     @include mix.mx(auto);
@@ -38,6 +38,7 @@
     }
     @include res.laptop {
       // border-radius: var.$space_2;
+      width: 100%;
     }
     img {
       max-width: 100%;

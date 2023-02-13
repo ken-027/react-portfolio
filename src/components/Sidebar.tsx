@@ -3,7 +3,7 @@ import logo from '../assets/logo.svg'
 import info from '../shared/info'
 import { ISocial } from '../ts-interfaces'
 import { motion } from 'framer-motion'
-import { Popover } from 'antd'
+import Popover from 'antd/lib/popover'
 
 import '../styles/sass/components/_sidebar.scss'
 

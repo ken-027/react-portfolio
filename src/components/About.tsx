@@ -12,7 +12,7 @@ import { Skill } from '../ts-interfaces'
 import { contentAnimation, labelAnimation } from '../config/animate'
 
 import Skills from './about/Skills'
-import { Image } from 'antd'
+import Image from 'antd/lib/image'
 
 const About = ({
 	onViewPort,

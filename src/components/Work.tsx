@@ -14,7 +14,7 @@ import Images from './work/Images'
 import Details from './work/Details'
 import WorkCard from './work/WorkCard'
 import EmptyBox from '../assets/empty.png'
-import { Popover } from 'antd'
+import Popover from 'antd/lib/popover'
 import mobiles from '../shared/mobiles'
 import desktops from '../shared/desktops'
 

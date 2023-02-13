@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import info from '../shared/info'
 import { BiGitRepoForked } from 'react-icons/bi'
 import '../styles/sass/components/_footer.scss'
-import { Popover } from 'antd'
+import Popover from 'antd/lib/popover'
 import { contentAnimation } from '../config/animate'
 
 const Footer = (): React.ReactElement => (

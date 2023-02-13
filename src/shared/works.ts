@@ -2,7 +2,7 @@ import skills from './skills'
 import info from './info'
 import { IWork } from '../ts-interfaces'
 
-import { workOne, workThree, workTwo, workFour, workFive, workSix } from './images'
+import { workOne, workThree, workTwo, workFour, workFive, workSix, workSeven } from './images'
 
 const works: IWork[] = [
 	{
@@ -61,7 +61,7 @@ const works: IWork[] = [
 	},
 	{
 		title: 'Wilson Works Static Website',
-		description: 'A simple static website of Wilson Works',
+		description: 'A simple landing page of Wilson Works',
 		website: 'https://kenneth-andales.github.io/wilson-works',
 		repository: `${info.socials[0].link}/wiwosite`,
 		developmentType: 'Frontend',
@@ -92,7 +92,7 @@ const works: IWork[] = [
 	},
 	{
 		title: 'Educat Landing Page',
-		description: 'A simple static website of educat learning system',
+		description: 'A simple landing page of educat learning system',
 		website: 'https://kenneth-andales.github.io/educat',
 		repository: `${info.socials[0].link}/educat-landing`,
 		developmentType: 'Frontend',
@@ -104,6 +104,21 @@ const works: IWork[] = [
 			skills.frontend.skills[3].name,
 		],
 		images: workSix,
+	},
+	{
+		title: 'AgencyMatch Landing Page',
+		description: 'A simple landing page of agency match',
+		website: 'https://kenneth-andales.github.io/agency-match',
+		repository: `${info.socials[0].link}/agency-match`,
+		developmentType: 'Frontend',
+		technologies: [
+			skills.language.skills[0].name,
+			skills.language.skills[1].name,
+			skills.language.skills[2].name,
+			skills.language.skills[3].name,
+			skills.frontend.skills[3].name,
+		],
+		images: workSeven,
 	},
 ]
 

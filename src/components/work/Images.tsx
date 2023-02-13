@@ -6,7 +6,7 @@ import { Pagination } from 'swiper'
 import 'swiper/css/zoom'
 import 'swiper/css/pagination'
 import 'swiper/css'
-import { Image } from 'antd'
+import Image from 'antd/lib/image'
 
 import { IWork } from '../../ts-interfaces'
 
