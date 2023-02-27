@@ -52,7 +52,10 @@ const Work = ({
 									{...contentAnimation}
 									className='row'>
 									<div className='box'>
-										<Details totalSamples={work.images.length} info={work} />
+										<Details
+											totalSamples={work.images.length}
+											info={work}
+										/>
 										<Images info={work} />
 									</div>
 								</motion.div>
@@ -104,10 +107,23 @@ const Work = ({
               Mobile
 						</motion.h3>
 						<div className='work-container'>
-							<div className='no-project'>
-								{mobiles.length ? (
-									<p>List the mobiles</p>
-								) : (
+							{mobiles.length ? (
+								mobiles.map((mobile, index) => (
+									<motion.div
+										key={index}
+										{...contentAnimation}
+										className='row'>
+										<div className='box'>
+											<Details
+												totalSamples={mobile.images.length}
+												info={mobile}
+											/>
+											<Images info={mobile} />
+										</div>
+									</motion.div>
+								))
+							) : (
+								<div className='no-project'>
 									<Popover
 										arrowPointAtCenter
 										color={'#E45323'}
@@ -131,8 +147,8 @@ const Work = ({
                       No application made
 										</motion.p>
 									</Popover>
-								)}
-							</div>
+								</div>
+							)}
 						</div>
 					</div>
 					<div className=''>

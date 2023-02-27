@@ -112,8 +112,14 @@ const skills: ISkills = {
 			},
 			{
 				name: 'React',
-				description: 'This is a jquery',
+				description: 'This is a react',
 				rating: 7,
+				icon: react,
+			},
+			{
+				name: 'React Native',
+				description: 'This is a react native',
+				rating: 5,
 				icon: react,
 			},
 		],

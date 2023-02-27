@@ -3,7 +3,7 @@ import { IWork } from '../../ts-interfaces'
 import { FaShareSquare, FaGithub } from 'react-icons/fa'
 import Popover from 'antd/lib/popover'
 
-const Details = ({ info, totalSamples }: { info: IWork, totalSamples: number }) => {
+const Details = ({ info, totalSamples }: { info: IWork & {downloadLink?: string}, totalSamples: number }) => {
 	const hasWebsite: boolean = info.website.trim() ? true : false
 	const hasRepo: boolean = info.repository.trim() ? true : false
 
@@ -47,17 +47,17 @@ const Details = ({ info, totalSamples }: { info: IWork, totalSamples: number }) 
 						arrowPointAtCenter
 						content={
 							<div>
-								<p>{info.website || 'Not deployed!'}</p>
+								<p>{info.downloadLink ? 'Download link' : info.website || 'Not deployed!'}</p>
 							</div>
 						}
 						title={hasWebsite && <p className='popup-title'>Redirect to</p>}
 						overlayClassName='popup link'
 						placement='bottomLeft'
 						trigger='hover'>
-						{hasWebsite ? (
+						{hasWebsite || info.downloadLink ? (
 							<a
-								target='_blank'
-								href={info.website} rel="noreferrer">
+								target={info.downloadLink ? '' : '_blank'}
+								href={info.website || info.downloadLink} rel="noreferrer">
 								<FaShareSquare />
 							</a>
 						) : (

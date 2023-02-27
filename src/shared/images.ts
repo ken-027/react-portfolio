@@ -119,6 +119,32 @@ import WorkSeven14 from '../assets/work7/14.png'
 import WorkSeven15 from '../assets/work7/15.png'
 import WorkSeven16 from '../assets/work7/16.png'
 
+import WorkEight1 from '../assets/work8/1.png'
+import WorkEight2 from '../assets/work8/2.png'
+import WorkEight3 from '../assets/work8/3.png'
+import WorkEight4 from '../assets/work8/4.png'
+import WorkEight5 from '../assets/work8/5.png'
+import WorkEight6 from '../assets/work8/6.png'
+import WorkEight7 from '../assets/work8/7.png'
+import WorkEight8 from '../assets/work8/8.png'
+import WorkEight9 from '../assets/work8/9.png'
+import WorkEight10 from '../assets/work8/10.png'
+import WorkEight11 from '../assets/work8/11.png'
+import WorkEight12 from '../assets/work8/12.png'
+import WorkEight13 from '../assets/work8/13.png'
+import WorkEight14 from '../assets/work8/14.png'
+
+import WorkNine1 from '../assets/work9/1.png'
+import WorkNine2 from '../assets/work9/2.png'
+import WorkNine3 from '../assets/work9/3.png'
+import WorkNine4 from '../assets/work9/4.png'
+
+import WorkTen1 from '../assets/work10/1.png'
+import WorkTen2 from '../assets/work10/2.png'
+import WorkTen3 from '../assets/work10/3.png'
+import WorkTen4 from '../assets/work10/4.png'
+import WorkTen5 from '../assets/work10/5.png'
+
 export const workOne = [
 	WorkOne1,
 	WorkOne2,
@@ -220,10 +246,10 @@ export const workFive = [
 ]
 
 export const workSix = [
-	WorkSix1, 
-	WorkSix2,  
-	WorkSix3,  
-	WorkSix4,  
+	WorkSix1,
+	WorkSix2,
+	WorkSix3,
+	WorkSix4,
 	WorkSix5,
 	WorkSix6,
 	WorkSix7,
@@ -237,9 +263,9 @@ export const workSix = [
 ]
 
 export const workSeven = [
-	WorkSeven1, 
-	WorkSeven2,  
-	WorkSeven3,  
+	WorkSeven1,
+	WorkSeven2,
+	WorkSeven3,
 	WorkSeven5,
 	WorkSeven6,
 	WorkSeven7,
@@ -253,3 +279,24 @@ export const workSeven = [
 	WorkSeven15,
 	WorkSeven16,
 ]
+
+export const workEight = [
+	WorkEight1,
+	WorkEight2,
+	WorkEight3,
+	WorkEight4,
+	WorkEight5,
+	WorkEight6,
+	WorkEight7,
+	WorkEight8,
+	WorkEight9,
+	WorkEight10,
+	WorkEight11,
+	WorkEight12,
+	WorkEight13,
+	WorkEight14,
+]
+
+export const workNine = [WorkNine1, WorkNine2, WorkNine3, WorkNine4]
+
+export const workTen = [WorkTen1, WorkTen2, WorkTen3, WorkTen4, WorkTen5]
