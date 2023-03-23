@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body,
+html {
+  @apply font-Lato text-secondary scroll-smooth scroll-p-2 overflow-x-hidden;
+}
+
+body {
+  @apply overflow-y-hidden;
+
+  a {
+    @apply cursor-pointer;
+  }
+}
+
+label {
+  @apply text-secondary;
+}
+
+input,
+textarea {
+  @apply border-[1px] outline-none text-lg text-secondary border-tertiary rounded-md px-2 py-1 transition-all duration-[0.3s];
+  resize: none;
+
+  &:focus {
+    @apply border-secondary shadow-md;
+
+    &::placeholder {
+      @apply transition-all duration-[0.3s];
+    }
+  }
+
+  &::placeholder {
+    @apply font-[300] text-gray-400;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0.4rem;
+  height: 0.4rem;
+  // &:hover {
+  //   width: 0.5rem;
+  //   height: 0.5rem;
+  // }
+}
+
+/* Track styles */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle styles */
+::-webkit-scrollbar-thumb {
+  @apply bg-green-600;
+  border: 1px solid theme('colors.green.600');
+  border-radius: 5px;
+
+  &:hover {
+    @apply bg-tertiary;
+  }
+}
+
+.typed-cursor {
+  opacity: 1;
+  animation: typedjsBlink 0.7s infinite;
+  -webkit-animation: typedjsBlink 0.7s infinite;
+  animation: typedjsBlink 0.7s infinite;
+}
+@keyframes typedjsBlink {
+  50% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes typedjsBlink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.typed-fade-out {
+  opacity: 0;
+  transition: opacity 0.25s;
+  -webkit-animation: 0;
+  animation: 0;
+}
