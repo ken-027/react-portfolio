@@ -1,0 +1,303 @@
+.padding {
+  @apply px-6 mb-14;
+}
+
+.nav {
+  @apply flex justify-between items-center px-2.5 h-[8vh] absolute inset-x-0;
+
+  @screen md {
+    @apply flex-col;
+  }
+}
+
+.burger {
+  @apply z-20;
+}
+
+.radial-gradient {
+  @apply block absolute inset-[-30%] -z-10;
+  background: radial-gradient(circle, #9ae5d1 0%, #ffffff 60%);
+  content: '';
+}
+
+.linkContainer {
+  @apply fixed -z-10 opacity-0 inset-0;
+
+  ul {
+    @apply border-l inset-0 absolute bg-tertiary p-3 py-14 pt-14 flex flex-col items-center gap-4;
+
+    li {
+      @apply mb-2;
+      a {
+        @apply font-Raleway text-primary block w-fit font-semibold text-xl transition-all duration-300;
+
+        &:hover {
+          @apply text-secondary;
+        }
+      }
+
+      &:last-child {
+        a {
+          @apply font-semibold;
+        }
+      }
+    }
+  }
+}
+
+.linkShow {
+  @apply z-10 opacity-100 transition ease-linear duration-150;
+}
+
+.button {
+  @apply bg-tertiary text-white px-8 py-[0.25rem] rounded-[0.3rem] shadow-md;
+
+  &:hover {
+    color: theme('colors.secondary');
+  }
+}
+
+.btnResumeContainer {
+  @apply mt-auto;
+
+  a {
+    @apply bg-primary;
+    color: theme('colors.tertiary') !important;
+    &:hover {
+      @apply bg-secondary;
+      color: theme('colors.primary') !important;
+    }
+  }
+}
+
+.main {
+  @apply min-h-screen;
+}
+
+// * Header section
+
+.header {
+  @extend .padding;
+  @apply h-screen flex flex-col gap-6 py-5 items-center justify-end font-Lato text-secondary;
+
+  p {
+    @apply font-normal text-base leading-5;
+  }
+  h1 {
+    @apply text-4xl font-Raleway font-extrabold my-2;
+    span {
+      @apply inline-block;
+    }
+  }
+
+  h2 {
+    @apply text-lg text-tertiary font-Raleway font-black;
+  }
+
+  svg {
+    margin-bottom: 0;
+  }
+}
+
+.socials {
+  @apply flex gap-3 py-2;
+
+  a {
+    @apply transition-all duration-500;
+
+    img {
+      @apply w-[40px] aspect-[1/1];
+    }
+
+    &:hover {
+      @apply shadow-md rounded-md scale-[1.1];
+    }
+
+    &:nth-child(1) {
+      @apply shadow-[#0289d17d];
+    }
+
+    &:nth-child(2) {
+      @apply shadow-[#3434348c];
+    }
+
+    &:nth-child(3) {
+      @apply shadow-[#f44f5a97];
+    }
+  }
+}
+
+.h2 {
+  @apply text-xl text-center uppercase font-Raleway font-extrabold text-secondary mb-8;
+}
+
+.h3 {
+  @apply text-center font-Lato font-bold mb-5;
+}
+
+.image {
+  @apply w-[80%] mx-auto max-w-full grid place-items-center relative overflow-visible mb-10;
+
+  &::before {
+    @extend .radial-gradient;
+  }
+}
+
+.logo {
+  height: 50px;
+  aspect-ratio: 1/1;
+}
+
+.description {
+  @apply pt-5;
+  p {
+    @apply text-base font-medium mb-4;
+  }
+}
+
+.knowledgeList {
+  @apply pt-5;
+
+  li {
+    @apply font-Lato font-medium mb-2;
+  }
+}
+
+.icons {
+  @apply grid grid-cols-4 gap-3;
+
+  li {
+    @apply flex flex-col items-center;
+
+    h5 {
+      @apply text-sm mt-1 font-Lato font-semibold text-center;
+    }
+  }
+}
+
+// * Skill section
+
+.skills {
+  @apply flex flex-col mb-4 gap-2;
+
+  li {
+    @apply flex gap-2;
+
+    img {
+      @apply h-[45px] aspect-[1/1];
+    }
+
+    > div {
+      @apply w-full flex flex-col justify-between;
+      h4 {
+        @apply font-bold font-Lato uppercase;
+      }
+      div {
+        @apply h-4 rounded-lg bg-tertiary p-[2px] flex items-center;
+        div {
+          @apply bg-primary rounded-lg h-3;
+        }
+      }
+    }
+  }
+}
+
+// * Knowledge section
+
+.knowledge {
+  @apply grid grid-cols-2 justify-center items-baseline gap-2 gap-y-4;
+}
+
+.knowledgeItem {
+  @apply p-4;
+
+  img {
+    @apply m-auto;
+  }
+
+  h3 {
+    @apply font-bold uppercase text-center mt-2 leading-[1.1rem];
+  }
+}
+
+// * Experience Section
+
+.experience {
+  @apply grid gap-6 place-items-center pb-5;
+}
+
+.card {
+  @apply bg-gradient-to-tr to-[#0a7053] from-secondary text-primary rounded-[1.5rem] w-[85%] px-6 py-5 min-h-[300px] leading-tight;
+
+  h3 {
+    @apply font-Raleway font-bold text-base uppercase leading-tight;
+  }
+
+  small {
+    @apply text-[13px];
+  }
+
+  p:nth-child(2) {
+    span {
+      @apply text-xs ml-1;
+    }
+  }
+
+  p:nth-child(4) {
+    @apply text-sm my-8;
+  }
+
+  p:last-child {
+    @apply text-sm;
+  }
+}
+
+// * Portfolio Section
+
+.portfolio {
+  @apply flex flex-col gap-10;
+}
+
+.portfolioCard {
+  @apply w-[90%] mx-auto;
+
+  > div {
+    @apply overflow-hidden h-[500px] rounded-md border-secondary border-[1px] cursor-pointer;
+    img {
+      @apply max-w-full relative transition-all ease-in-out duration-700 top-0;
+    }
+
+    &:hover {
+      img {
+        @apply duration-[2s] translate-y-[-100%] top-full;
+      }
+    }
+  }
+
+  h3 {
+    @apply font-extrabold text-base text-center mt-3 uppercase;
+  }
+}
+
+// * Contact Section
+
+.form {
+  @apply py-10 flex flex-col gap-2;
+
+  > div {
+    @apply flex flex-col;
+    label {
+      @apply mb-0.5;
+    }
+  }
+}
+
+.submit {
+  @apply bg-tertiary text-primary capitalize;
+}
+
+// * Footer Section
+
+.footer {
+  @apply bg-secondary h-20 text-center text-primary;
+}
