@@ -4,17 +4,41 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  user-select: none;
+}
+
 body,
 html {
-  @apply font-Lato text-secondary scroll-smooth scroll-p-2 overflow-x-hidden;
+  @apply font-Lato text-secondary scroll-smooth;
+  overflow: hidden !important;
 }
 
 body {
-  @apply overflow-y-hidden;
-
+  // @apply h-screen w-screen;
   a {
-    @apply cursor-pointer;
+    @apply cursor-pointer z-[5];
   }
+
+  // p {
+  //   &:hover {
+  //     @apply transition-all;
+  //     text-shadow: 1px 1px 2px currentColor;
+  //   }
+  // }
+
+  #root {
+    @apply h-screen scroll-smooth scroll-p-2 overflow-x-hidden snap-y snap-mandatory relative max-w-[390px] mx-auto;
+    section,
+    header,
+    footer {
+      // scroll-snap-align: start;
+    }
+  }
+
+  // .cursor {
+  //   @apply h-[30px] z-[4] transition-[cursor] bg-tertiary duration-200 aspect-[1/1] ease-out border rounded-full fixed;
+  // }
 }
 
 label {
@@ -64,31 +88,81 @@ textarea {
   }
 }
 
-.typed-cursor {
-  opacity: 1;
-  animation: typedjsBlink 0.7s infinite;
-  -webkit-animation: typedjsBlink 0.7s infinite;
-  animation: typedjsBlink 0.7s infinite;
-}
-@keyframes typedjsBlink {
-  50% {
-    opacity: 0;
+svg {
+  .hand {
+    animation: handMoving 0.6s infinite ease-in-out alternate;
+  }
+
+  .text {
+    // @apply animate-pulse;
+  }
+
+  .bracket,
+  .operator {
+    animation: bouncing 1s infinite ease-out alternate;
+  }
+
+  .operator:nth-child(even) {
+    animation-delay: 0.2s;
+  }
+
+  .setting {
+    animation: handMoving 1s infinite ease-in-out alternate;
+  }
+
+  .circle {
+    // @apply animate-bounce;
+  }
+
+  &:hover {
+    // .object,
+    .object {
+      rect {
+        @apply transition-all duration-300 fill-primary;
+      }
+      path {
+        @apply fill-tertiary animate-pulse;
+        &.diff {
+          @apply fill-primary;
+        }
+      }
+    }
   }
 }
-@-webkit-keyframes typedjsBlink {
-  0% {
-    opacity: 1;
+
+@keyframes handMoving {
+  from {
+    transform: skew(0deg, 2deg);
   }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
+  to {
+    transform: skew(0deg, 0deg);
   }
 }
-.typed-fade-out {
-  opacity: 0;
-  transition: opacity 0.25s;
-  -webkit-animation: 0;
-  animation: 0;
+
+@keyframes bouncing {
+  from {
+    transform: translateY(-10px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes cursor {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(0.7);
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(1) translate(0, 0);
+  }
+  to {
+    transform: scale(1.2) translate(-8%, -3%);
+  }
 }

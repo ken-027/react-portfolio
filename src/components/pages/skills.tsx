@@ -18,6 +18,7 @@ import CodeigniterImg from '@/assets/icons/codeigniter.svg'
 import ExpressImg from '@/assets/icons/express.svg'
 import MysqlImg from '@/assets/icons/mysql.svg'
 import MongodbImg from '@/assets/icons/mongodb.svg'
+import { m, Variant } from 'framer-motion'
 
 type props = PropsWithChildren<{}>
 type icon = {
@@ -29,6 +30,11 @@ type icon = {
 type iconType = {
   type: string
   icons: icon[]
+}
+
+type variant = {
+  visible: Variant
+  hidden: Variant
 }
 
 const icons: iconType[] = [
@@ -96,40 +102,104 @@ const icons: iconType[] = [
 ]
 
 const Skills: React.FC<props> = ({}) => {
+  const containerVariant: variant = {
+    hidden: { opacity: 0, y: 10 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: 'easeIn',
+        when: 'beforeChildren',
+        staggerChildren: 0.6,
+      },
+    },
+  }
+
+  const skillVariant: variant = {
+    hidden: {
+      x: -10,
+    },
+    visible: {
+      x: 0,
+      transition: {
+        duration: 0.1,
+        type: 'spring',
+        when: 'beforeChildren',
+        staggerChildren: 0.4,
+      },
+    },
+  }
+
+  const childrenVariant: variant = {
+    hidden: {
+      x: -10,
+      opacity: 0,
+    },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  }
+
   return (
-    <section
+    <m.section
+      variants={containerVariant}
+      initial='hidden'
+      whileInView='visible'
       id='about'
       className={styles.padding}>
       <h2 className={styles.h2}>Skills</h2>
-      <div className={styles.image}>
+      <m.div
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        viewport={{ amount: 0.2 }}
+        className={styles.image}>
         <SkillImage className={styles.image} />
-      </div>
+      </m.div>
       <div>
         {icons.map((item, index) => (
           <div key={index}>
             {/* <p>{item.type}</p> */}
             <ul className={styles.skills}>
               {item.icons.map((item, index) => (
-                <li key={index}>
-                  <img
+                <m.li
+                  variants={skillVariant}
+                  initial='hidden'
+                  whileInView='visible'
+                  viewport={{ amount: 1 }}
+                  key={index}>
+                  <m.img
+                    variants={childrenVariant}
                     src={item.image}
                     alt={item.name}
                     height={40}
                     width={40}
                   />
                   <div className={styles.rating}>
-                    <h4>{item.name}</h4>
+                    <m.h4 variants={childrenVariant}>{item.name}</m.h4>
                     <div>
-                      <div style={{ width: `${item.rating * 10}%` }}></div>
+                      <m.div
+                        transition={{
+                          duration: 1.5,
+                          type: 'tween',
+                        }}
+                        initial={{ width: 0 }}
+                        whileInView={{ width: `${item.rating * 10}%` }}
+                      />
                     </div>
                   </div>
-                </li>
+                </m.li>
               ))}
             </ul>
           </div>
         ))}
       </div>
-    </section>
+    </m.section>
   )
 }
 

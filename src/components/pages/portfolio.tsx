@@ -61,9 +61,7 @@ const Portfolio: React.FC<props> = ({}) => {
         {portfolios.map((item, index) => {
           const [click, setClick] = useState<boolean>(false)
 
-          useEffect(() => {
-            console.log(click)
-          }, [click])
+          useEffect(() => {}, [click])
 
           return (
             <div
@@ -78,21 +76,14 @@ const Portfolio: React.FC<props> = ({}) => {
                   alt={item.title}
                 />
                 <div>
-                  <a onClick={() => window.open(item.link, '_blank')}>
-                    <FaGlobeAsia
-                      size={30}
-                      className={styles.githubRepo}
-                    />
-                  </a>
-                  <a onClick={() => window.open(item.repo, '_blank')}>
-                    <FaGithub
-                      size={30}
-                      className={styles.githubRepo}
-                    />
+                  <h3>{item.title}</h3>
+                  <a
+                    href={item.link}
+                    target='_blank'>
+                    {item.link}
                   </a>
                 </div>
               </div>
-              <h3>{item.title}</h3>
             </div>
           )
         })}

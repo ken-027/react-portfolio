@@ -1,7 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  purge: ['./pages/**/*.{ts,tsx}', './components/**/*.{ts,tsx}'],
+  // purge: ['./pages/**/*.{ts,tsx}', './components/**/*.{ts,tsx}'],
   // darkMode: false, // or 'media' or 'class'
+  content: [],
   theme: {
     extend: {
       colors: {

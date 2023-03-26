@@ -23,7 +23,7 @@ const experiences: experience[] = [
     company: 'Bluehive Ph',
     type: 'Part-time',
     contributes:
-      'Managed front-end development and collaborated with the back-end development and project manager for various projects. My responsibilities included API integration and providing daily and weekly updates on project progress.',
+      'Managed front-end development and worked collaboratively with the back-end developer and project manager on multiple projects. Spearheaded API integration and provided regular project progress updates on a daily and weekly basis, ensuring effective communication and alignment across all stakeholders.',
     location: 'Quezon City, Metro Manila',
     date: {
       from: new Date(2022, 7),
@@ -35,7 +35,7 @@ const experiences: experience[] = [
     company: 'WerOrg',
     type: 'Freelance',
     contributes:
-      'Successfully rebuilt the back-end application of an e-commerce site, adding translation capabilities and fixing minor onboarding issues. Additionally, I addressed some SEO-related issues on a live website. As part of my responsibilities, I handled the cPanel to upload code changes.',
+      'Rebuilt the back-end application of an e-commerce site, incorporating translation capabilities and resolving minor onboarding issues, resulting in improved user experience. Implemented SEO-related improvements to enhance the performance of a live website. Managed the cPanel to upload code changes, ensuring seamless deployment and functionality of the website.',
     location: 'Florida, USA',
     date: {
       from: new Date(2022, 0),
@@ -47,7 +47,7 @@ const experiences: experience[] = [
     company: 'Cloud Panda Phils Inc.',
     type: 'Fulltime',
     contributes:
-      'Collaborated with other developers to build both government and internal websites. Additionally, I worked with QA testers to fix bugs in other projects. My responsibilities included uploading code to Bitbucket and updating the status of tasks on our project management tool.',
+      'Played an integral role in developing government and internal websites, working closely with fellow developers to ensure their successful deployment. Collaborated effectively with QA testers to resolve issues and improve project functionality. Managed code uploads to Bitbucket and tracked task statuses using project management tools, ensuring that all team members were aligned and up-to-date on project progress.',
     location: 'BGC Taguig, Metro Manila',
     date: {
       from: new Date(2019, 9),
@@ -59,7 +59,7 @@ const experiences: experience[] = [
     company: 'International Payment Processing',
     type: 'Fulltime',
     contributes:
-      'Collaborated with junior and senior developers as well as my supervisor on minor or major tasks. Additionally, I managed to build a solo project with some assistance from other developers.',
+      'Collaborated with junior and senior developers and the supervisor to complete various tasks. Successfully handled a solo project with guidance from experienced developers, showcasing independent and teamwork abilities.',
     location: 'Puerto Princesa City, Palawan',
     date: {
       from: new Date(2018, 4),

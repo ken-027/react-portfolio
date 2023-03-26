@@ -5,9 +5,9 @@
 .nav {
   @apply flex justify-between items-center px-2.5 h-[8vh] absolute inset-x-0;
 
-  @screen md {
-    @apply flex-col;
-  }
+  // @screen md {
+  //   @apply flex-col;
+  // }
 }
 
 .burger {
@@ -20,8 +20,13 @@
   content: '';
 }
 
+.linear-gradient {
+  @apply bg-gradient-to-tr to-[#0a7053] from-secondary;
+}
+
 .linkContainer {
-  @apply fixed -z-10 opacity-0 inset-0;
+  // @apply fixed -z-10 opacity-0 inset-0;
+  @apply fixed z-10 inset-0;
 
   ul {
     @apply border-l inset-0 absolute bg-tertiary p-3 py-14 pt-14 flex flex-col items-center gap-4;
@@ -29,10 +34,11 @@
     li {
       @apply mb-2;
       a {
-        @apply font-Raleway text-primary block w-fit font-semibold text-xl transition-all duration-300;
+        @apply font-Raleway text-primary block w-fit font-semibold text-xl transition-all duration-500;
 
         &:hover {
-          @apply text-secondary;
+          // @apply text-secondary;
+          text-shadow: 0px 0px 6px currentColor;
         }
       }
 
@@ -45,9 +51,9 @@
   }
 }
 
-.linkShow {
-  @apply z-10 opacity-100 transition ease-linear duration-150;
-}
+// .linkShow {
+//   @apply z-10 opacity-100 transition ease-linear duration-150;
+// }
 
 .button {
   @apply bg-tertiary text-white px-8 py-[0.25rem] rounded-[0.3rem] shadow-md;
@@ -64,8 +70,8 @@
     @apply bg-primary;
     color: theme('colors.tertiary') !important;
     &:hover {
-      @apply bg-secondary;
-      color: theme('colors.primary') !important;
+      text-shadow: unset !important;
+      box-shadow: 0px 0px 6px theme('colors.primary');
     }
   }
 }
@@ -110,27 +116,35 @@
 .socials {
   @apply flex gap-3 py-2;
 
-  a {
-    @apply transition-all duration-500;
+  li {
+    a {
+      @apply block transition-all duration-500;
 
-    img {
-      @apply w-[30px] aspect-[1/1];
-    }
+      img {
+        @apply w-[30px] aspect-[1/1];
+      }
 
-    &:hover {
-      @apply shadow-md rounded-md scale-[1.1];
+      &:hover {
+        @apply shadow-md rounded-md scale-[1.1];
+      }
     }
 
     &:nth-child(1) {
-      @apply shadow-[#0289d17d];
+      a {
+        @apply shadow-[#0289d17d];
+      }
     }
 
     &:nth-child(2) {
-      @apply shadow-[#3434348c];
+      a {
+        @apply shadow-[#3434348c];
+      }
     }
 
     &:nth-child(3) {
-      @apply shadow-[#f44f5a97];
+      a {
+        @apply shadow-[#f44f5a97];
+      }
     }
   }
 }
@@ -144,10 +158,14 @@
 }
 
 .image {
-  @apply w-[80%] mx-auto max-w-full grid place-items-center relative overflow-visible mb-6;
+  @apply w-[80%] mx-auto z-[-1] max-w-full grid place-items-center relative overflow-visible mb-6;
 
   &::before {
     @extend .radial-gradient;
+  }
+
+  div {
+    height: unset !important;
   }
 }
 
@@ -198,7 +216,7 @@
     > div {
       @apply w-full flex flex-col justify-between;
       h4 {
-        @apply font-bold font-Lato uppercase;
+        @apply font-bold font-Raleway uppercase;
       }
       div {
         @apply h-4 rounded-lg bg-tertiary p-[2px] flex items-center;
@@ -231,11 +249,12 @@
 // * Experience Section
 
 .experience {
-  @apply grid gap-6 place-items-center pb-5;
+  @apply grid grid-cols-1 gap-6 place-items-center pb-5;
 }
 
 .card {
-  @apply bg-gradient-to-tr to-[#0a7053] from-secondary text-primary rounded-[1.5rem] w-[85%] px-6 py-5 min-h-[300px] leading-tight;
+  @extend .linear-gradient;
+  @apply text-primary rounded-[1.5rem] w-[85%] px-6 py-5 h-full min-h-[300px] leading-tight;
 
   h3 {
     @apply font-Raleway font-bold text-base uppercase leading-tight;
@@ -270,7 +289,7 @@
   @apply transition-all duration-700 m-auto;
 
   &:hover {
-    @apply scale-[1.2] text-secondary;
+    @apply scale-[1.2];
   }
 }
 
@@ -278,22 +297,30 @@
   @apply w-[90%] mx-auto;
 
   > div {
-    @apply overflow-hidden h-[500px] relative rounded-md transition-all;
+    @apply overflow-hidden border border-[#0336287d] h-[500px] relative rounded-md transition-all shadow-md shadow-[#03362829];
     img {
       @apply max-w-full relative transition-all ease-in-out duration-700 top-0;
     }
 
-    &::before {
-      @apply block absolute inset-0 transition-all duration-700 bg-primary opacity-80 z-10;
-      content: '';
-    }
+    // &::before {
+    //   @extend .linear-gradient;
+    //   @apply block absolute inset-0 transition-all duration-700 z-10;
+    //   content: '';
+    // }
 
     div {
-      @apply bg-tertiary border-t-[1px] border-secondary z-10 text-primary text-center flex justify-center gap-4 p-2 absolute inset-x-0 bottom-[-100%] transition-all duration-700;
+      @extend .linear-gradient;
+      @apply bg-secondary border-t-[1px] border-[#0336287d] z-10 text-primary text-center p-2 overflow-hidden text-ellipsis whitespace-nowrap absolute inset-x-0 bottom-[-100%] transition-all duration-700;
+      a {
+        @apply text-sm text-ellipsis font-light whitespace-nowrap overflow-hidden transition-all duration-300;
+        &:hover {
+          text-shadow: 0 0 8px currentColor;
+        }
+      }
     }
 
     &:hover {
-      @apply border-secondary border-[1px];
+      box-shadow: 0 0 20px #158e6e7e;
       &::before {
         @apply opacity-0 z-0;
       }
@@ -308,7 +335,7 @@
   }
 
   h3 {
-    @apply font-extrabold text-base text-center mt-3 uppercase;
+    @apply font-extrabold text-base text-center uppercase;
   }
 }
 
@@ -326,8 +353,11 @@
 }
 
 .submit {
-  @apply text-primary capitalize;
+  @apply text-primary capitalize cursor-pointer transition-all duration-300 outline-none;
   background-color: theme('colors.tertiary') !important;
+  &:hover {
+    box-shadow: 0 0 8px theme('colors.tertiary');
+  }
 }
 
 // * Footer Section
@@ -340,10 +370,29 @@
   }
 
   h2 {
-    @apply z-10;
+    @apply z-10 font-Raleway font-normal text-sm;
+    text-shadow: 0 0 30px theme('colors.primary');
+    span {
+      @apply text-secondary font-bold;
+    }
   }
 }
 
 .waveFooter {
   @apply absolute w-full inset-x-0 h-[15%] rotate-180 -z-10;
+}
+
+.cursor {
+  span {
+    @apply font-black text-tertiary;
+  }
+}
+
+.linkedin {
+  width: 56%;
+  overflow: visible;
+  stroke: #fff;
+  stroke-width: 1;
+  stroke-linejoin: round;
+  stroke-linecap: round;
 }

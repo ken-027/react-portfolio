@@ -13,7 +13,7 @@ const Footer: React.FC<props> = ({}) => {
         alt='Wave background'
       />
       <div>
-        <h2>Design and Built by Kenneth Andales</h2>
+        <h2>Design and Built by <span>Kenneth Andales</span></h2>
       </div>
     </footer>
   )
